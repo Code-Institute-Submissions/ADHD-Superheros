@@ -51,6 +51,29 @@ def get_last_3_priorities():
         columns.append(column[-3:])
 
     print(columns)
+    # Add code to user can input whether task was done or not 
+
+
+def get_current_wins():
+    """
+    Get 3 wins from previous day from user
+    """
+    while True:
+        print("Its importnat to take time to document your wins")
+        print("Focusing your thoughs on past progress leads to future progress")
+        print("Your win will need to have a minimum of 10 words")
+        print("Example: I cleared all my emails by luchtime and worked on my project in the afteroon as scheduled")
+
+        win_str = input("Enter your win here:\n")
+
+        # win_data = win_str
+        # Add code to ensure win saves as a string
+
+        # if validate_data(win_data):
+        #     print("Example is not strong enough. Try more detail!")
+        #     break
+
+        print(win_data)
 
 
 def main():
@@ -60,6 +83,7 @@ def main():
     get_strenghts_data()
     get_advice_data()
     get_last_3_priorities()
+    get_current_wins()
 
 
 main()
