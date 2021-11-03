@@ -51,7 +51,7 @@ def get_last_3_priorities():
         columns.append(column[-3:])
 
     print(columns)
-    # Add code to user can input whether task was done or not 
+    # Add code so user can input whether task was done or not 
 
 
 def get_current_wins():
@@ -65,15 +65,31 @@ def get_current_wins():
         print("Example: I cleared all my emails by luchtime and worked on my project in the afteroon as scheduled")
 
         win_str = input("Enter your win here:\n")
-
+        win_data = str(win_str)
         # win_data = win_str
-        # Add code to ensure win saves as a string
+        # #Add code to ensure win_data saves as a string
 
         # if validate_data(win_data):
-        #     print("Example is not strong enough. Try more detail!")
-        #     break
-
+        # #     print("Example is not strong enough. Try more detail!")
+        # #     break
         print(win_data)
+
+        return win_data
+
+# def validate_data(values):
+#     """
+#     Inside the try, raises ValueError if string less than 6 words
+#     """
+#     try:
+#         if len(values) < 10:
+#             raise ValueError(
+#                 f"At least 10 words are required, you provided len(values)"
+#             )
+#         except ValueError as e:
+#             print(f"You appear to entered invalid data: {e}, please try again.\n")
+#             return False
+
+#         return True.
 
 
 def update_wins_worksheet(data):
@@ -81,10 +97,10 @@ def update_wins_worksheet(data):
     Receives a string to be inserted into wins worksheet
     Update the wins worksheet with the data provided
     """
-    print(f"Updating your wins worksheet...\n")
+    print("Updating your wins worksheet...\n")
     worksheet_to_update = SHEET.worksheet("wins")
     worksheet_to_update.append_row(data)
-    print(f"Your wins worksheet update successfully\n")
+    print("Your wins worksheet update successfully\n")
 
 
 def main():
@@ -94,6 +110,7 @@ def main():
     get_strenghts_data()
     get_advice_data()
     get_last_3_priorities()
+    get_current_wins()
     data = get_current_wins()
     update_wins_worksheet(data)
 
