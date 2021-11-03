@@ -43,11 +43,11 @@ def get_last_3_priorities():
     Get previous days top 3 priorities.
     Present to user to confirm if done or not done on previous day.
     """
-    dailytop3 = SHEET.worksheet("dailytop3")
+    dailytopthree = SHEET.worksheet("dailytopthree")
     
     columns = []
     for ind in range(1, 3):
-        column = dailytop3.col_values(ind)
+        column = dailytopthree.col_values(ind)
         columns.append(column[-3:])
 
     print(columns)
@@ -76,6 +76,17 @@ def get_current_wins():
         print(win_data)
 
 
+def update_wins_worksheet(data):
+    """
+    Receives a string to be inserted into wins worksheet
+    Update the wins worksheet with the data provided
+    """
+    print(f"Updating your wins worksheet...\n")
+    worksheet_to_update = SHEET.worksheet("wins")
+    worksheet_to_update.append_row(data)
+    print(f"Your wins worksheet update successfully\n")
+
+
 def main():
     """
     Run all program functions
@@ -83,7 +94,8 @@ def main():
     get_strenghts_data()
     get_advice_data()
     get_last_3_priorities()
-    get_current_wins()
+    data = get_current_wins()
+    update_wins_worksheet(data)
 
 
 main()
