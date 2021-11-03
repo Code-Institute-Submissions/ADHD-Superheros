@@ -38,11 +38,19 @@ def get_advice_data():
     # Add code to update last presented data of advice
 
 
-# def get_last_3_priorities():
-#     """
-#     Get previous days top 3 priorities.
-#     Present to user to confirm if done or not done on previous day.
-#     """
+def get_last_3_priorities():
+    """
+    Get previous days top 3 priorities.
+    Present to user to confirm if done or not done on previous day.
+    """
+    dailytop3 = SHEET.worksheet("dailytop3")
+    
+    columns = []
+    for ind in range(1, 3):
+        column = dailytop3.col_values(ind)
+        columns.append(column[-3:])
+
+    print(columns)
 
 
 def main():
@@ -51,5 +59,7 @@ def main():
     """
     get_strenghts_data()
     get_advice_data()
+    get_last_3_priorities()
+
 
 main()
