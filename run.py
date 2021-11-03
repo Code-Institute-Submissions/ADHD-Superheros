@@ -14,24 +14,32 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('ADHDSuperheros')
 
+strenghts = SHEET.worksheet("strenghts").get_all_values()
 
-def get_stenghts_data():
+strenghts_row = strenghts[-1]
+
+print(strenghts_row)
+
+def get_strenghts_data():
     """
     Get strenghts from strenghts worksheet least recently used.
     Print for user to be reminded.
     """
+    strenghts = SHEET.worksheet("strenghts").get_all_values()
+    strenghts_row = strenghts[-1]
+    print(strenghts_row)
+    # Add in code to change date in last presented
+
+# def get_advice_data():
+#     """
+#     Get advice from advice worksheet least recently used.
+#     Print to display to user. 
+#     """
 
 
-def get_advice_data():
-    """
-    Get advice from advice worksheet least recently used.
-    Print to display to user. 
-    """
-
-
-def get_last_3_priorities():
-    """
-    Get previous days top 3 priorities.
-    Present to user to confirm if done or not done on previous day.
-    """
+# def get_last_3_priorities():
+#     """
+#     Get previous days top 3 priorities.
+#     Present to user to confirm if done or not done on previous day.
+#     """
 
