@@ -26,6 +26,7 @@ def get_strenghts_data():
     # Add code to update last presented data of strenght
     # Decide which code is better for strenght and advice functions
 
+
 def get_advice_data():
     """
     Get advice from advice worksheet least recently used.
@@ -36,8 +37,19 @@ def get_advice_data():
     print(advice_row)
     # Add code to update last presented data of advice
 
+
 # def get_last_3_priorities():
 #     """
 #     Get previous days top 3 priorities.
 #     Present to user to confirm if done or not done on previous day.
 #     """
+
+
+def main():
+    """
+    Run all program functions
+    """
+    get_strenghts_data()
+    get_advice_data()
+
+main()
