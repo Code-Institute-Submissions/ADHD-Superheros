@@ -17,11 +17,21 @@ SHEET = GSPREAD_CLIENT.open('love_sandwiches')
 
 def get_stenghts_data():
     """
-    Get strenghts from strenghts worksheet and print so it's displayed to user
+    Get strenghts from strenghts worksheet least recently used.
+    Print for user to be reminded.
     """
 
 
 def get_advice_data():
     """
-    Get advice from advice worksheet and print so it's displayed to user
+    Get advice from advice worksheet least recently used.
+    Print to display to user. 
     """
+
+
+def get_last_3_priorities():
+    """
+    Get previous days top 3 priorties 
+    Present to user to confirm if done or not done on previous day.
+    """
+
