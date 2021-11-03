@@ -14,11 +14,6 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('ADHDSuperheros')
 
-strenghts = SHEET.worksheet("strenghts").get_all_values()
-
-strenghts_row = strenghts[-1]
-
-print(strenghts_row)
 
 def get_strenghts_data():
     """
