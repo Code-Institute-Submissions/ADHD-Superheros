@@ -1,31 +1,45 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
-Welcome USER_NAME,
+* To do: Add in responsive mock up
+* To do: spell check through grammarly
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **August 17, 2021**
+Overview
 
-## Reminders
+Purpose: 
 
-* Your code must be placed in the `run.py` file
-* Your dependencies must be placed in the `requirements.txt` file
-* Do not edit any of the other files or your code may not deploy properly
+* What? ADHD is neurotypical developmental disorder charaterised by an impairment of executive function (mental proceses for used to manging day to day life and attainging goals). ADHD Ireland (https://adhdireland.ie/for-adults/adhd-in-adults/) share that adults with ADHD have problems in six major areas of executive functioning:
 
-## Creating the Heroku app
+    * Activation – Problems with organization, prioritizing, and starting tasks.
+    * Focus – Problems with sustaining focus and resisting distraction, especially with reading.
+    * Effort – Problems with motivation, sustained effort, and persistence.
+    * Emotion – Difficulty regulating emotions and managing stress.
+    * Memory – Problems with short-term memory and memory retrieval.
+    * Action – Problems with self-control and self-regulation.
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
+* To do: Fix missing line space
+* Why? People with ADHD are neurodiverent individuals living in a neurotypical world. The world in general celebrates and rewards neurotypical traits which can leave ADHDers to dwell on their perceived weaknesses, shortcomings and failures. Apps recommended for people with ADHD are often focusing solely on organising their daily lives such as this ADHD app list here of calendars and todo list apps but none are uniquely designed for ADHDers:
 
-1. `heroku/python`
-2. `heroku/nodejs`
+https://www.additudemag.com/mobile-apps-for-adhd-minds/
 
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
+* How? This app combines focusing on celebrating ADHD strenghts and successes rather than dwelling on weaknesses and failings. It uses the core funtion as a restrictive to-do list feature (top 3 daily priroties rather than any endless list of to-do items) to encourage hyperfocus while reminding the users of the amazing their amazing potential, key ADHD strenghts and significant past succeses/wins.
 
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
+### User Stories
 
-Connect your GitHub repository and deploy as normal.
+Agreed:
 
-## Constraints
+* As a user, I need to see a daily reminder of a ADHD superpower/strenght.
+* As a user, I need to see a daily reminder of advice tailored to ADHDers.
 
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
+* As a user, I need to review my top 3 priorities from the yeserday day and confirm done/not done.
+* As a user, I need a weekly % of my task completion (one week = 21 tasks, 16 done on the day = 76%). 
+* As a user, I need a monthly % of my task completion (one month = 90 tasks, 79 done on the day = 86%).
 
------
-Happy coding!
+* As a user, I need to document my top 3 win/successes from the yesterday day.
+* As a user, I need to be reminded of random wins/successes from any previous day except yesterday.
+* As a user, I need to set my top 3 priorities for the current day.
+
+To be considered:
+
+* As a user, I need to be require to document examples of how I used my ADHD superpower/strenght.
+
+### Process Map
+
