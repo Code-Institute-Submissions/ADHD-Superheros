@@ -30,7 +30,7 @@ def get_strenghts_data():
 def get_advice_data():
     """
     Get advice from advice worksheet least recently used.
-    Print to display to user. 
+    Print to display to user.
     """
     advice = SHEET.worksheet("advice").get_all_values()
     advice_row = advice[-1]
@@ -44,14 +44,14 @@ def get_last_3_priorities():
     Present to user to confirm if done or not done on previous day.
     """
     dailytopthree = SHEET.worksheet("dailytopthree")
-    
+
     columns = []
     for ind in range(1, 3):
         column = dailytopthree.col_values(ind)
         columns.append(column[-3:])
 
     print(columns)
-    # Add code so user can input whether task was done or not 
+    # Add code so user can input whether task was done or not.
 
 
 def get_current_wins():
@@ -60,9 +60,11 @@ def get_current_wins():
     """
     while True:
         print("Its importnat to take time to document your wins")
-        print("Focusing your thoughs on past progress leads to future progress")
+        print("Focusing your thoughts on past progress")
+        print("leads to future progress")
         print("Your win will need to have a minimum of 10 words")
-        print("Example: I cleared all my emails by luchtime and worked on my project in the afteroon as scheduled")
+        print("Example: I cleared all my emails by luchtime")
+        print("and worked on my project in the afteroon as scheduled")
 
         win_str = input("Enter your win here:\n")
         win_data = str(win_str)
@@ -86,7 +88,7 @@ def get_current_wins():
 #                 f"At least 10 words are required, you provided len(values)"
 #             )
 #         except ValueError as e:
-#             print(f"You appear to entered invalid data: {e}, please try again.\n")
+#             print(f"Invalid data enetered: {e}, please try again.\n")
 #             return False
 
 #         return True.
