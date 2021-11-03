@@ -12,7 +12,7 @@ SCOPE = [
 CREDS = Credentials.from_service_account_file('creds.json')
 SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
-SHEET = GSPREAD_CLIENT.open('love_sandwiches')
+SHEET = GSPREAD_CLIENT.open('ADHDSuperheros')
 
 
 def get_stenghts_data():
@@ -31,7 +31,7 @@ def get_advice_data():
 
 def get_last_3_priorities():
     """
-    Get previous days top 3 priorties 
+    Get previous days top 3 priorities.
     Present to user to confirm if done or not done on previous day.
     """
 
