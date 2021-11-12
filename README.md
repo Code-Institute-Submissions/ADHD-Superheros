@@ -56,8 +56,7 @@ To be considered:
 
 ### Process Map
 
-
-
+ ![Process map of app](assets/images/processmap.png)
 
 ### Technologies
 
