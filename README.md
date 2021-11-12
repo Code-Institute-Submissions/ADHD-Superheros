@@ -4,11 +4,13 @@
 * To do: Fix missing line spaces
 * To do: Consider rename to ADHD Superpowers (from ADHD Superheros)
 
-Overview:
+# ADHD Superstars
+
+## Overview:
 
 To create an app that encourages a positive mindset in the ADHD user by focusing on strenghts and successes as well minimzing cognitivie overload by narrowing focus on top 3 most important tasks for the day. 
 
-Purpose: 
+### Purpose: 
 
 * What? 
 
@@ -35,6 +37,8 @@ https://www.additudemag.com/mobile-apps-for-adhd-minds/
 
 2. Reduce cognitive overload - It uses the core funtion as a restrictive to-do list feature (top 3 daily priroties rather than any endless list of to-do items) to encourage hyperfocus while reminding the users of the amazing their amazing potential, key ADHD strenghts and significant past succeses/wins.
 
+## UX
+
 ### User Stories
 
 Agreed:
@@ -59,13 +63,19 @@ To be considered:
 
  ![Process map of app](assets/images/processmap.png)
 
-### Technologies
+### Process Map
 
-## Languages Used
+To do: Add examples of user stories as features including screenshots
+
+## Bugs
+
+## Technologies
+
+### Languages Used
 
 * Python
 
-## Libraries and Programs Used
+### Libraries and Programs Used
 
 * Git - Version control.
 
@@ -82,3 +92,25 @@ To be considered:
 * Lucidchart.com - To help me design my flowcharts.
 
 * Am I responsive - To generate the image at the beginning of the README.
+
+## Testing
+
+### Validators
+
+### Compatibility
+
+### Responsiveness
+
+### User Story Testing
+
+## Deplpoyment
+
+### Local Deployment
+
+## Credits and Learning Experience
+
+### Content
+
+### Media
+
+### Acknowledgements
