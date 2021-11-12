@@ -56,3 +56,29 @@ To be considered:
 
 ### Process Map
 
+
+
+
+### Technologies
+
+## Languages Used
+
+* Python
+
+## Libraries and Programs Used
+
+* Git - Version control.
+
+* GitHub - For storing code and deploying the site.
+
+* Gitpod - Used for editing my code.
+
+* Google Sheets - To store user's login information and progress.
+
+* Gspread - API to enable python to access google sheets.
+
+* Heroku - To deploy project.
+
+* Lucidchart.com - To help me design my flowcharts.
+
+* Am I responsive - To generate the image at the beginning of the README.
