@@ -15,14 +15,14 @@ GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('ADHDSuperheros')
 
 
-def get_strenghts_data():
+def get_strengths_data():
     """
-    Get strenghts from strenghts worksheet least recently used.
+    Get strengths from strengths worksheet least recently used.
     Print for user to be reminded.
     """
-    strenghts = SHEET.worksheet("strenghts")
-    strenghts_row = strenghts.get_all_values()
-    print(strenghts_row[-1])
+    strengths = SHEET.worksheet("strengths")
+    strengths_row = strengths.get_all_values()
+    print(strengths_row[-1])
     # Add code to update last presented data of strenght
     # Decide which code is better for strenght and advice functions
 
@@ -109,7 +109,7 @@ def main():
     """
     Run all program functions
     """
-    get_strenghts_data()
+    get_strengths_data()
     get_advice_data()
     get_last_3_priorities()
     get_current_wins()
