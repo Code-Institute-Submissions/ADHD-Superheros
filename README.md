@@ -1,9 +1,12 @@
 
 * To do: Add in responsive mock up
 * To do: spell check through grammarly
+* To do: Fix missing line spaces
 * To do: Consider rename to ADHD Superpowers (from ADHD Superheros)
 
-Overview
+Overview:
+
+To create an app that encourages a positive mindset in the ADHD user by focusing on strenghts and successes as well minimzing cognitivie overload by narrowing focus on top 3 most important tasks for the day. 
 
 Purpose: 
 
@@ -17,8 +20,6 @@ Purpose:
     * Emotion – Difficulty regulating emotions and managing stress.
     * Memory – Problems with short-term memory and memory retrieval.
     * Action – Problems with self-control and self-regulation.
-
-* To do: Fix missing line spaces
 
 * Why? 
 
