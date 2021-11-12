@@ -53,6 +53,7 @@ Agreed:
 To be considered:
 
 * As a user, I need to be require to document examples of how I used my ADHD superpower/strenght.
+* As a user, I need an email reminder midday of my top 3 priorities for today to help me refocus
 
 ### Process Map
 
