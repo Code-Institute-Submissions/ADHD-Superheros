@@ -6,6 +6,8 @@
 
 # ADHD Superstars
 
+ ![Mockup of app across different screen sizes](assets/images/responsivemockup.png)
+
 ## Overview:
 
 To create an app that encourages a positive mindset in the ADHD user by focusing on strenghts and successes as well minimzing cognitivie overload by narrowing focus on top 3 most important tasks for the day. 
