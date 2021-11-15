@@ -46,8 +46,8 @@ def get_last_3_priorities():
     dailytopthree = SHEET.worksheet("dailytopthree")
 
     columns = []
-    for ind in range(1, 3):
-        column = dailytopthree.col_values(ind)
+    for num in range(1, 3):
+        column = dailytopthree.col_values(num)
         columns.append(column[-3:])
 
     print(columns)
@@ -59,15 +59,16 @@ def get_current_wins():
     Get 3 wins from previous day from user
     """
     while True:
-        print("Its importnat to take time to document your wins")
+        print("Its important to take time to document your wins")
         print("Focusing your thoughts on past progress")
         print("leads to future progress")
         print("Your win will need to have a minimum of 10 words")
-        print("Example: I cleared all my emails by luchtime")
-        print("and worked on my project in the afteroon as scheduled")
+        print("Example: I cleared all my emails by lunchtime")
+        print("and worked on my project in the afternoon as scheduled")
 
         win_str = input("Enter your win here:\n")
-        win_data = str(win_str)
+        win_data = win_str.split(",")
+        # win_data = str(win_str) 
         # win_data = win_str
         # #Add code to ensure win_data saves as a string
 
@@ -101,6 +102,7 @@ def update_wins_worksheet(data):
     """
     print("Updating your wins worksheet...\n")
     worksheet_to_update = SHEET.worksheet("wins")
+    print(data)
     worksheet_to_update.append_row(data)
     print("Your wins worksheet update successfully\n")
 
@@ -112,7 +114,6 @@ def main():
     get_strengths_data()
     get_advice_data()
     get_last_3_priorities()
-    get_current_wins()
     data = get_current_wins()
     update_wins_worksheet(data)
 
