@@ -71,14 +71,11 @@ def get_current_wins():
         time.sleep(3)
         win_str = input("Enter your win here:\n")
         win_data = win_str.split(",")
-        # win_data = str(win_str) 
-        # win_data = win_str
         # #Add code to ensure win_data saves as a string
 
         # if validate_data(win_data):
         # #     print("Example is not strong enough. Try more detail!")
         # #     break
-        print(win_data)
 
         return win_data
 
