@@ -1,6 +1,6 @@
 import gspread
+import time
 from google.oauth2.service_account import Credentials
-
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -60,12 +60,15 @@ def get_current_wins():
     """
     while True:
         print("Its important to take time to document your wins")
+        time.sleep(3)
         print("Focusing your thoughts on past progress")
         print("leads to future progress")
+        time.sleep(3)
         print("Your win will need to have a minimum of 10 words")
+        time.sleep(3)
         print("Example: I cleared all my emails by lunchtime")
         print("and worked on my project in the afternoon as scheduled")
-
+        time.sleep(3)
         win_str = input("Enter your win here:\n")
         win_data = win_str.split(",")
         # win_data = str(win_str) 
