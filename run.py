@@ -45,7 +45,8 @@ def main_menu():
         leaving()
     else:
         print("You must choose option 1, 2, 3 or 4")
-        time.sleep(2)
+        time.sleep(1)
+        main_menu()
 
 
 def learn_app():
@@ -57,8 +58,9 @@ def learn_app():
     print("Now that you know how to use the app,")
     print("would you like to return to the main menu or exit?")
     print("1. Main menu")
+    time.sleep(1)
     print("2. Exit")
-    time.sleep(2)
+    time.sleep(1)
     learn_choice = input("Enter your choice 1-2 below\n")
     if learn_choice == '1':
         main_menu()
