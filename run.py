@@ -1,7 +1,8 @@
+import time
+# https://www.geeksforgeeks.org/python-datetime-module/
+from datetime import date, timedelta
 import gspread
 from google.oauth2.service_account import Credentials
-import time
-from datetime import date, timedelta  # https://www.geeksforgeeks.org/python-datetime-module/
 from colorama import Fore, Back, Style  # https://pypi.org/project/colorama/
 
 SCOPE = [
@@ -37,19 +38,19 @@ def main_menu():
     # 1 = main()
     if menu_choice == '1':
         main()
-    # 2 = learn_app() 
+    # 2 = learn_app()
     elif menu_choice == '2':
         learn_app()
     # 3 = learn_adhd() - to be defined
     elif menu_choice == '3':
         learn_adhd()
-    # 4 = exit() - to be defined
+    # 4 = leaving() - to be defined
     elif menu_choice == '4':
-        exit()
+        leaving()
     else:
         print("You must choose option 1, 2, 3 or 4")
         time.sleep(2)
-    
+
 
 def learn_app():
     """
@@ -66,7 +67,7 @@ def learn_app():
     if learn_choice == '1':
         main_menu()
     elif learn_choice == '2':
-        exit()
+        leaving()
     else:
         print("You must choose option 1 or 2")
         time.sleep(2)
@@ -76,10 +77,11 @@ def learn_adhd():
     """
     Provides user with education info on ADHD
     """
-    print("ADHD is neurotypical developmental disorder") 
+    print("ADHD is neurotypical developmental disorder")
     print("charaterised by an impairment of executive function")
     time.sleep(2)
-    print("Now that you know more about ADHD, would you like to return to the main menu or exit?")
+    print("Now that you know more about ADHD,")
+    print("would you like to return to the main menu or exit?")
     print("1. Main menu")
     print("2. Exit")
     time.sleep(2)
@@ -87,27 +89,29 @@ def learn_adhd():
     if adhd_choice == '1':
         main_menu()
     elif adhd_choice == '2':
-        exit()
+        leaving()
     else:
         print("You must choose option 1 or 2")
         time.sleep(2)
 
 
-def exit():
+def leaving():
     """
     Guides user out of app
     """
-    print("We hope that even though you are leaving the app, that you got value from your time spent here")
-    print("If you leave this screen open, you can return the main menu at anytime")
+    print("We hope that even though you are leaving the app,")
+    print("that you got value from your time spent here")
+    print("If you leave this screen open,")
+    print("you can return the main menu at anytime")
     print("You can also close and open the app again to access the main menu")
     print("1. Main menu")
     print("2. Close app")
     time.sleep(2)
-    exit_choice = input("Enter your choice 1-2 below\n")
-    if exit_choice == '1':
+    leaving_choice = input("Enter your choice 1-2 below\n")
+    if leaving_choice == '1':
         main_menu()
-    elif exit_choice == '2':
-        exit()
+    elif leaving_choice == '2':
+        leaving()
     else:
         print("You must choose option 1 or 2")
         time.sleep(2)
@@ -156,14 +160,14 @@ def calc_weekly_avg():
     """
     Get last 7 days of total priorities (done & undone)
     Calculate %  done of total priorities
-    """ 
+    """
     wk_start_date = date.today() - timedelta(days=7)
     wk_end_date = date.today()
     # Add code to create list [] filter by date range
-    wktotal = 21 # total prioritise in last 7 days
-    wkdone = 11 # priorities with status done in last 7 days 
+    wktotal = 21  # total prioritise in last 7 days
+    wkdone = 11  # priorities with status done in last 7 days
     weekly_avg_num = (wkdone / wktotal)
-    weekly_avg_per = "{:.0%}".format(weekly_avg_num) 
+    weekly_avg_per = "{:.0%}".format(weekly_avg_num)
     print(weekly_avg_per)
 
 
@@ -171,14 +175,14 @@ def calc_month_avg():
     """
     Get last 30 days of total priorities (done & undone)
     Calculate %  done of total priorities
-    """ 
+    """
     mth_start_date = date.today() - timedelta(days=30)
     mth_end_date = date.today()
     # Add code to create list [] filter by date range
     mthtotal = 200  # total prioritise in last 30 days
-    mthdone = 33  # priorities with status done in last 30 days 
+    mthdone = 33  # priorities with status done in last 30 days
     month_avg_num = (mthdone / mthtotal)
-    month_avg_per = "{:.0%}".format(month_avg_num) 
+    month_avg_per = "{:.0%}".format(month_avg_num)
     print(month_avg_per)
 
 
