@@ -1,7 +1,8 @@
 import gspread
 from google.oauth2.service_account import Credentials
 import time
-from datetime import date, datetime, timedelta # https://www.geeksforgeeks.org/python-datetime-module/
+from datetime import date, timedelta  # https://www.geeksforgeeks.org/python-datetime-module/
+from colorama import Fore, Back, Style  # https://pypi.org/project/colorama/
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -21,15 +22,18 @@ def main_menu():
     Displays welcome message to user
     Provides user with menu options
     """
-    print("Welcome to the ADHD Superhros app")
-    time.sleep(2)
-    print("1. Use app")
+    print(Fore.RED + "Welcome to the ADHD Superhros app")
+    time.sleep(1)
+    print(Fore.BLUE + "1. Use app")
+    time.sleep(1)
     print("2. Learn how to use app")
+    time.sleep(1)
     print("3. Learn about ADHD")
+    time.sleep(1)
     print("4. Exit")
-    time.sleep(2)
-    menu_choice = input("Enter your choice 1-4 below\n")
-    time.sleep(2)
+    time.sleep(1)
+    menu_choice = input(Style.RESET_ALL + "Enter your choice 1-4 below\n")
+    time.sleep(1)
     # 1 = main()
     if menu_choice == '1':
         main()
@@ -53,7 +57,8 @@ def learn_app():
     """
     print("Optimise Daily Life while reducing cognitive overload")
     time.sleep(2)
-    print("Now that you know how to use the app, would you like to return to the main menu or exit?")
+    print("Now that you know how to use the app,")
+    print("would you like to return to the main menu or exit?")
     print("1. Main menu")
     print("2. Exit")
     time.sleep(2)
@@ -71,7 +76,8 @@ def learn_adhd():
     """
     Provides user with education info on ADHD
     """
-    print("ADHD is neurotypical developmental disorder charaterised by an impairment of executive function")
+    print("ADHD is neurotypical developmental disorder") 
+    print("charaterised by an impairment of executive function")
     time.sleep(2)
     print("Now that you know more about ADHD, would you like to return to the main menu or exit?")
     print("1. Main menu")
@@ -88,7 +94,7 @@ def learn_adhd():
 
 
 def exit():
-     """
+    """
     Guides user out of app
     """
     print("We hope that even though you are leaving the app, that you got value from your time spent here")
@@ -105,8 +111,6 @@ def exit():
     else:
         print("You must choose option 1 or 2")
         time.sleep(2)
-
-
 
 
 def get_strengths_data():
@@ -171,8 +175,8 @@ def calc_month_avg():
     mth_start_date = date.today() - timedelta(days=30)
     mth_end_date = date.today()
     # Add code to create list [] filter by date range
-    mthtotal = 200 # total prioritise in last 30 days
-    mthdone = 33 # priorities with status done in last 30 days 
+    mthtotal = 200  # total prioritise in last 30 days
+    mthdone = 33  # priorities with status done in last 30 days 
     month_avg_num = (mthdone / mthtotal)
     month_avg_per = "{:.0%}".format(month_avg_num) 
     print(month_avg_per)
