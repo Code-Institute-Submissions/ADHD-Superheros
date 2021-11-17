@@ -86,6 +86,28 @@ def learn_adhd():
         time.sleep(2)
 
 
+def exit():
+     """
+    Guides user out of app
+    """
+    print("We hope that even though you are leaving the app, that you got value from your time spent here")
+    print("If you leave this screen open, you can return the main menu at anytime")
+    print("You can also close and open the app again to access the main menu")
+    print("1. Main menu")
+    print("2. Close app")
+    time.sleep(2)
+    exit_choice = input("Enter your choice 1-2 below\n")
+    if exit_choice == '1':
+        main_menu()
+    elif exit_choice == '2':
+        exit()
+    else:
+        print("You must choose option 1 or 2")
+        time.sleep(2)
+
+
+
+
 def get_strengths_data():
     """
     Get strengths from strengths worksheet least recently used.
