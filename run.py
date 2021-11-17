@@ -1,7 +1,7 @@
 import gspread
 from google.oauth2.service_account import Credentials
 import time
-from rich import print
+from datetime import date, datetime, timedelta # https://www.geeksforgeeks.org/python-datetime-module/
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -146,6 +146,21 @@ def get_last_3_priorities():
 
     print(columns)
     # Add code so user can input whether task was done or not.
+
+
+def calc_weekly_avg():
+    """
+    Get last 7 days of total priorities (done & undone)
+    Calculate %  done of total priorities
+    """ 
+    wk_start_date = date.today() - timedelta(days=7)
+    wk_end_date = date.today()
+    # Add code to create list [] filter by date range
+    ptotal = 200 # total prioritise in last 7 days
+    done = 33 # priorities with status done in last 7 days 
+    weekly_avg_num = (done/ptotal)
+    weekly_avg_per = "{:.0%}".format(weekly_avg_num) 
+    print(weekly_avg_per)
 
 
 def get_current_wins():
