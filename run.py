@@ -21,14 +21,14 @@ def main_menu():
     Provides user with menu options
     """
     print("Welcome to the ADHD Superhros app")
-    time.sleep(3)
+    time.sleep(2)
     print("1. Use app")
     print("2. Learn how to use app")
     print("3. Learn about ADHD")
     print("4. Exit")
-    time.sleep(3)
+    time.sleep(2)
     menu_choice = input("Enter your choice 1-4 below\n")
-    time.sleep(3)
+    time.sleep(2)
     # 1 = main()
     if menu_choice == '1':
         main()
@@ -42,22 +42,49 @@ def main_menu():
     elif menu_choice == '4':
         exit()
     else:
-        print("You must choice an option 1")
-        time.sleep(3)
+        print("You must choose option 1, 2, 3 or 4")
+        time.sleep(2)
     
 
-
-def learn_app()
+def learn_app():
     """
     Privders user with instructions on how to use app
     """
     print("Optimise Daily Life while reducing cognitive overload")
-    time.sleep(3)
+    time.sleep(2)
     print("Now that you know how to use the app, would you like to return to the main menu or exit?")
-
-    print("1. Use app")
+    print("1. Main menu")
     print("2. Exit")
+    time.sleep(2)
     learn_choice = input("Enter your choice 1-2 below\n")
+    if learn_choice == '1':
+        main_menu()
+    elif learn_choice == '2':
+        exit()
+    else:
+        print("You must choose option 1 or 2")
+        time.sleep(2)
+
+
+def learn_adhd():
+    """
+    Provides user with education info on ADHD
+    """
+    print("ADHD is neurotypical developmental disorder charaterised by an impairment of executive function")
+    time.sleep(2)
+    print("Now that you know more about ADHD, would you like to return to the main menu or exit?")
+    print("1. Main menu")
+    print("2. Exit")
+    time.sleep(2)
+    adhd_choice = input("Enter your choice 1-2 below\n")
+    if adhd_choice == '1':
+        main_menu()
+    elif adhd_choice == '2':
+        exit()
+    else:
+        print("You must choose option 1 or 2")
+        time.sleep(2)
+
 
 def get_strengths_data():
     """
@@ -162,4 +189,4 @@ def main():
     update_wins_worksheet(data)
 
 
-main()
+main_menu()
