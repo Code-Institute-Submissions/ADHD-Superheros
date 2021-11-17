@@ -156,11 +156,26 @@ def calc_weekly_avg():
     wk_start_date = date.today() - timedelta(days=7)
     wk_end_date = date.today()
     # Add code to create list [] filter by date range
-    ptotal = 200 # total prioritise in last 7 days
-    done = 33 # priorities with status done in last 7 days 
-    weekly_avg_num = (done/ptotal)
+    wktotal = 21 # total prioritise in last 7 days
+    wkdone = 11 # priorities with status done in last 7 days 
+    weekly_avg_num = (wkdone / wktotal)
     weekly_avg_per = "{:.0%}".format(weekly_avg_num) 
     print(weekly_avg_per)
+
+
+def calc_month_avg():
+    """
+    Get last 30 days of total priorities (done & undone)
+    Calculate %  done of total priorities
+    """ 
+    mth_start_date = date.today() - timedelta(days=30)
+    mth_end_date = date.today()
+    # Add code to create list [] filter by date range
+    mthtotal = 200 # total prioritise in last 30 days
+    mthdone = 33 # priorities with status done in last 30 days 
+    month_avg_num = (mthdone / mthtotal)
+    month_avg_per = "{:.0%}".format(month_avg_num) 
+    print(month_avg_per)
 
 
 def get_current_wins():
