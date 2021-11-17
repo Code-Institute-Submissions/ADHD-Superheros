@@ -14,6 +14,23 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('ADHDSuperheros')
 
+def main_menu():
+    """
+    Displays welcome message to user
+    Provides user with menu options
+    """
+    print("Welcome to the ADHD Superhros app")
+    time.sleep(3)
+    print("1. Use app")
+    print("2. Learn how to use app")
+    print("3. Learn about ADHD")
+    print("4. Exit")
+    time.sleep(3)
+    win_str = input("Enter your choice 1-4 below\n")
+    # 1 = main()
+    # 2 = learn_app() - to be defined
+    # 3 = learn_adhd() - to be defined
+    # 4 = exit() - to be defined
 
 def get_strengths_data():
     """
@@ -23,8 +40,8 @@ def get_strengths_data():
     strengths = SHEET.worksheet("strengths")
     strengths_row = strengths.get_all_values()
     print(strengths_row[-1])
-    # Add code to update last presented data of strenght
-    # Decide which code is better for strenght and advice functions
+    # Add code to update last presented data of strength
+    # Decide which code is better for strength and advice functions
 
 
 def get_advice_data():
