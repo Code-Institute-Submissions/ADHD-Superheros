@@ -27,11 +27,23 @@ def main_menu():
     print("3. Learn about ADHD")
     print("4. Exit")
     time.sleep(3)
-    menu_str = input("Enter your choice 1-4 below\n")
+    menu_choice = input("Enter your choice 1-4 below\n")
+    time.sleep(3)
     # 1 = main()
-    # 2 = learn_app() - to be defined
+    if menu_choice == '1':
+        main()
+    # 2 = learn_app() 
+    elif menu_choice == '2':
+        learn_app()
     # 3 = learn_adhd() - to be defined
+    elif menu_choice == '3':
+        learn_adhd()
     # 4 = exit() - to be defined
+    elif menu_choice == '4':
+        exit()
+    else:
+        print("You must choice an option 1")
+        time.sleep(3)
     
 
 
@@ -44,8 +56,8 @@ def learn_app()
     print("Now that you know how to use the app, would you like to return to the main menu or exit?")
 
     print("1. Use app")
-    print("4. Exit")
-    menu_str = input("Enter your choice 1-4 below\n")
+    print("2. Exit")
+    learn_choice = input("Enter your choice 1-2 below\n")
 
 def get_strengths_data():
     """
