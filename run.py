@@ -14,6 +14,7 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('ADHDSuperheros')
 
+
 def main_menu():
     """
     Displays welcome message to user
@@ -26,11 +27,25 @@ def main_menu():
     print("3. Learn about ADHD")
     print("4. Exit")
     time.sleep(3)
-    win_str = input("Enter your choice 1-4 below\n")
+    menu_str = input("Enter your choice 1-4 below\n")
     # 1 = main()
     # 2 = learn_app() - to be defined
     # 3 = learn_adhd() - to be defined
     # 4 = exit() - to be defined
+    
+
+
+def learn_app()
+    """
+    Privders user with instructions on how to use app
+    """
+    print("Optimise Daily Life while reducing cognitive overload")
+    time.sleep(3)
+    print("Now that you know how to use the app, would you like to return to the main menu or exit?")
+
+    print("1. Use app")
+    print("4. Exit")
+    menu_str = input("Enter your choice 1-4 below\n")
 
 def get_strengths_data():
     """
