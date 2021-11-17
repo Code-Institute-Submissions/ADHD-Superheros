@@ -10,7 +10,7 @@
 
 ## Overview:
 
-To create an app that encourages a positive mindset in the ADHD user by focusing on strenghts and successes as well minimzing cognitivie overload by narrowing focus on top 3 most important tasks for the day. 
+To create an app that encourages a positive mindset in the ADHD user by focusing on strengths and successes as well minimzing cognitivie overload by narrowing focus on top 3 most important tasks for the day. 
 
 ### Purpose: 
 
@@ -35,9 +35,9 @@ https://www.additudemag.com/mobile-apps-for-adhd-minds/
 
 * How? 
 
-1. Focus on the positive - This app combines focusing on celebrating ADHD strenghts and successes rather than dwelling on weaknesses and failings. 
+1. Focus on the positive - This app combines focusing on celebrating ADHD strengths and successes rather than dwelling on weaknesses and failings. 
 
-2. Reduce cognitive overload - It uses the core funtion as a restrictive to-do list feature (top 3 daily priroties rather than any endless list of to-do items) to encourage hyperfocus while reminding the users of the amazing their amazing potential, key ADHD strenghts and significant past succeses/wins.
+2. Reduce cognitive overload - It uses the core funtion as a restrictive to-do list feature (top 3 daily priroties rather than any endless list of to-do items) to encourage hyperfocus while reminding the users of the amazing their amazing potential, key ADHD strengths and significant past succeses/wins.
 
 ## UX
 
@@ -45,7 +45,7 @@ https://www.additudemag.com/mobile-apps-for-adhd-minds/
 
 Agreed:
 
-* As a user, I need to see a daily reminder of a ADHD superpower/strenght.
+* As a user, I need to see a daily reminder of a ADHD superpower/strength.
 * As a user, I need to see a daily reminder of advice tailored to ADHDers.
 
 * As a user, I need to review my top 3 priorities from the yeserday day and confirm done/not done.
@@ -58,14 +58,20 @@ Agreed:
 
 To be considered:
 
-* As a user, I need to be require to document examples of how I used my ADHD superpower/strenght.
+* As a user, I need to be require to document examples of how I used my ADHD superpower/strength.
 * As a user, I need an email reminder midday of my top 3 priorities for today to help me refocus
 
 ### Process Map
 
+#### Main Menu Flow:
+
+ ![Process map of main menu](assets/images/processmap.png)
+
+#### App Flow:
+
  ![Process map of app](assets/images/processmap.png)
 
-### Process Map
+### User Story Testing
 
 To do: Add examples of user stories as features including screenshots
 
