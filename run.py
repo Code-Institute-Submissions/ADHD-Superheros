@@ -32,7 +32,8 @@ def main_menu():
     Displays welcome message to user
     Provides user with menu options
     """
-    print(Fore.RED + "Welcome to the ADHD Superhros app")
+    print(Fore.RED + "Welcome to the ADHD Superheros app")
+    print('\n')
     time.sleep(1)
     print(Fore.BLUE + "1. Use app")
     time.sleep(1)
@@ -41,6 +42,7 @@ def main_menu():
     print("3. Learn about ADHD")
     time.sleep(1)
     print("4. Exit")
+    print('\n')
     time.sleep(1)
     menu_choice = input(Style.RESET_ALL + "Enter your choice 1-4 below\n")
     time.sleep(1)
@@ -172,7 +174,7 @@ def calc_weekly_avg():
     wk_start_date = date.today() - timedelta(days=7)
     wk_end_date = date.today()
     # Add code to create list [] filter by date range
-    wktotal = 21 
+    wktotal = 21  # total prioritise in last 7 days
     wkdone = 11  # priorities with status done in last 7 days
     weekly_avg_num = (wkdone / wktotal)
     weekly_avg_per = "{:.0%}".format(weekly_avg_num)
