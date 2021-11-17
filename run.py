@@ -19,6 +19,14 @@ GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('ADHDSuperheros')
 
 
+def clear():
+    """
+    Clear the console/screen
+    https://stackoverflow.com/questions/2084508/clear-terminal-in-python
+    """
+    os.system('cls' if os.name == 'nt' else 'clear')
+
+
 def main_menu():
     """
     Displays welcome message to user
@@ -47,6 +55,7 @@ def main_menu():
     else:
         print("You must choose option 1, 2, 3 or 4")
         time.sleep(1)
+        clear()
         main_menu()
 
 
@@ -157,22 +166,22 @@ def get_last_3_priorities():
 
 def calc_weekly_avg():
     """
-    Get last 7 days of total priorities (done & undone)
+    Get last 7 days of total priorities (complete & incomplete)
     Calculate %  done of total priorities
     """
     wk_start_date = date.today() - timedelta(days=7)
     wk_end_date = date.today()
     # Add code to create list [] filter by date range
-    wktotal = 21  # total prioritise in last 7 days
+    wktotal = 21 
     wkdone = 11  # priorities with status done in last 7 days
     weekly_avg_num = (wkdone / wktotal)
     weekly_avg_per = "{:.0%}".format(weekly_avg_num)
-    print(weekly_avg_per)
+    print(f'Your average % of completed priorities for the last 7 days is {weekly_avg_per}')
 
 
 def calc_month_avg():
     """
-    Get last 30 days of total priorities (done & undone)
+    Get last 30 days of total priorities (complete & incomplete)
     Calculate %  done of total priorities
     """
     mth_start_date = date.today() - timedelta(days=30)
@@ -182,7 +191,7 @@ def calc_month_avg():
     mthdone = 33  # priorities with status done in last 30 days
     month_avg_num = (mthdone / mthtotal)
     month_avg_per = "{:.0%}".format(month_avg_num)
-    print(month_avg_per)
+    print(f'Your average % of completed priorities for the last 30 days is {month_avg_per}')
 
 
 def get_current_wins():
@@ -245,6 +254,8 @@ def main():
     get_strengths_data()
     get_advice_data()
     get_last_3_priorities()
+    calc_weekly_avg()
+    calc_month_avg()
     data = get_current_wins()
     update_wins_worksheet(data)
 
