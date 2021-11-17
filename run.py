@@ -35,16 +35,12 @@ def main_menu():
     time.sleep(1)
     menu_choice = input(Style.RESET_ALL + "Enter your choice 1-4 below\n")
     time.sleep(1)
-    # 1 = main()
     if menu_choice == '1':
         main()
-    # 2 = learn_app()
     elif menu_choice == '2':
         learn_app()
-    # 3 = learn_adhd() - to be defined
     elif menu_choice == '3':
         learn_adhd()
-    # 4 = leaving() - to be defined
     elif menu_choice == '4':
         leaving()
     else:
