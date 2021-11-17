@@ -4,6 +4,7 @@ from datetime import date, timedelta
 import gspread
 from google.oauth2.service_account import Credentials
 from colorama import Fore, Back, Style  # https://pypi.org/project/colorama/
+import os
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
