@@ -5,6 +5,7 @@ import gspread
 from google.oauth2.service_account import Credentials
 from colorama import Fore, Back, Style  # https://pypi.org/project/colorama/
 import os
+import pyfiglet
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -32,6 +33,8 @@ def main_menu():
     Displays welcome message to user
     Provides user with menu options
     """
+    ascii_banner = pyfiglet.figlet_format("ADHD Superheros!!")
+    print(ascii_banner)
     print(Fore.RED + "Welcome to the ADHD Superheros app")
     print('\n')
     time.sleep(1)
