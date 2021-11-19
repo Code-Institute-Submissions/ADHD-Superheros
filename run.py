@@ -1,10 +1,10 @@
 import time
 # https://www.geeksforgeeks.org/python-datetime-module/
 from datetime import date, timedelta, datetime
+import os
 import gspread
 from google.oauth2.service_account import Credentials
 from colorama import Fore, Back, Style  # https://pypi.org/project/colorama/
-import os
 import pyfiglet
 
 SCOPE = [
@@ -179,15 +179,15 @@ def calc_weekly_avg():
     wk_end_date = date.today()
     print(wk_start_date)
     print(wk_end_date)
- 
-    wktotal = 0  # total prioritise in last 7 days
+
+    wktotal = 0  # total priorities in last 7 days
     wkdone = 0  # priorities with status done in last 7 days
-    
+
     rows = dailytopthree.get_all_values()
     for i, row in enumerate(rows):
-        if i > 0 :
-            dt = datetime.strptime(row[0], "%d/%m/%Y").date()
-            if dt >= wk_start_date and dt <= wk_end_date:
+        if i > 0:
+            dt_w = datetime.strptime(row[0], "%d/%m/%Y").date()
+            if dt_w >= wk_start_date and dt_w <= wk_end_date:
                 if row[3] == 'done':
                     wkdone += 1
                 wktotal += 1
@@ -209,15 +209,14 @@ def calc_month_avg():
     print(mth_start_date)
     print(mth_end_date)
 
-    
-    mthtotal = 0  # total prioritise in last 30 days
+    mthtotal = 0  # total priorities in last 30 days
     mthdone = 0  # priorities with status done in last 30 days
 
     rows = dailytopthree.get_all_values()
     for i, row in enumerate(rows):
-        if i > 0 :
-            dtm = datetime.strptime(row[0], "%d/%m/%Y").date()
-            if dtm >= mth_start_date and dtm <= mth_end_date:
+        if i > 0:
+            dt_m = datetime.strptime(row[0], "%d/%m/%Y").date()
+            if dt_m >= mth_start_date and dt_m <= mth_end_date:
                 if row[3] == 'done':
                     mthdone += 1
                 mthtotal += 1
