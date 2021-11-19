@@ -10,13 +10,13 @@
 
 ## Overview:
 
-To create an app that encourages a positive mindset in the ADHD user by focusing on strengths and successes as well minimzing cognitivie overload by narrowing focus on top 3 most important tasks for the day. 
+To create an app that encourages a positive mindset in the ADHD user by focusing on strengths and successes as well minimizing cognitive overload by narrowing focus on the top 3 most important tasks for the day. 
 
 ### Purpose: 
 
 * What? 
 
-1. ADHD is neurotypical developmental disorder charaterised by an impairment of executive function (mental proceses for used to manging day to day life and attainging goals). ADHD Ireland (https://adhdireland.ie/for-adults/adhd-in-adults/) share that adults with ADHD have problems in six major areas of executive functioning:
+1. ADHD is a neurotypical developmental disorder characterised by an impairment of executive function (mental processes used to managing day to day life and attaining goals). ADHD Ireland (https://adhdireland.ie/for-adults/adhd-in-adults/) share that adults with ADHD have problems in six major areas of executive functioning:
 
     * Activation – Problems with organization, prioritizing, and starting tasks.
     * Focus – Problems with sustaining focus and resisting distraction, especially with reading.
@@ -27,17 +27,15 @@ To create an app that encourages a positive mindset in the ADHD user by focusing
 
 * Why? 
 
-1. Encourage a positive mindset at start of day - People with ADHD are neurodiverent individuals living in a neurotypical world. The world in general celebrates and rewards neurotypical traits which can leave ADHDers to dwell on their perceived weaknesses, shortcomings and failures. 
+1. Encourage a positive mindset at the start of the day - People with ADHD are neurodivergent individuals living in a neurotypical world. The world in general celebrates and rewards neurotypical traits which can leave ADHDers to dwell on their perceived weaknesses, shortcomings and failures. 
 
-2. Optimise Daily Life while reducing cognitive overload - Apps recommended for people with ADHD are often focusing solely on organising their daily lives such as this ADHD app list here of calendars and todo list apps but none are uniquely designed for ADHDers:
-
-https://www.additudemag.com/mobile-apps-for-adhd-minds/
+2. Optimise Daily Life while reducing cognitive overload - Apps recommended for people with ADHD are often focusing solely on organising their daily lives such as this ADHD app list here of calendars and to-do list apps but none are uniquely designed for ADHDers: https://www.additudemag.com/mobile-apps-for-adhd-minds/
 
 * How? 
 
-1. Focus on the positive - This app combines focusing on celebrating ADHD strengths and successes rather than dwelling on weaknesses and failings. 
+1. Focus on the positive - This app shifts the users focus on celebrating ADHD strengths and successes rather than dwelling on weaknesses and failings. 
 
-2. Reduce cognitive overload - It uses the core funtion as a restrictive to-do list feature (top 3 daily priroties rather than any endless list of to-do items) to encourage hyperfocus while reminding the users of the amazing their amazing potential, key ADHD strengths and significant past succeses/wins.
+2. Reduce cognitive overload - It uses the core function as a restrictive to-do list feature (top 3 daily priorities rather than an endless list of to-do items) to encourage hyperfocus while reminding the users of the amazing their amazing potential, key ADHD strengths and significant past successes/wins.
 
 ## UX
 
