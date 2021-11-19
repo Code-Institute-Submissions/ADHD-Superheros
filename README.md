@@ -115,6 +115,24 @@ To do: Add examples of user stories as features including screenshots
 
 ### Local Deployment
 
+In order to make a local copy of this repository, you can type the following into your IDE terminal:_
+
+- `git clone https://github.com/declanosullivan/ADHD-Superstars.git`
+
+Alternatively, if using Gitpod, you can click below to create your own workspace using this repository.
+
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/declanosullivan/ADHD-Superstars)
+
+Sending emails within this Python application:
+
+**NOTE**: If receiving errors while sending emails using this app, due to Google's security feature with **2-Factor Authentication**, **Less Secure Apps**, and **DisplayUnlockCaptcha**, you'll need to follow these steps.
+
+- Turn **Off** [2-Factor Authentication](https://myaccount.google.com/signinoptions/two-step-verification/enroll-welcome)
+- Turn **On** [Less Secure Apps](https://myaccount.google.com/lesssecureapps)
+- Turn **On** [DisplayUnlockCaptcha](https://accounts.google.com/DisplayUnlockCaptcha)
+
+It's highly recommend to create a secondary Google account for this purpose, instead of using your actual account (to keep your actual account secure!). This is purely used for sending emails to the user from this application.
+
 ## Credits and Learning Experience
 
 ### Content
