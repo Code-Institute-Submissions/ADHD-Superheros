@@ -1,6 +1,6 @@
 import time
 # https://www.geeksforgeeks.org/python-datetime-module/
-from datetime import date, timedelta
+from datetime import date, timedelta, datetime
 import gspread
 from google.oauth2.service_account import Credentials
 from colorama import Fore, Back, Style  # https://pypi.org/project/colorama/
@@ -174,11 +174,25 @@ def calc_weekly_avg():
     Get last 7 days of total priorities (complete & incomplete)
     Calculate %  done of total priorities
     """
+    dailytopthree = SHEET.worksheet("dailytopthree")
     wk_start_date = date.today() - timedelta(days=7)
     wk_end_date = date.today()
-    # Add code to create list [] filter by date range
-    wktotal = 21  # total prioritise in last 7 days
-    wkdone = 11  # priorities with status done in last 7 days
+    print(wk_start_date)
+    print(wk_end_date)
+ 
+    wktotal = 0  # total prioritise in last 7 days
+    wkdone = 0  # priorities with status done in last 7 days
+    
+    rows = dailytopthree.get_all_values()
+    for i, row in enumerate(rows):
+        if i > 0 :
+            dt = datetime.strptime(row[0], "%d/%m/%Y").date()
+            if dt >= wk_start_date and dt <= wk_end_date:
+                if row[3] == 'done':
+                    wkdone += 1
+                wktotal += 1
+    print(wkdone)
+    print(wktotal)
     weekly_avg_num = (wkdone / wktotal)
     weekly_avg_per = "{:.0%}".format(weekly_avg_num)
     print(f'Your average % of completed priorities for the last 7 days is {weekly_avg_per}')
@@ -189,11 +203,26 @@ def calc_month_avg():
     Get last 30 days of total priorities (complete & incomplete)
     Calculate %  done of total priorities
     """
+    dailytopthree = SHEET.worksheet("dailytopthree")
     mth_start_date = date.today() - timedelta(days=30)
     mth_end_date = date.today()
-    # Add code to create list [] filter by date range
-    mthtotal = 200  # total prioritise in last 30 days
-    mthdone = 33  # priorities with status done in last 30 days
+    print(mth_start_date)
+    print(mth_end_date)
+
+    
+    mthtotal = 0  # total prioritise in last 30 days
+    mthdone = 0  # priorities with status done in last 30 days
+
+    rows = dailytopthree.get_all_values()
+    for i, row in enumerate(rows):
+        if i > 0 :
+            dtm = datetime.strptime(row[0], "%d/%m/%Y").date()
+            if dtm >= mth_start_date and dtm <= mth_end_date:
+                if row[3] == 'done':
+                    mthdone += 1
+                mthtotal += 1
+    print(mthdone)
+    print(mthtotal)
     month_avg_num = (mthdone / mthtotal)
     month_avg_per = "{:.0%}".format(month_avg_num)
     print(f'Your average % of completed priorities for the last 30 days is {month_avg_per}')
