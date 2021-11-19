@@ -65,7 +65,7 @@ To be considered:
 
 #### Main Menu Flow:
 
- ![Process map of main menu](assets/images/processmap.png)
+ ![Process map of main menu](assets/images/mainmenu.png)
 
 #### App Flow:
 
