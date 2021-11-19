@@ -78,6 +78,7 @@ def learn_app():
     """
     Privders user with instructions on how to use app
     """
+    clear()
     print("Optimise Daily Life while reducing cognitive overload")
     time.sleep(2)
     print("Now that you know how to use the app,")
@@ -100,6 +101,7 @@ def learn_adhd():
     """
     Provides user with education info on ADHD
     """
+    clear()
     print("ADHD is neurotypical developmental disorder")
     print("charaterised by an impairment of executive function")
     time.sleep(2)
