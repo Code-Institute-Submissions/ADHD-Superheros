@@ -2,10 +2,20 @@ import time
 # https://www.geeksforgeeks.org/python-datetime-module/
 from datetime import date, timedelta, datetime
 import os
+import re
 import gspread
 from google.oauth2.service_account import Credentials
 from colorama import Fore, Back, Style  # https://pypi.org/project/colorama/
 import pyfiglet
+if os.path.exists("env.py"):
+    import env  # noqa
+
+import smtplib
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
+
+EMAIL = os.environ.get("EMAIL")
+PASSWORD = os.environ.get("PASSWORD")
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -59,7 +69,7 @@ def main_menu():
         leaving()
     else:
         print("You must choose option 1, 2, 3 or 4")
-        time.sleep(1)
+        time.sleep(2.5)
         clear()
         main_menu()
 
@@ -279,6 +289,37 @@ def update_wins_worksheet(data):
     worksheet_to_update.append_row(data)
     print("Your wins worksheet update successfully\n")
 
+def get_email():
+    global USER_EMAIL
+    while True:
+        USER_EMAIL = input("Please enter your email: \n")
+        regex = r"^[a-zA-Z0-9._%+-]{1,64}@[a-zA-Z0-9.-]{3,252}\.[a-zA-Z]{2,}$"
+
+        if not re.fullmatch(regex, USER_EMAIL):
+            clear()
+            print(f"'{USER_EMAIL}' is Invalid, enter a real email address!\n")
+        else:
+            clear()
+            print("Thank you for entering your email!\n")
+            break
+    return USER_EMAIL
+
+def email_send():
+    msg = MIMEMultipart()
+    msg["From"] = EMAIL
+    msg["To"] = USER_EMAIL
+    msg["Subject"] = "Your ADHD Superhero Summary!"
+    format_email = (
+        f'This is a test email being sent from python'
+    )
+    msg.attach (MIMEText(str(format_email), "html"))
+    smtpserver = smtplib.SMTP("smtp.gmail.com", 587)
+    smtpserver.ehlo()
+    smtpserver.starttls()
+    smtpserver.ehlo()
+    smtpserver.login(EMAIL, PASSWORD)
+    smtpserver.send_message(msg)
+    smtpserver.quit()
 
 def main():
     """
@@ -291,6 +332,8 @@ def main():
     calc_month_avg()
     data = get_current_wins()
     update_wins_worksheet(data)
+    get_email()
+    email_send()
 
 
 main_menu()
