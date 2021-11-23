@@ -149,7 +149,7 @@ Sending emails within this Python application:
 
 It's highly recommend to create a secondary Google account for this purpose, instead of using your actual account (to keep your actual account secure!). This is purely used for sending emails to the user from this application.
 
-#### Google Drive and Google Sheets APIs
+### Google Drive and Google Sheets APIs
 
 Prerequisites
 
@@ -244,6 +244,61 @@ raise SpreadsheetNotFound gspread.exceptions.SpreadsheetNotFound
 ```
 - Avoid renaming your Google Sheet. If you do, you'll need to update the name in your pthon code again.
 
+### Heroku Deployment
+
+Prerequisites
+
+- A github repository 
+- Your creds.json file open in Gitpod.
+- Ensuring your requirements.txt is up to date. You can so using by enter the following line in your terminal:
+```
+pip3 freeze > requirements.txt
+```
+
+Step 1 - Creating an account
+
+- If you already have an Heroku account, please sign into your existing account.
+- If you don't, go to Heroku.com and create a free account.
+
+Step 2 - Create an app
+
+- Click on 'New' drop down in the upper right hand corner.
+- Select 'Create a new app'.
+- When choosing an app name, it will need to be unique to Heroku.
+- If Github repository name or poject name is not be available, choose a name similar by adding additional words, dashes, letters or numbers.
+- Enter your choosen 'App name' and select your region.
+- Click 'Create app' button.
+
+Step 3 - Add Config Vars
+
+- Go to the 'Settings' tab in your app.
+- Scroll down to 'Config Vars' section and click 'Reveal Config Vars' button.
+- We are going to add two config vars.
+- From the creds.json file, copy the full contents.
+- Enter CREDS for KEY and then paste the contents from creds.json into VALUE field.
+- Then click the 'Add' button. 
+- Enter PORT for KEY and then 8000 for VALUE and click 'Add' button.
+
+Step 4 - Add Buildpacks
+
+- On the same 'Settings' tab in your app, scroll down to the 'Buildpacks' seciton. 
+- The buildpacks need to be listed in your Settings in a specific order. 
+- It's best to add Python first, click 'Save Changes and repeat for then Node.js.
+- If the buildpacks don't appear with Python first and Node.js second, you change the order by dragging Pythong to the top. 
+
+Step 4 - Select Github Deployment Method
+
+- Go to the 'Deploy' tab in your app.
+- In the Deployment method' section,  select 'GitHub' and click 'Connect to GitHub'.
+- Search for your Github repository name which will create a list of repository names.
+- Click 'Connect' button and your Heroku app will be linked to your Github repository.
+- You can choose manual deploys for your app, click 'Deploy Branch' in the 'Manual Deploy' section.
+- Once succesfully deployed, a green tick will appear next to Deploy to Heroku
+- Your app will not update/rebuild each time you push to Github which will conserve your dyno hours in Heroku. 
+- You will need to click 'Deploy Branch' each time you want the app to rebuild after you have pushed changes to Github. 
+- Or you can choose automatic deploys for your app, 
+- Your app will update/rebuild each time you push to Github which will not conserve your dyno hours in Heroku
+- To access your deployed app, scroll to the top and click 'Open app'.
 
 ## Credits and Learning Experience
 
