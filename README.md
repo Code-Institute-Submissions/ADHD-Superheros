@@ -83,6 +83,8 @@ To do: Add examples of user stories as features including screenshots
 
 ### Libraries and Programs Used
 
+#### Programs Used
+
 * [Git](https://www.atlassian.com/git) - used for branching, merging, and rewriting repository history.
 
 * [GitHub](https://github.com/) - used a hosting service for Git repositories.
@@ -90,8 +92,6 @@ To do: Add examples of user stories as features including screenshots
 * [Gitpod](https://gitpod.io/) - used as a workspace for Git repositories.
 
 * [Google Sheets](https://www.google.com/sheets/about/) - used to store user information (wins, strenghts, priorities).
-
-* [Gspread](https://docs.gspread.org/en/v4.0.1/) - used API to enable python to access google sheets. 
 
 * [Heroku](https://www.heroku.com/) - used to deploy project. 
 
@@ -101,6 +101,21 @@ To do: Add examples of user stories as features including screenshots
 
 * [Microsoft Photos](https://www.microsoft.com/en-us/p/microsoft-photos/9wzdncrfjbh4?) - used to resize images.
 
+#### Libraries Used
+
+* [Gspread](https://docs.gspread.org/en/v4.0.1/) - used API to enable python to access google sheets. 
+
+* [Time](https://docs.python.org/3/library/time.html) - used create pauses (in seconds) between print statements. 
+
+* [Os](https://docs.python.org/3/library/os.html) - used to create a function that clears screen for user. 
+
+* [Datetime](https://docs.python.org/3/library/datetime.html) - used to create calculations of date ranges in functions.
+
+* [Pyfiglet](https://pypi.org/project/pyfiglet/0.7/) - used to render a string as a ASCII text. 
+
+* [Colorama](https://pypi.org/project/colorama/) - used to add color to text styling of print statements.
+
+* [Smtplib](https://docs.python.org/3/library/smtplib.html) - used to create a function that sends email.
 
 ## Testing
 
