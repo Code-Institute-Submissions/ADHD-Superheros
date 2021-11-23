@@ -149,6 +149,102 @@ Sending emails within this Python application:
 
 It's highly recommend to create a secondary Google account for this purpose, instead of using your actual account (to keep your actual account secure!). This is purely used for sending emails to the user from this application.
 
+#### Google Drive and Google Sheets APIs
+
+Prerequisites
+
+- Before following these steps, you need to have a Google Drive account and a Google Sheet created to link with. 
+- You can create Google Drive account [here](https://www.google.com/drive/).
+
+Step 1 - Creating a project
+
+- In the Google Cloud Console Platform dashboard, click 'CREATE PROJECT' or click [here](https://console.cloud.google.com/projectcreate).
+- Name project (be careful, the project name cannot be changed later) and click "CREATE'.
+- You should now be on your new project's dashboard. 
+- If not, you can access your project dropdown next to 'Google Cloud Platform'.
+
+Step 2 - Enable Google Drive API
+
+- From the sidebar, select 'API & Services' and then 'Library'.
+- We will enable the 'Google Drive API first and then enable the 'Google Sheets API'.
+- Search first for ['Google Drive API'](https://console.cloud.google.com/apis/library/drive.googleapis.com).
+- Click the 'ENABLE' button. It may take a minute to enable the API.
+- Once enabled, you'll be brought to the this API's Overview page. 
+
+Step 3 - Create Credentials
+
+- Click the ''CREATE CREDENTIALS' button.
+- Select 'Google Drive API' from the 'Which API are you using?'drop down.
+- An additional question will appear - 'What data will you be accessing?'.
+- Select 'Application Data'.
+- An additional question will appear - 'Are you planning to use this API with Compute Engine, Kubernetes Engine, App Engine, or Cloud Functions?'.
+- Select 'No, I'm not using them' and click 'NEXT' button.
+- Add name to 'Service account name' - it should be the same or similar to your poject name.
+- Role is optional but it should be set to 'Editor' providing the account read and write permission. 
+- The 'Grant users access to this service account' section is optional. Leave black and click 'DONE'
+
+Step 4 - Create JSON key
+
+- Once the Service account is created, you'll be brought to the Credentials overview page. 
+- Select your new Service account at the bottom of the page and click on the 'KEYS' tab.  
+- Click on 'ADD KEY' dropdown, then 'Create new key', choose 'JSON' from key type and then click 'CREATE' button.
+- A JSON file will automatically downloaded your local computer. Rename the file creds.json.
+
+Step 5 - Enable Google Sheets API
+
+- We will now enable the Google Sheets API which has less steps. 
+- From the sidebar of the Google Cloud Platform, select 'API & Services' and then 'Library'.
+- Search for ['Google Sheets API'](https://console.cloud.google.com/apis/library/sheets.googleapis.com).
+- Click the 'ENABLE' button. It may take a minute to enable the API.
+- Once enabled, you'll be brought to the this API's Overview page. 
+
+Step 6 - Add Credentials File to Gitpod
+
+- Locate the JSON file from earlier that you renamed to creds.json.
+- Open your Gitpod workspace and navigate to the Explorer tab.
+- Drag and drop this file into your Gitpod workspace.
+- Once upload, add creds.json to your .gitignore file to prevent it from syncing to Github. 
+- This is to prevent the credentials in the creds.json file being publically available on Github.  
+
+Step 7 - Link spreadsheet to Google Cloud service account
+
+- From the creds.json file, copy the email address (without the quotation marks) after "client_email".
+- Open the the relevant Google Sheet and click 'Share' button.
+- Paste in the email address you copied from the creds.json file.
+- Select 'Editor' from drop down, untick 'Notify' and 'Click Save'.
+
+Step 8 - Install python libaries
+
+- In your terminal, type the following line to import the gpsread and google auth packages. 
+```
+pip3 install gspread google-auth
+````
+- Then enter and you'll see the new depedencies being installed into your workspace
+- At the top section of your python file (run.py), add 'Import gspread' underneath the last library lsited. 
+- On line under 'Import gspreadh', add 'from google.oauth2.service_account import Credentials'
+- Add a empty line and then on the next line add the following:
+```
+SCOPE = [ 
+    "https://www.googleapis.com/auth/spreadsheets", 
+    "https://www.googleapis.com/auth/drive.file", 
+    "https://www.googleapis.com/auth/drive" 
+    ]
+```
+- Add a empty line and then on the next line add the following four lines:
+```
+CREDS = Credentials.from_service_account_file('creds.json') 
+SCOPED_CREDS = CREDS.with_scopes(SCOPE) 
+GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS) 
+SHEET = GSPREAD_CLIENT.open('google_sheet_name_here')
+```
+- On the last line, update 'google_sheet_name_here' needs replaced with the **exact** name of your Google Sheet. 
+- If the name does not match exactly, you will get the following error message:
+```
+raise SpreadsheetNotFound gspread.exceptions.SpreadsheetNotFound
+```
+- Avoid renaming your Google Sheet. If you do, you'll need to update the name in your pthon code again.
+
+
 ## Credits and Learning Experience
 
 ### Content
