@@ -148,9 +148,13 @@ def get_strengths_data():
     Print for user to be reminded.
     """
     strengths = SHEET.worksheet("strengths")
-    strengths_row = strengths.get_all_values()
-    print(strengths_row[-1])
-    # Add code to update last presented data of strength
+    row_count = len(strengths.col_values(1))
+    row_ref_start = row_count + 2
+    random_row = strengths.row_values(randrange(1, row_ref_start))
+    clear()
+    time.sleep(2)
+    print('ADHD is like having superpowers if you focus on your strengths enough.')
+    print(f'Today, try to think about examples where the strength of {random_row[0]}. {random_row[1]}')
     # Decide which code is better for strength and advice functions
 
 
