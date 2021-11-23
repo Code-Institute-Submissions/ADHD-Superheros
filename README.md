@@ -300,7 +300,20 @@ Step 4 - Select Github Deployment Method
 - Your app will update/rebuild each time you push to Github which will not conserve your dyno hours in Heroku
 - To access your deployed app, scroll to the top and click 'Open app'.
 
+### Sending Emails using Python 
+
+- [freeCodeCamp](https://www.freecodecamp.org/news/send-emails-using-code-4fcea9df63f/)
+- [StackOverflow](https://stackoverflow.com/a/17596848)
+- [StackOverflow](https://stackoverflow.com/q/16512592)
+- [StackOverflow](https://stackoverflow.com/a/8519646)
+
 ## Credits and Learning Experience
+
+* Thanks to Tim, my CI mentor, for the great support through my third project and in particular guiding me through sending emails form Python:
+    - [freeCodeCamp](https://www.freecodecamp.org/news/send-emails-using-code-4fcea9df63f/)
+    - [StackOverflow](https://stackoverflow.com/a/17596848)
+    - [StackOverflow](https://stackoverflow.com/q/16512592)
+    - [StackOverflow](https://stackoverflow.com/a/8519646)
 
 ### Content
 
