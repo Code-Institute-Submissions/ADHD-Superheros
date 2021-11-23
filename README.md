@@ -308,6 +308,10 @@ Step 4 - Select Github Deployment Method
     - [StackOverflow](https://stackoverflow.com/q/16512592)
     - [StackOverflow](https://stackoverflow.com/a/8519646)
 
+* ADHD Strenghts and advice shared through app adopted from these articles in Additube Magazine:
+    - [Positives of ADHD - 12 Amazing Superpowers](https://www.additudemag.com/slideshows/positives-of-adhd/)
+
+
 ### Content
 
 ### Media
