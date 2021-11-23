@@ -79,25 +79,25 @@ To do: Add examples of user stories as features including screenshots
 
 ### Languages Used
 
-* Python
+* [Python](https://www.python.org/)
 
 ### Libraries and Programs Used
 
-* Git - Version control.
+* [Git](https://www.atlassian.com/git) - used for branching, merging, and rewriting repository history.
 
-* GitHub - For storing code and deploying the site.
+* [GitHub](https://github.com/) - used a hosting service for Git repositories.
 
-* Gitpod - Used for editing my code.
+* [Gitpod](https://gitpod.io/) - used as a workspace for Git repositories.
 
-* Google Sheets - To store user's login information and progress.
+* [Google Sheets](https://www.google.com/sheets/about/) - To store user's login information and progress.
 
-* Gspread - API to enable python to access google sheets.
+* [Gspread](https://docs.gspread.org/en/v4.0.1/) - API to enable python to access google sheets. 
 
-* Heroku - To deploy project.
+* [Heroku](https://www.heroku.com/) - To deploy project. 
 
-* Lucidchart.com - To help me design my flowcharts.
+* [Lucidchart](https://www.lucidchart.com/) - To help me design my flowcharts.
 
-* Am I responsive - To generate the image at the beginning of the README.
+* [Am I responsive](http://ami.responsivedesign.is/) - To generate the image at the beginning of the README.
 
 ## Testing
 
