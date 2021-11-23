@@ -5,6 +5,7 @@ import os
 import re
 import gspread
 from google.oauth2.service_account import Credentials
+from random import randrange
 from colorama import Fore, Back, Style  # https://pypi.org/project/colorama/
 import pyfiglet
 if os.path.exists("env.py"):
@@ -163,9 +164,14 @@ def get_advice_data():
     Get advice from advice worksheet least recently used.
     Print to display to user.
     """
-    advice = SHEET.worksheet("advice").get_all_values()
-    advice_row = advice[-1]
-    print(advice_row)
+    advice = SHEET.worksheet("advice")
+    row_count = len(advice.col_values(1))
+    row_ref_start = row_count + 2
+    random_row = advice.row_values(randrange(1, row_ref_start))
+    clear()
+    time.sleep(2)
+    print('Great advice is worth repeating.')
+    print(f'Today, give some thought to the advice {random_row[0]}. {random_row[1]}')
     # Add code to update last presented data of advice
 
 
@@ -295,6 +301,7 @@ def update_wins_worksheet(data):
     worksheet_to_update.append_row(data)
     print("Your wins worksheet update successfully\n")
 
+
 def get_email():
     global USER_EMAIL
     while True:
@@ -309,6 +316,7 @@ def get_email():
             print("Thank you for entering your email!\n")
             break
     return USER_EMAIL
+
 
 def email_send():
     msg = MIMEMultipart()
@@ -326,6 +334,7 @@ def email_send():
     smtpserver.login(EMAIL, PASSWORD)
     smtpserver.send_message(msg)
     smtpserver.quit()
+
 
 def main():
     """
