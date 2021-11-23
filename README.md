@@ -89,15 +89,18 @@ To do: Add examples of user stories as features including screenshots
 
 * [Gitpod](https://gitpod.io/) - used as a workspace for Git repositories.
 
-* [Google Sheets](https://www.google.com/sheets/about/) - To store user's login information and progress.
+* [Google Sheets](https://www.google.com/sheets/about/) - used to store user information (wins, strenghts, priorities).
 
-* [Gspread](https://docs.gspread.org/en/v4.0.1/) - API to enable python to access google sheets. 
+* [Gspread](https://docs.gspread.org/en/v4.0.1/) - used API to enable python to access google sheets. 
 
-* [Heroku](https://www.heroku.com/) - To deploy project. 
+* [Heroku](https://www.heroku.com/) - used to deploy project. 
 
-* [Lucidchart](https://www.lucidchart.com/) - To help me design my flowcharts.
+* [Lucidchart](https://www.lucidchart.com/) - used to create flow charts. 
 
-* [Am I responsive](http://ami.responsivedesign.is/) - To generate the image at the beginning of the README.
+* [Am I responsive](http://ami.responsivedesign.is/) - used generate responsive mockup image at the top/beginning of the README.
+
+* [Microsoft Photos](https://www.microsoft.com/en-us/p/microsoft-photos/9wzdncrfjbh4?) - used to resize images.
+
 
 ## Testing
 
