@@ -6,7 +6,7 @@
 
 # ADHD Superstars
 
- ![Mockup of app across different screen sizes](assets/images/responsivemockup.png)
+ ![Mockup of app across different screen sizes](assets/documentation/wireframes/responsivemockup.png)
 
 ## Overview:
 
@@ -63,11 +63,21 @@ To be considered:
 
 #### Main Menu Flow:
 
- ![Process map of main menu](assets/images/mainmenu.png)
+ ![Process map of main menu](assets/documentation/wireframes/mapmainmenu.png)
 
 #### App Flow:
 
- ![Process map of app](assets/images/processmap.png)
+ ![Process map of app](assets/documentation/wireframes/mapprocessmap.png)
+
+### Wireframes
+
+#### Main Menu
+
+ ![Wireframe of main menu](assets/documentation/wireframes/wireframemainmenu.png)
+
+#### Option 1 (Loading...)
+
+ ![Wireframe of main menu](assets/documentation/wireframes/wireframeoption1.png)
 
 ### User Story Testing
 
