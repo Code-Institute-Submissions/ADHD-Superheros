@@ -43,7 +43,6 @@ Agreed:
 * As a user, I need to review my top 3 priorities from yesterday day and confirm done/not done.
 * As a user, I need a weekly % of my task completion (one week = 21 tasks, 16 done on the day = 76%). 
 * As a user, I need a monthly % of my task completion (one month = 90 tasks, 79 done on the day = 86%).
-
 * As a user, I need to document my top 3 wins/successes from yesterday.
 * As a user, I need a reminder of random wins/successes from any previous day except yesterday.
 * As a user, I need to set my top 3 priorities for the current day.
@@ -51,26 +50,25 @@ Agreed:
 
 Not agreed:
 
-*None
-
+* None
 
 ### Process Map
 
-#### Main Menu Flow:
+* Main Menu Flow:
 
  ![Process map of the main menu](assets/documentation/wireframes/mapmainmenu.png)
 
-#### App Flow:
+* App Flow:
 
  ![Process map of the app](assets/documentation/wireframes/mapprocessmap.png)
 
 ### Wireframes
 
-#### Main Menu
+* Main Menu
 
  ![Wireframe of the main menu](assets/documentation/wireframes/wireframemainmenu.png)
 
-#### Option 1 (Loading...)
+* Option 1 (Loading...)
 
  ![Wireframe of the main menu](assets/documentation/wireframes/wireframeoption1.png)
 
