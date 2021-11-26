@@ -104,6 +104,8 @@ To do: Add examples of user stories as features, including screenshots.
 
 * [Microsoft Photos](https://www.microsoft.com/en-us/p/microsoft-photos/9wzdncrfjbh4?) - used to resize images.
 
+* [Grammarly](https://www.microsoft.com/en-us/p/microsoft-photos/9wzdncrfjbh4?) - used to ensure documentation is clear and correct.
+
 #### Libraries Used
 
 * [Gspread](https://docs.gspread.org/en/v4.0.1/) - used API to enable Python to access google sheets. 
@@ -172,7 +174,7 @@ Step 2: Enable Google Drive API.
 - We will enable the 'Google Drive API first and then enable the 'Google Sheets API'.
 - Search first for ['Google Drive API'](https://console.cloud.google.com/apis/library/drive.googleapis.com).
 - Click the 'ENABLE' button. It may take a minute to enable the API.
-- Once enabled, you'll be brought to this API's Overview page. 
+- Once enabled, you should now see this API's Overview page. 
 
 Step 3: Create Credentials.
 
@@ -199,7 +201,7 @@ Step 5: Enable Google Sheets API.
 - From the sidebar of the Google Cloud Platform, select 'API & Services' and then 'Library'.
 - Search for ['Google Sheets API'](https://console.cloud.google.com/apis/library/sheets.googleapis.com).
 - Click the 'ENABLE' button. It may take a minute to enable the API.
-- Once enabled, you'll be brought to this API's Overview page. 
+- Once enabled, you should now see  to this API's Overview page. 
 
 Step 6: Add Credentials File to Gitpod.
 
