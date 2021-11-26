@@ -314,7 +314,7 @@ Step 4 - Select Github Deployment Method.
 
 ## Credits and Learning Experience
 
-* Thanks to Tim, my CI mentor, for the great support through my third project and in particular guiding me through sending emails form Python:
+* Thanks to Tim Nelson, my CI mentor, for the great support through my third project and in particular guiding me through sending emails from Python:
     - [freeCodeCamp](https://www.freecodecamp.org/news/send-emails-using-code-4fcea9df63f/)
     - [StackOverflow](https://stackoverflow.com/a/17596848)
     - [StackOverflow](https://stackoverflow.com/q/16512592)
@@ -323,6 +323,22 @@ Step 4 - Select Github Deployment Method.
 * ADHD Strengths and advice shared through app adopted from these articles in Additube Magazine:
     - [Positives of ADHD - 12 Amazing Superpowers](https://www.additudemag.com/slideshows/positives-of-adhd/)
 
+* Thanks to Dave Horrocks for sharing a code block I've adopted to add random funtionality to the strenghts and advice functions.
+
+```
+SHEET  = a_sheet # replace a_sheet with your accessed/authorized sheet
+WORKSHEET = a_sheet.worksheet("name_of_worksheet")
+
+#this line includes the heading row and doesn't account for Sheets rows starting at 1
+row_count = len(WORKSHEET.col_values(1)) # counts all rows with data entries in col1
+row_ref_start = row_count + 1 #accounts for Sheets rows starting at 1
+​
+#start the randrange at 1 if including heading row, 2 if not.
+random_row = WORKSHEET.row_values(randrange(1, row_ref_start))
+```
+
+* Thanks to fellow Student Ivana Iles for sharing this resouce for adding emojis to the app code:
+    - [Emojipedia - Home of Emoji Meanings](https://emojipedia.org/)
 
 ### Content
 
