@@ -67,6 +67,14 @@ Not agreed:
 
  ![Wireframe of the main menu](assets/documentation/wireframes/wireframeoption1.png)
 
+* Option 3 (Learn about ADHD 1/2)
+
+ ![Wireframe of the first learn about ADHD screen](assets/documentation/wireframes/wireframeoption3a.png)
+
+* Option 3 (Learn about ADHD 2/2)
+
+ ![Wireframe of the second learn about ADHD screen](assets/documentation/wireframes/wireframeoption3b.png)
+
 ### User Story Testing
 
 To do: Add examples of user stories as features, including screenshots.
