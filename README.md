@@ -317,8 +317,10 @@ Step 4 - Select Github Deployment Method.
     - [StackOverflow](https://stackoverflow.com/q/16512592)
     - [StackOverflow](https://stackoverflow.com/a/8519646)
 
-* ADHD Strengths and advice shared through app adopted from these articles in Additube Magazine:
+* ADHD Strengths, advice and information about the condition shared through app adopted from these articles in Additube Magazine:
     - [Positives of ADHD - 12 Amazing Superpowers](https://www.additudemag.com/slideshows/positives-of-adhd/)
+    - [What Is ADHD? Meaning, Symptoms & Tests](https://www.additudemag.com/what-is-adhd-symptoms-causes-treatments/)
+    - [ADHD in Adults](https://adhdireland.ie/for-adults/adhd-in-adults/)
 
 * Thanks to Dave Horrocks for sharing a code block I've adopted to add random funtionality to the strenghts and advice functions.
 
