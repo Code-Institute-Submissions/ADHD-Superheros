@@ -148,14 +148,19 @@ def get_strengths_data():
     Get strengths from strengths worksheet least recently used.
     Print for user to be reminded.
     """
+    global STRENGTH_NAME
+    global STRENGTH_DETAIL
     strengths = SHEET.worksheet("strengths")
     row_count = len(strengths.col_values(1))
     row_ref_start = row_count + 2
     random_row = strengths.row_values(randrange(1, row_ref_start))
-    clear()
     time.sleep(2)
+    print(random_row[0])
+    print(random_row[1])
+    STRENGTH_NAME = random_row[0]
+    STRENGTH_DETAIL = random_row[1]
     print('ADHD is like having superpowers if you focus on your strengths enough.')
-    print(f'Today, try to think about examples where the strength of {random_row[0]}. {random_row[1]}')
+    print(f'Today, try to think about examples where the strength of {STRENGTH_NAME}. {STRENGTH_DETAIL}')
     # Decide which code is better for strength and advice functions
 
 
@@ -164,14 +169,17 @@ def get_advice_data():
     Get advice from advice worksheet least recently used.
     Print to display to user.
     """
+    global ADVICE_NAME
+    global ADVICE_DETAIL
     advice = SHEET.worksheet("advice")
     row_count = len(advice.col_values(1))
     row_ref_start = row_count + 2
     random_row = advice.row_values(randrange(1, row_ref_start))
-    clear()
     time.sleep(2)
+    ADVICE_NAME = random_row[0]
+    ADVICE_DETAIL = random_row[1]
     print('Great advice is worth repeating.')
-    print(f'Today, give some thought to the advice {random_row[0]}. {random_row[1]}')
+    print(f'Today, give some thought to the advice {ADVICE_NAME}. {ADVICE_DETAIL}')
     # Add code to update last presented data of advice
 
 
@@ -332,7 +340,19 @@ def email_send():
     msg["To"] = USER_EMAIL
     msg["Subject"] = "Your ADHD Superhero Summary!"
     format_email = (
-        f'This is a test email being sent from python'
+        f"Thank you for taking the time today to use the ADHD Superheros App.\n"
+
+        f"This emails purpose is summarise what we have covered today.\n"
+
+        f"It's important to focus on your strenghts. Today's strength is {STRENGTH_NAME}\n"
+
+        f"{STRENGTH_DETAIL}\n"
+
+        f"Great advice is worth repeating. Today's advice focused on {ADVICE_NAME}\n"
+      
+        f"{ADVICE_DETAIL}\n"
+
+        f"Great advice is worth repeating. Today's advice focused on {ADVICE_NAME}\n"
     )
     msg.attach (MIMEText(str(format_email), "html"))
     smtpserver = smtplib.SMTP("smtp.gmail.com", 587)
