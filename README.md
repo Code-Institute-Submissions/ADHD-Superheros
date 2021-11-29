@@ -11,12 +11,12 @@ To create an app that encourages a positive mindset in the ADHD user by focusing
 
 ADHD is a neurotypical developmental disorder characterised by an impairment of executive function (mental processes used to manage day-to-day life and attain goals). ADHD Ireland (https://adhdireland.ie/for-adults/adhd-in-adults/) share that adults with ADHD have problems in six main areas of executive functioning:
 
-    * Activation – Problems with organisation, prioritising, and starting tasks.
-    * Focus – Problems with sustaining focus and resisting distraction, especially with reading.
-    * Effort – Problems with motivation, sustained effort, and persistence.
-    * Emotion – Difficulty regulating emotions and managing stress.
-    * Memory – Problems with short-term memory and memory retrieval.
-    * Action – Problems with self-control and self-regulation.
+* Activation – Problems with organisation, prioritising, and starting tasks.
+* Focus – Problems with sustaining focus and resisting distraction, especially with reading.
+* Effort – Problems with motivation, sustained effort, and persistence.
+* Emotion – Difficulty regulating emotions and managing stress.
+* Memory – Problems with short-term memory and memory retrieval.
+* Action – Problems with self-control and self-regulation.
 
 Apps recommended by ADHD resources are often the same popular to-do list and reminder apps suitable for the general population and not tailored to ADHD. Here is a list for example:
 
