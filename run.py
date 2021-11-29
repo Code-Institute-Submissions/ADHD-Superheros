@@ -121,7 +121,8 @@ def learn_adhd():
     time.sleep(1)
     print(Fore.BLUE + "* ADHD is not a specific learning disability.")
     time.sleep(1)
-    print(Fore.CYAN + "ADHD is, instead, a developmental impairment of the brain’s self-management system.")
+    print('\n')
+    print(Fore.BLACK + "ADHD is, instead, a developmental impairment of the brain’s self-management system.")
     print('\n')
     time.sleep(1)
     adhd_page = input(Fore.BLACK +"Press enter to load next screen about ADHD\n")
@@ -152,9 +153,11 @@ def learn_adhd():
     # clear() will decomment once testing is done
     ascii_banner = pyfiglet.figlet_format("ADHD Superheros!!")
     print(ascii_banner)
+    time.sleep(1)
     print("1. Main menu")
+    time.sleep(1)
     print("2. Exit")
-    time.sleep(2)
+    time.sleep(1)
     adhd_choice = input("Enter your choice 1-2 below\n")
     if adhd_choice == '1':
         main_menu()
