@@ -44,7 +44,7 @@ def main_menu():
     Displays welcome message to user
     Provides user with menu options
     """
-    ascii_banner = pyfiglet.figlet_format("ADHD Superheros!!")
+    ascii_banner = pyfiglet.figlet_format("ADHD Superheros")
     print(ascii_banner)
     print(Fore.RED + "Welcome to the ADHD Superheros app")
     print('\n')
@@ -79,7 +79,9 @@ def learn_app():
     """
     Privders user with instructions on how to use app
     """
-    clear()
+    cclear()
+    ascii_banner = pyfiglet.figlet_format("ADHD Superheros")
+    print(ascii_banner)
     print(Fore.RED + "How to use the app")
     print("Optimise Daily Life while reducing cognitive overload")
     time.sleep(2)
@@ -104,7 +106,7 @@ def learn_adhd():
     Provides user with education info on ADHD
     """
     clear()
-    ascii_banner = pyfiglet.figlet_format("ADHD Superheros!!")
+    ascii_banner = pyfiglet.figlet_format("ADHD Superheros")
     print(ascii_banner)
     print(Fore.RED + "Learn about ADHD - Part 1/2")
     print('\n')
@@ -128,7 +130,7 @@ def learn_adhd():
     adhd_page = input(Fore.BLACK +"Press enter to load next screen about ADHD\n")
     print('\n')
     # clear() will decomment once testing is done
-    ascii_banner = pyfiglet.figlet_format("ADHD Superheros!!")
+    ascii_banner = pyfiglet.figlet_format("ADHD Superheros")
     print(ascii_banner)
     print(Fore.RED + "Learn about ADHD - Part 2/2")
     print('\n')
@@ -151,7 +153,7 @@ def learn_adhd():
     print('\n')
     adhd_page = input("Press enter to load your exit options\n")
     # clear() will decomment once testing is done
-    ascii_banner = pyfiglet.figlet_format("ADHD Superheros!!")
+    ascii_banner = pyfiglet.figlet_format("ADHD Superheros")
     print(ascii_banner)
     time.sleep(1)
     print("1. Main menu")
