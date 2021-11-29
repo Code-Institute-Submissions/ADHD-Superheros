@@ -126,9 +126,9 @@ def leaving():
     Guides user out of app
     """
     print("We hope that even though you are leaving the app,")
-    print("that you got value from your time spent here")
+    print("that you got value from your time spent here.")
     print("If you leave this screen open,")
-    print("you can return the main menu at anytime")
+    print("you can return the main menu at any time")
     print("You can also close and open the app again to access the main menu")
     print("1. Main menu")
     print("2. Close app")
