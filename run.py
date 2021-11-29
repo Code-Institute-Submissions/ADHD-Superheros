@@ -248,9 +248,13 @@ def calc_month_avg():
                 mthtotal += 1
     print(mthdone)
     print(mthtotal)
-    month_avg_num = (mthdone / mthtotal)
-    month_avg_per = "{:.0%}".format(month_avg_num)
-    print(f'Your average % of completed priorities for the last 30 days is {month_avg_per}')
+    if mthtotal == 0:
+        print("There are no priorites for the last 30 days")
+        print("If you log priorties more often, we'll have data to share")
+    else:
+        month_avg_num = (mthdone / mthtotal)
+        month_avg_per = "{:.0%}".format(month_avg_num)
+        print(f'Your average % of completed priorities for the last 30 days is {month_avg_per}')
 
 
 def get_current_wins():
