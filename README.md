@@ -3,15 +3,13 @@
 
  ![Mockup of the app across different screen sizes](assets/documentation/wireframes/responsivemockup.png)
 
-## Overview:
+## Overview
 
 To create an app that encourages a positive mindset in the ADHD user by focusing on strengths and successes and minimising cognitive overload by narrowing focus on the top 3 most important tasks for the day. 
 
-### Purpose: 
+### Background
 
-* What? 
-
-1. ADHD is a neurotypical developmental disorder characterised by an impairment of executive function (mental processes used to manage day-to-day life and attain goals). ADHD Ireland (https://adhdireland.ie/for-adults/adhd-in-adults/) share that adults with ADHD have problems in six main areas of executive functioning:
+ADHD is a neurotypical developmental disorder characterised by an impairment of executive function (mental processes used to manage day-to-day life and attain goals). ADHD Ireland (https://adhdireland.ie/for-adults/adhd-in-adults/) share that adults with ADHD have problems in six main areas of executive functioning:
 
     * Activation – Problems with organisation, prioritising, and starting tasks.
     * Focus – Problems with sustaining focus and resisting distraction, especially with reading.
@@ -20,17 +18,14 @@ To create an app that encourages a positive mindset in the ADHD user by focusing
     * Memory – Problems with short-term memory and memory retrieval.
     * Action – Problems with self-control and self-regulation.
 
-* Why? 
+Apps recommended by ADHD resources are often the same popular to-do list and reminder apps suitable for the general population and not tailored to ADHD. Here is a list for example:
 
-1. Encourage a positive mindset at the start of the day - People with ADHD are neurodivergent individuals living in a neurotypical world. The world in general celebrates and rewards neurotypical traits, which can leave ADHDers to dwell on their perceived weaknesses, shortcomings and failures. 
+https://www.additudemag.com/mobile-apps-for-adhd-minds/
 
-2. Optimise Daily Life while reducing cognitive overload - Apps recommended for people with ADHD are often focusing solely on organising their daily lives, such as this ADHD app list here of calendars and to-do list apps, but none are uniquely designed for ADHDers: https://www.additudemag.com/mobile-apps-for-adhd-minds/
+### Project Goals
 
-* How? 
-
-1. Focus on the positive - This app shifts the users focus on celebrating ADHD strengths and successes rather than dwelling on weaknesses and failings. 
-
-2. Reduce cognitive overload - It uses the core function as a restrictive to-do list feature (top 3 daily priorities rather than an endless list of to-do items) to encourage hyperfocus while reminding the users of their potential, key ADHD strengths and significant past successes/wins.
+* Encourage a positive mindset at the start of the day by focusing on strengths, advice, wins and progress. 
+* Optimise focus by requiring the user to clarify their top three priorities for the day.
 
 ## UX
 
@@ -221,37 +216,39 @@ Step 7 - Link spreadsheet to Google Cloud service account.
 Step 8: Install Python libraries.
 
 - In your terminal, type the following line to import the gpsread and google auth packages. 
-```
-pip3 install gspread google-auth
-````
+
+    ```
+    pip3 install gspread google-auth
+    ````
+    
 - Then enter, and the new dependencies installed are displayed in the terminal. 
 - At the top section of your Python file (run.py), add 'Import gspread' underneath the last library listed. 
 - On line under 'Import gspread', add 'from google.oauth2.service_account import Credentials'
 - Add an empty line, and then on the next line, add the following:
 
-```
-SCOPE = [ 
-    "https://www.googleapis.com/auth/spreadsheets", 
-    "https://www.googleapis.com/auth/drive.file", 
-    "https://www.googleapis.com/auth/drive" 
-    ]
-```
+    ```
+    SCOPE = [ 
+        "https://www.googleapis.com/auth/spreadsheets", 
+        "https://www.googleapis.com/auth/drive.file", 
+        "https://www.googleapis.com/auth/drive" 
+        ]
+    ```
 
 - Add an empty line, and then on the next line, add the following four lines:
 
-```
-CREDS = Credentials.from_service_account_file('creds.json') 
-SCOPED_CREDS = CREDS.with_scopes(SCOPE) 
-GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS) 
-SHEET = GSPREAD_CLIENT.open('google_sheet_name_here')
-```
+    ```
+    CREDS = Credentials.from_service_account_file('creds.json') 
+    SCOPED_CREDS = CREDS.with_scopes(SCOPE) 
+    GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS) 
+    SHEET = GSPREAD_CLIENT.open('google_sheet_name_here')
+    ```
 
 - On the last line, update 'google_sheet_name_here' needs replaced with the **exact** name of your Google Sheet. 
 - If the name does not match exactly, you will get the following error message:
 
-```
-raise SpreadsheetNotFound gspread.exceptions.SpreadsheetNotFound
-```
+    ```
+    raise SpreadsheetNotFound gspread.exceptions.SpreadsheetNotFound
+    ```
 
 - Avoid renaming your Google Sheet. If you do, you'll need to update the name in your Python code again.
 
@@ -263,9 +260,9 @@ Prerequisites
 - Your creds.json file open in Gitpod.
 - Ensuring your requirements.txt is up to date. You can do so using by entering the following line in your terminal:
 
-```
-pip3 freeze > requirements.txt
-```
+    ```
+    pip3 freeze > requirements.txt
+    ```
 
 Step 1 - Creating an account.
 
@@ -325,17 +322,17 @@ Step 4 - Select Github Deployment Method.
 
 * Thanks to Dave Horrocks for sharing a code block I've adopted to add random funtionality to the strenghts and advice functions.
 
-```
-SHEET  = a_sheet # replace a_sheet with your accessed/authorized sheet
-WORKSHEET = a_sheet.worksheet("name_of_worksheet")
+    ```
+    SHEET  = a_sheet # replace a_sheet with your accessed/authorized sheet
+    WORKSHEET = a_sheet.worksheet("name_of_worksheet")
 
-#this line includes the heading row and doesn't account for Sheets rows starting at 1
-row_count = len(WORKSHEET.col_values(1)) # counts all rows with data entries in col1
-row_ref_start = row_count + 1 #accounts for Sheets rows starting at 1
-​
-#start the randrange at 1 if including heading row, 2 if not.
-random_row = WORKSHEET.row_values(randrange(1, row_ref_start))
-```
+    #this line includes the heading row and doesn't account for Sheets rows starting at 1
+    row_count = len(WORKSHEET.col_values(1)) # counts all rows with data entries in col1
+    row_ref_start = row_count + 1 #accounts for Sheets rows starting at 1
+    ​
+    #start the randrange at 1 if including heading row, 2 if not.
+    random_row = WORKSHEET.row_values(randrange(1, row_ref_start))
+    ```
 
 * Thanks to fellow Student Ivana Iles for sharing this resouce for adding emojis to the app code:
     - [Emojipedia - Home of Emoji Meanings](https://emojipedia.org/)
