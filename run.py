@@ -215,9 +215,13 @@ def calc_weekly_avg():
                 wktotal += 1
     print(wkdone)
     print(wktotal)
-    weekly_avg_num = (wkdone / wktotal)
-    weekly_avg_per = "{:.0%}".format(weekly_avg_num)
-    print(f'Your average % of completed priorities for the last 7 days is {weekly_avg_per}')
+    if wktotal == 0:
+        print("There are no priorites for the last 7 days")
+        print("If you log priorties more often, we'll have data to share")
+    else:
+        weekly_avg_num = (wkdone / wktotal)
+        weekly_avg_per = "{:.0%}".format(weekly_avg_num)
+        print(f'Your average % of completed priorities for the last 7 days is {weekly_avg_per}')
 
 
 def calc_month_avg():
