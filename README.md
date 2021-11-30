@@ -86,12 +86,8 @@ Not agreed:
 * Option 4 (Exit app)
 
  ![Wireframe of the exit screen](assets/documentation/wireframes/wireframeoption4.png)
-
-### User Story Testing
-
-To do: Add examples of user stories as features, including screenshots.
-
-## Bugs
+ 
+### Feaures
 
 ## Technologies
 
@@ -106,6 +102,9 @@ To do: Add examples of user stories as features, including screenshots.
 * [Git](https://www.atlassian.com/git) - used for branching, merging, and rewriting repository history.
 
 * [GitHub](https://github.com/) - used a hosting service for Git repositories.
+
+* [GitHub Projects Board](https://github.com/declanosullivan/ADHD-Superheros/projects/1) - used as kanban to-do list for tracking issues and feature progress.
+    - ![Screenshot of projects board]()
 
 * [Gitpod](https://gitpod.io/) - used as a workspace for Git repositories.
 
@@ -139,27 +138,23 @@ To do: Add examples of user stories as features, including screenshots.
 
 ## Testing
 
-### Validators
-
-### Compatibility
-
-### Responsiveness
-
-### User Story Testing
+For all testing documentation, please refer to [TESTING](TESTING.md)
 
 ## Deployment
 
 ### Local Deployment
 
-To make a local copy of this repository, you can type the following into your IDE terminal:_
+To make a local copy of this repository, you can type the following into your IDE terminal:
 
-- `git clone https://github.com/declanosullivan/ADHD-Superstars.git`
+- `git clone https://github.com/declanosullivan/ADHD-Superheros.git`
 
 Alternatively, if using Gitpod, you can click below to create your own workspace using this repository.
 
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/declanosullivan/ADHD-Superstars)
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/declanosullivan/ADHD-Superheros)
 
 Sending emails within this Python application:
+
+Add in steps for env.py file and add to gitignore using the envsample.py as a template
 
 **NOTE**: If receiving errors while sending emails using this app, due to Google's security feature with **2-Factor Authentication**, **Less Secure Apps**, and **DisplayUnlockCaptcha**, you'll need to follow these steps.
 
@@ -235,40 +230,40 @@ Step 7 - Link spreadsheet to Google Cloud service account.
 
 Step 8: Install Python libraries.
 
-- In your terminal, type the following line to import the gpsread and google auth packages. 
+- In your terminal, type the following line to install all packages required for this application:
 
-    ```
-    pip3 install gspread google-auth
-    ````
+```shell
+pip3 install -r requirements.txt
+```
     
 - Then enter, and the new dependencies installed are displayed in the terminal. 
-- At the top section of your Python file (run.py), add 'Import gspread' underneath the last library listed. 
-- On line under 'Import gspread', add 'from google.oauth2.service_account import Credentials'
+- At the top section of your Python file (run.py), add `import gspread` underneath the last library listed. 
+- On line under `import gspread`, add `from google.oauth2.service_account import Credentials`
 - Add an empty line, and then on the next line, add the following:
 
-    ```
-    SCOPE = [ 
-        "https://www.googleapis.com/auth/spreadsheets", 
-        "https://www.googleapis.com/auth/drive.file", 
-        "https://www.googleapis.com/auth/drive" 
-        ]
-    ```
+```python
+SCOPE = [ 
+    "https://www.googleapis.com/auth/spreadsheets", 
+    "https://www.googleapis.com/auth/drive.file", 
+    "https://www.googleapis.com/auth/drive" 
+    ]
+```
 
 - Add an empty line, and then on the next line, add the following four lines:
 
-    ```
-    CREDS = Credentials.from_service_account_file('creds.json') 
-    SCOPED_CREDS = CREDS.with_scopes(SCOPE) 
-    GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS) 
-    SHEET = GSPREAD_CLIENT.open('google_sheet_name_here')
-    ```
+```python
+CREDS = Credentials.from_service_account_file('creds.json') 
+SCOPED_CREDS = CREDS.with_scopes(SCOPE) 
+GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS) 
+SHEET = GSPREAD_CLIENT.open('google_sheet_name_here')
+```
 
 - On the last line, update 'google_sheet_name_here' needs replaced with the **exact** name of your Google Sheet. 
 - If the name does not match exactly, you will get the following error message:
 
-    ```
-    raise SpreadsheetNotFound gspread.exceptions.SpreadsheetNotFound
-    ```
+```python
+raise SpreadsheetNotFound gspread.exceptions.SpreadsheetNotFound
+```
 
 - Avoid renaming your Google Sheet. If you do, you'll need to update the name in your Python code again.
 
@@ -280,14 +275,14 @@ Prerequisites
 - Your creds.json file open in Gitpod.
 - Ensuring your requirements.txt is up to date. You can do so using by entering the following line in your terminal:
 
-    ```
-    pip3 freeze > requirements.txt
-    ```
+```
+pip3 freeze --local > requirements.txt
+```
 
 Step 1 - Creating an account.
 
 - If you already have a Heroku account, please sign in to your existing account.
-- If you don't, go to Heroku.com and create a free account.
+- If you don't, go to [Heroku.com](https://www.heroku.com) and create a free account.
 
 Step 2: Create an app.
 
@@ -304,18 +299,18 @@ Step 3: Add Config Vars.
 - Scroll down to the 'Config Vars' section and click the 'Reveal Config Vars' button.
 - We are going to add two config vars.
 - From the creds.json file, copy the entire contents.
-- Enter CREDS for KEY and then paste the contents from creds.json into the VALUE field.
+- Enter `CREDS` for KEY and then paste the contents from creds.json into the VALUE field.
 - Then click the 'Add' button. 
-- Enter PORT for KEY and then 8000 for VALUE and click the 'Add' button.
+- Enter `PORT` for KEY and then `8000` for VALUE and click the 'Add' button.
 
 Step 4: Add Buildpacks.
 
 - On the same 'Settings' tab in your app, scroll down to the 'Buildpacks' section. 
 - The buildpacks need to be listed in your Settings in a specific order. 
 - It's best to add Python first, click 'Save Changes and repeat for then Node.js.
-- If the buildpacks don't appear with Python first and Node.js second, you change the order by dragging Python to the top. 
+- If the buildpacks don't appear with **Python** first and **Node.js** second, you change the order by dragging Python to the top. 
 
-Step 4 - Select Github Deployment Method.
+Step 5 - Select Github Deployment Method.
 
 - Go to the 'Deploy' tab in your app.
 - In the Deployment method' section,  select 'GitHub' and click 'Connect to GitHub'.
@@ -344,20 +339,24 @@ Step 4 - Select Github Deployment Method.
 
 * Thanks to Dave Horrocks for sharing a code block I've adopted to add random funtionality to the strenghts and advice functions.
 
-    ```
-    SHEET  = a_sheet # replace a_sheet with your accessed/authorized sheet
-    WORKSHEET = a_sheet.worksheet("name_of_worksheet")
+```python
+SHEET  = a_sheet # replace a_sheet with your accessed/authorized sheet
+WORKSHEET = a_sheet.worksheet("name_of_worksheet")
 
-    #this line includes the heading row and doesn't account for Sheets rows starting at 1
-    row_count = len(WORKSHEET.col_values(1)) # counts all rows with data entries in col1
-    row_ref_start = row_count + 1 #accounts for Sheets rows starting at 1
-    ​
-    #start the randrange at 1 if including heading row, 2 if not.
-    random_row = WORKSHEET.row_values(randrange(1, row_ref_start))
-    ```
+#this line includes the heading row and doesn't account for Sheets rows starting at 1
+row_count = len(WORKSHEET.col_values(1)) # counts all rows with data entries in col1
+row_ref_start = row_count + 1 #accounts for Sheets rows starting at 1
+​
+#start the randrange at 1 if including heading row, 2 if not.
+random_row = WORKSHEET.row_values(randrange(1, row_ref_start))
+```
 
 * Thanks to fellow Student Ivana Iles for sharing this resouce for adding emojis to the app code:
     - [Emojipedia - Home of Emoji Meanings](https://emojipedia.org/)
+
+* Sample data of historical priorities adopted from this webiste:
+    - [Free Task & To-Do List Template by Instagantt](https://instagantt.com/free-task-and-to-do-list-template-for-project-management)
+
 
 ### Content
 
