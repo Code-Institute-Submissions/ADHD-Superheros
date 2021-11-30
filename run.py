@@ -6,7 +6,7 @@ import re
 import gspread
 from google.oauth2.service_account import Credentials
 from random import randrange
-from colorama import Fore, Back, Style  # https://pypi.org/project/colorama/
+from colorama import Fore, Style  # https://pypi.org/project/colorama/
 import pyfiglet
 if os.path.exists("env.py"):
     import env  # noqa
@@ -44,17 +44,18 @@ def main_menu():
     Displays welcome message to user
     Provides user with menu options
     """
+    clear()
     ascii_banner = pyfiglet.figlet_format("ADHD Superheros")
     print(ascii_banner)
     print(Fore.RED + "Welcome to the ADHD Superheros app")
     print('\n')
-    time.sleep(1)
+    time.sleep(0.5)
     print(Fore.BLUE + "1. Use app")
-    time.sleep(1)
+    time.sleep(0.5)
     print("2. Learn how to use app")
-    time.sleep(1)
+    time.sleep(0.5)
     print("3. Learn about ADHD")
-    time.sleep(1)
+    time.sleep(0.5)
     print("4. Exit")
     print('\n')
     time.sleep(1)
@@ -70,7 +71,7 @@ def main_menu():
         leaving()
     else:
         print("You must choose option 1, 2, 3 or 4")
-        time.sleep(2.5)
+        time.sleep(1)
         clear()
         main_menu()
 
@@ -84,67 +85,112 @@ def learn_app():
     print(ascii_banner)
     print(Fore.RED + "How to use the app")
     print('\n')
-    print(Fore.WHITE + "Below is a summary of each of the menu options")
+    print(Fore.WHITE + "Below is a summary of each of the menu options.")
     print('\n')
     time.sleep(1)
-    # Option 1 
+    # Option 1
     print(Fore.WHITE + "1. Use app")
     print('\n')
     time.sleep(1)
-    print(Fore.BLUE + "* Shares a daily reminder of a strength and advice related to ADHD.")
+    print(
+        Fore.BLUE + "* Shares a daily reminder of "
+        "a strength and advice related to ADHD.")
     time.sleep(1)
-    print(Fore.CYAN + "* Review previous top 3 priorities and confirm if completed.")
+    print(
+        Fore.CYAN + "* Review previous top 3 "
+        "priorities and confirm if completed.")
     time.sleep(1)
-    print(Fore.BLUE + "* Calculates your average completed priorities for the last 7 and 30 days.")
+    print(
+        Fore.BLUE + "* Calculates your average completed "
+        "priorities for the last 7 and 30 days.")
     time.sleep(1)
-    print(Fore.CYAN + "* You'll be asked to provide a win/success for the previous day.")
+    print(
+        Fore.CYAN + "* You'll be asked to provide "
+        "a win/success for the previous day.")
     time.sleep(1)
-    print(Fore.BLUE + "* You'll be asked for your email and a summary email will be sent to you.")
+    print(
+        Fore.BLUE + "* You'll be asked for your email "
+        "and a summary email will be sent to you.")
     print('\n')
     time.sleep(1)
-    learn_page = input(Fore.WHITE +"Press enter to load next screen about using the app\n")
+    input(
+        Fore.WHITE + "Press enter to load the next "
+        "screen about using the app")
     print('\n')
-    # Option 2 - add clear () + banner
+    # Option 2
+    clear()
+    ascii_banner = pyfiglet.figlet_format("ADHD Superheros")
+    print(ascii_banner)
     print(Fore.WHITE + "2. Learn how to use app")
     print('\n')
     time.sleep(1)
-    print(Fore.BLUE + "* You'll be provided with an overview of each of the menu options.")
+    print(
+        Fore.BLUE + "* You'll be provided with an overview "
+        "of each of the menu options.")
     time.sleep(1)
-    print(Fore.CYAN + "* You'll get a sense of what to expect in particular for option 1 - Use app.")
+    print(
+        Fore.CYAN + "* You'll get a sense of what to expect "
+        "in particular for option 1 - Use app.")
     time.sleep(1)
     print('\n')
-    learn_page = input(Fore.WHITE +"Press enter to load next screen about using the app\n")
+    input(
+        Fore.WHITE + "Press enter to load the next "
+        "screen about using the app")
     print('\n')
-    # Option 3 -  add clear () + banner
+    # Option 3
+    clear()
+    ascii_banner = pyfiglet.figlet_format("ADHD Superheros")
+    print(ascii_banner)
     print(Fore.WHITE + "3. Learn about ADHD")
     print('\n')
     time.sleep(1)
-    print(Fore.BLUE + "* You'll be presented with education information about ADHD.")
+    print(
+        Fore.BLUE + "* You'll be presented with education "
+        "information about ADHD.")
     time.sleep(1)
-    print(Fore.CYAN + "* The information is sourced from national and internationl experts.")
+    print(
+        Fore.CYAN + "* The information is sourced from "
+        "national and internationl experts.")
     time.sleep(1)
     print('\n')
-    learn_page = input(Fore.WHITE +"Press enter to load next screen about using the app\n")
+    input(
+        Fore.WHITE + "Press enter to load the next "
+        "screen about using the app\n")
     print('\n')
-    # Option 4 -  add clear () + banner
+    # Option 4
+    clear()
+    ascii_banner = pyfiglet.figlet_format("ADHD Superheros")
+    print(ascii_banner)
     print(Fore.WHITE + "4. Exit")
     print('\n')
     time.sleep(1)
-    print(Fore.BLUE + "* You'll be presented with two choice - return to main menu or the app will clear the screen.")
+    print(
+        Fore.BLUE + "* You'll be presented with two choices "
+        "- return to main menu or the app will clear the screen.")
     time.sleep(1)
-    print(Fore.CYAN + "* You can always return by reopening the app if you leave by mistake.")
+    print(
+        Fore.CYAN + "* You can always return by reopening "
+        "the app if you leave by mistake.")
     time.sleep(1)
     print('\n')
-    print(Fore.WHITE + "Thank you for learning how to use the app. You'll now be presented with menu options.")
+    print(
+        Fore.WHITE + "Thank you for learning how to use the app. "
+        "You'll now be presented with menu options.")
     print('\n')
-    learn_page = input(Fore.WHITE +"Press enter to load your menu options\n")
+    input(Fore.WHITE + "Press enter to load your menu options\n")
+    clear()
+    ascii_banner = pyfiglet.figlet_format("ADHD Superheros")
+    print(ascii_banner)
+    print("Your menu options")
     print('\n')
+    time.sleep(1)
     print("1. Main menu")
     time.sleep(1)
     print("2. Exit")
     time.sleep(1)
     print('\n')
     learn_choice = input("Enter your choice 1-2 below\n")
+    # wrap in a while loop
     if learn_choice == '1':
         main_menu()
     elif learn_choice == '2':
@@ -161,13 +207,20 @@ def learn_adhd():
     clear()
     ascii_banner = pyfiglet.figlet_format("ADHD Superheros")
     print(ascii_banner)
+    # Part 1 of 2
     print(Fore.RED + "Learn about ADHD - Part 1/2")
     print('\n')
-    print(Fore.WHITE + "ADHD stands for attention deficit hyperactivity disorder.")
+    print(
+        Fore.WHITE + "ADHD stands for attention deficit "
+        "hyperactivity disorder.")
     time.sleep(1)
-    print("It is a complex brain disorder that impacts 11% of children and almost 5% of adults.")
+    print(
+        "It is a complex brain disorder that impacts "
+        "11% of children and almost 5% of adults.")
     time.sleep(1)
-    print("ADHD is a developmental impairment of the brain’s executive functions.")
+    print(
+        "ADHD is a developmental impairment of "
+        "the brain’s executive functions.")
     print('\n')
     time.sleep(1)
     print(Fore.BLUE + "* ADHD is not a behaviour disorder.")
@@ -177,48 +230,68 @@ def learn_adhd():
     print(Fore.BLUE + "* ADHD is not a specific learning disability.")
     time.sleep(1)
     print('\n')
-    print(Fore.WHITE + "ADHD is, instead, a developmental impairment of the brain’s self-management system.")
+    print(
+        Fore.WHITE + "ADHD is, instead, a developmental "
+        "impairment of the brain’s self-management system.")
     print('\n')
     time.sleep(1)
-    adhd_page = input(Fore.WHITE +"Press enter to load next screen about ADHD\n")
+    input(Fore.WHITE + "Press enter to load next screen about ADHD\n")
     print('\n')
-    # clear() will decomment once testing is done
+    clear()
     ascii_banner = pyfiglet.figlet_format("ADHD Superheros")
     print(ascii_banner)
+    # Part 2 of 2
     print(Fore.RED + "Learn about ADHD - Part 2/2")
     print('\n')
-    print(Fore.WHITE + "Adults with ADHD have problems in six major areas of executive functioning:")
+    print(
+        Fore.WHITE + "Adults with ADHD have problems in "
+        "six major areas of executive functioning:")
     print('\n')
     time.sleep(1)
-    print(Fore.BLUE + "* Activation – Problems with organization, prioritizing, and starting tasks.")
+    print(
+        Fore.BLUE + "* Activation – Problems with "
+        "organization, prioritizing, and starting tasks.")
     time.sleep(1)
-    print(Fore.CYAN + "* Focus – Problems with sustaining focus and resisting distraction, especially with reading.")
+    print(
+        Fore.CYAN + "* Focus – Problems with sustaining "
+        "focus and resisting distraction, especially with reading.")
     time.sleep(1)
-    print(Fore.BLUE + "* Effort – Problems with motivation, sustained effort, and persistence.")
+    print(
+        Fore.BLUE + "* Effort – Problems with motivation, "
+        "sustained effort, and persistence.")
     time.sleep(1)
-    print(Fore.CYAN + "* Emotion – Difficulty regulating emotions and managing stress.")
+    print(
+        Fore.CYAN + "* Emotion – Difficulty regulating "
+        "emotions and managing stress.")
     time.sleep(1)
-    print(Fore.BLUE + "* Memory – Problems with short-term memory and memory retrieval.")
+    print(
+        Fore.BLUE + "* Memory – Problems with short-term "
+        "memory and memory retrieval.")
     time.sleep(1)
-    print(Fore.CYAN + "* Action – Problems with self-control and self-regulation.")
+    print(
+        Fore.CYAN + "* Action – Problems with self-control "
+        "and self-regulation.")
     time.sleep(1)
     print('\n')
-    print(Fore.WHITE +"Thank you for taking the time to learn about ADHD")
+    print(Fore.WHITE + "Thank you for taking the time to learn about ADHD")
     print('\n')
-    adhd_page = input("Press enter to load your exit options\n")
-    # clear() will decomment once testing is done
+    input(Fore.WHITE + "Press enter to load your menu options\n")
+    clear()
     ascii_banner = pyfiglet.figlet_format("ADHD Superheros")
     print(ascii_banner)
+    print("Your menu options")
+    print('\n')
     time.sleep(1)
     print("1. Main menu")
     time.sleep(1)
     print("2. Exit")
     time.sleep(1)
     print('\n')
-    adhd_choice = input("Enter your choice 1-2 below\n")
-    if adhd_choice == '1':
+    learn_choice = input("Enter your choice 1-2 below\n")
+    # wrap in a while loop
+    if learn_choice == '1':
         main_menu()
-    elif adhd_choice == '2':
+    elif learn_choice == '2':
         leaving()
     else:
         print("You must choose option 1 or 2")
@@ -238,7 +311,9 @@ def leaving():
     time.sleep(1)
     print("You'll now get a option to return to main menu or close the app.")
     print('\n')
-    print("After the app is closed, you can reopen it to access the main menu.")
+    print(
+        "After the app is closed, you can "
+        "reopen it to access the main menu.")
     print('\n')
     print("1. Main menu")
     print("2. Close app")
@@ -248,6 +323,7 @@ def leaving():
         main_menu()
     elif leaving_choice == '2':
         clear()
+        print("Thanks for visiting ADHD Superheros!")
     else:
         print("You must choose option 1 or 2")
         time.sleep(2)
@@ -259,30 +335,35 @@ def get_strengths_data():
     """
     global STRENGTH_NAME
     global STRENGTH_DETAIL
+    clear()
+    print("Your strenghts data is loading.....")
     strengths = SHEET.worksheet("strengths")
     row_count = len(strengths.col_values(1))
     row_ref_start = row_count + 2
     random_row = strengths.row_values(randrange(1, row_ref_start))
-    time.sleep(2)
     STRENGTH_NAME = random_row[0]
     STRENGTH_DETAIL = random_row[1]
-    # add clear ()
+    clear()
     ascii_banner = pyfiglet.figlet_format("ADHD Superheros")
     print(ascii_banner)
     time.sleep(1)
     print(Fore.RED + "ADHD Strenghts")
     print('\n')
     time.sleep(1)
-    print(Fore.WHITE + 'ADHD is like having superpowers if you focus on your strengths enough.')
+    print(
+        Fore.WHITE + "ADHD is like having superpowers "
+        "if you focus on your strengths enough.")
     print('\n')
     time.sleep(1)
-    print(Fore.BLUE + f'Today, try to think about examples where the strength of {STRENGTH_NAME}.')
+    print(
+        Fore.BLUE + f"Today, try to think about examples "
+        "where you've used the strength of {STRENGTH_NAME}.")
     print('\n')
     time.sleep(1)
     print(Fore.CYAN + f'{STRENGTH_DETAIL}.')
     print('\n')
     time.sleep(1)
-    strengths_page = input(Fore.WHITE +"Press enter to load your daily advive reminder\n")
+    input(Fore.WHITE + "Press enter to load your daily advive reminder\n")
     print('\n')
 
 
@@ -293,14 +374,15 @@ def get_advice_data():
     """
     global ADVICE_NAME
     global ADVICE_DETAIL
-    strengths = SHEET.worksheet("advice")
-    row_count = len(strengths.col_values(1))
+    clear()
+    print("Your advice data is loading.....")
+    advice = SHEET.worksheet("advice")
+    row_count = len(advice.col_values(1))
     row_ref_start = row_count + 2
-    random_row = strengths.row_values(randrange(1, row_ref_start))
-    time.sleep(2)
+    random_row = advice.row_values(randrange(1, row_ref_start))
     ADVICE_NAME = random_row[0]
     ADVICE_DETAIL = random_row[1]
-    # add clear ()
+    clear()
     ascii_banner = pyfiglet.figlet_format("ADHD Superheros")
     print(ascii_banner)
     print(Fore.RED + "ADHD Advice")
@@ -308,13 +390,17 @@ def get_advice_data():
     print(Fore.WHITE + 'Great advice is worth repeating.')
     print('\n')
     time.sleep(1)
-    print(Fore.BLUE + f'Today, give some thought to the advice on {ADVICE_NAME}.')
+    print(
+        Fore.BLUE + f'Today, give some thought "
+        "to the advice on {ADVICE_NAME}.")
     print('\n')
     time.sleep(1)
     print(Fore.CYAN + f'{ADVICE_DETAIL}.')
     print('\n')
     time.sleep(1)
-    advice_page = input(Fore.WHITE +"Press enter to review your previous top 3 priorities.\n")
+    input(
+        Fore.WHITE + "Press enter to review your "
+        "previous top 3 priorities.")
     print('\n')
 
 
@@ -325,21 +411,29 @@ def get_last_3_priorities():
     """
     dailytopthree = SHEET.worksheet("dailytopthree")
     columns = []
-    for num in range(1, 4):
+    for num in range(1, 5):
         column = dailytopthree.col_values(num)
-        columns.append(column[-3:])
+        columns.append(column[-1:])
 
     print(columns)
     print(columns[0])
     print(columns[1])
     print(columns[2])
+    print(columns[3])
     ascii_banner = pyfiglet.figlet_format("ADHD Superheros")
     print(ascii_banner)
     print(Fore.RED + "Review previous top 3 priorities")
     print('\n')
+    print(f'Your last priorty was {columns[2]} on {columns[0]}')
+    print('\n')
+    taskstatus = input('Please confirm if this priority was done or undone')
+    taskdata = taskstatus.split(",")
+    columns[3] = taskdata
     # Add code so user can input whether task was done or not.
 
-    priorities_page = input(Fore.WHITE +"Press enter to view your weekly and monthly completion %.\n")
+    input(
+        Fore.WHITE + "Press enter to view your weekly "
+        "and monthly completion %.\n")
     print('\n')
 
 
@@ -348,6 +442,7 @@ def calc_weekly_avg():
     Get last 7 days of total priorities (complete & incomplete)
     Calculate %  done of total priorities
     """
+    clear()
     ascii_banner = pyfiglet.figlet_format("ADHD Superheros")
     print(ascii_banner)
     print(Fore.RED + "Your weekly report.")
@@ -369,24 +464,30 @@ def calc_weekly_avg():
         print(Fore.BLUE + "There are no priorites for the last 7 days")
         print('\n')
         time.sleep(1)
-        print(Fore.CYAN + "If you log priorties more often, we'll have data to share")
+        print(
+            Fore.CYAN + "If you log priorties more often, "
+            "we'll have data to share")
         print('\n')
         time.sleep(1)
-        weekly_page = input(Fore.WHITE +"Press enter to view your monthly report.\n")
+        input(Fore.WHITE + "Press enter to view your monthly report.\n")
         print('\n')
     else:
         weekly_avg_num = (wkdone / wktotal)
         weekly_avg_per = "{:.0%}".format(weekly_avg_num)
-        print(Fore.BLUE + f'You entered {wktotal} priorities between {wk_start_date} and {wk_end_date}.')
+        print(
+            Fore.BLUE + f'You entered {wktotal} priorities "
+            "between {wk_start_date} and {wk_end_date}.')
         print('\n')
         time.sleep(1)
         print(Fore.CYAN + f'You completed {wkdone} of {wktotal} priorities.')
         print('\n')
         time.sleep(1)
-        print(Fore.BLUE + f'Your average % of completed priorities for the last 7 days is {weekly_avg_per}')
+        print(
+            Fore.BLUE + f'Your average % of completed priorities "
+            "for the last 7 days is {weekly_avg_per}')
         print('\n')
         time.sleep(1)
-        weekly_page = input(Fore.WHITE +"Press enter to view your monthly report.\n")
+        input(Fore.WHITE + "Press enter to view your monthly report.")
         print('\n')
 
 
@@ -395,6 +496,7 @@ def calc_month_avg():
     Get last 30 days of total priorities (complete & incomplete)
     Calculate %  done of total priorities
     """
+    clear()
     ascii_banner = pyfiglet.figlet_format("ADHD Superheros")
     print(ascii_banner)
     print(Fore.RED + "Your monthly report.")
@@ -416,24 +518,30 @@ def calc_month_avg():
         print(Fore.BLUE + "There are no priorites for the last 30 days")
         print('\n')
         time.sleep(1)
-        print(Fore.CYAN + "If you log priorties more often, we'll have data to share")
+        print(
+            Fore.CYAN + "If you log priorties more often, "
+            "we'll have data to share")
         print('\n')
         time.sleep(1)
-        weekly_page = input(Fore.WHITE +"Press enter to view your monthly report.\n")
+        input(Fore.WHITE + "Press enter to view your monthly report.\n")
         print('\n')
     else:
         month_avg_num = (mthdone / mthtotal)
         month_avg_per = "{:.0%}".format(month_avg_num)
-        print(Fore.BLUE + f'You entered {mthtotal} priorities between {mth_start_date} and {mth_end_date}.')
+        print(
+            Fore.BLUE + f'You entered {mthtotal} priorities "
+            "between {mth_start_date} and {mth_end_date}.')
         print('\n')
         time.sleep(1)
         print(Fore.CYAN + f'You completed {mthdone} of {mthtotal} priorities.')
         print('\n')
         time.sleep(1)
-        print(Fore.BLUE + f'Your average % of completed priorities for the last 30 days is {month_avg_per}')
+        print(
+            Fore.BLUE + f'Your average % of completed priorities "
+            "for the last 30 days is {month_avg_per}')
         print('\n')
         time.sleep(1)
-        weekly_page = input(Fore.WHITE +"Press enter to view your monthly report.\n")
+        input(Fore.WHITE + "Press enter to submit your win or success.")
         print('\n')
 
 
@@ -441,26 +549,34 @@ def get_current_wins():
     """
     Get 3 wins from previous day from user
     """
+    clear()
     ascii_banner = pyfiglet.figlet_format("ADHD Superheros")
     print(ascii_banner)
+    print(Fore.RED + "Time to focus on a win or success")
+    print('\n')
     while True:
-        print("Its important to take time to document your wins")
-        time.sleep(3)
-        print("Focusing your thoughts on past progress")
-        print("leads to future progress")
-        time.sleep(3)
-        print("Your win will need to have a minimum of 10 words")
-        time.sleep(3)
-        print("Example: I cleared all my emails by lunchtime")
-        print("and worked on my project in the afternoon as scheduled")
-        time.sleep(3)
+        print(Fore.BLUE + "* Its important to take time to document your wins")
+        time.sleep(1)
+        print(
+            Fore.CYAN + "* Focusing your thoughts on past "
+            "progress and leads to future progress")
+        time.sleep(1)
+        print('\n')
+        print(Fore.WHITE + "Your win will need to have a minimum of 10 words")
+        print('\n')
+        time.sleep(1)
+        print(
+            "Example: I cleared all my emails by lunchtime and "
+            "worked on my project in the afternoon as scheduled")
+        print('\n')
+        time.sleep(1)
         win_str = input("Enter your win here:\n")
         win_data = win_str.split(",")
-        # #Add code to ensure win_data saves as a string
+        # Add code to ensure win_data saves as a string
 
         # if validate_data(win_data):
-        # #     print("Example is not strong enough. Try more detail!")
-        # #     break
+        #     print("Example is not strong enough. Try more detail!")
+        #     break
 
         return win_data
 
@@ -487,7 +603,6 @@ def update_wins_worksheet(data):
     """
     print("Updating your wins worksheet...\n")
     worksheet_to_update = SHEET.worksheet("wins")
-    print(data)
     worksheet_to_update.append_row(data)
     print("Your wins worksheet update successfully\n")
 
@@ -514,21 +629,20 @@ def email_send():
     msg["To"] = USER_EMAIL
     msg["Subject"] = "Your ADHD Superhero Summary!"
     format_email = (
-        f"Thank you for taking the time today to use the ADHD Superheros App.\n"
-
-        f"This emails purpose is summarise what we have covered today.\n"
-
-        f"It's important to focus on your strenghts. Today's strength is {STRENGTH_NAME}\n"
-
-        f"{STRENGTH_DETAIL}\n"
-
-        f"Great advice is worth repeating. Today's advice focused on {ADVICE_NAME}\n"
-      
-        f"{ADVICE_DETAIL}\n"
-
-        f"Great advice is worth repeating. Today's advice focused on {ADVICE_NAME}\n"
+        "Thank you for taking the time today to use the ADHD Superheros App."
+        "<br>"
+        "This emails purpose is summarise what we have covered today."
+        "<br>"
+        f"It's important to focus on your strenghts. Today's strength is <strong>{STRENGTH_NAME}</strong>."
+        "<br>"
+        f"{STRENGTH_DETAIL}"
+        "<br>"
+        f"Great advice is worth repeating. Today's advice focused on <strong>{ADVICE_NAME}</strong>."
+        "<br>"
+        f"{ADVICE_DETAIL}"
+        "<br>"
     )
-    msg.attach (MIMEText(str(format_email), "html"))
+    msg.attach(MIMEText(str(format_email), "html"))
     smtpserver = smtplib.SMTP("smtp.gmail.com", 587)
     smtpserver.ehlo()
     smtpserver.starttls()
