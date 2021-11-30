@@ -79,11 +79,12 @@ def learn_app():
     """
     Privders user with instructions on how to use app
     """
-    cclear()
+    clear()
     ascii_banner = pyfiglet.figlet_format("ADHD Superheros")
     print(ascii_banner)
     print(Fore.RED + "How to use the app")
-    print("Optimise Daily Life while reducing cognitive overload")
+    print('\n')
+    print(Fore.WHITE + "Below is a summary of each of the menu options")
     time.sleep(2)
     print("Now that you know how to use the app,")
     print("would you like to return to the main menu or exit?")
@@ -124,17 +125,17 @@ def learn_adhd():
     print(Fore.BLUE + "* ADHD is not a specific learning disability.")
     time.sleep(1)
     print('\n')
-    print(Fore.BLACK + "ADHD is, instead, a developmental impairment of the brain’s self-management system.")
+    print(Fore.WHITE + "ADHD is, instead, a developmental impairment of the brain’s self-management system.")
     print('\n')
     time.sleep(1)
-    adhd_page = input(Fore.BLACK +"Press enter to load next screen about ADHD\n")
+    adhd_page = input(Fore.WHITE +"Press enter to load next screen about ADHD\n")
     print('\n')
     # clear() will decomment once testing is done
     ascii_banner = pyfiglet.figlet_format("ADHD Superheros")
     print(ascii_banner)
     print(Fore.RED + "Learn about ADHD - Part 2/2")
     print('\n')
-    print(Fore.BLACK + "Adults with ADHD have problems in six major areas of executive functioning:")
+    print(Fore.WHITE + "Adults with ADHD have problems in six major areas of executive functioning:")
     print('\n')
     time.sleep(1)
     print(Fore.BLUE + "* Activation – Problems with organization, prioritizing, and starting tasks.")
@@ -149,7 +150,8 @@ def learn_adhd():
     time.sleep(1)
     print(Fore.CYAN + "* Action – Problems with self-control and self-regulation.")
     time.sleep(1)
-    print(Fore.BLACK +"Thank you for taking the time to learn about ADHD")
+    print('\n')
+    print(Fore.WHITE +"Thank you for taking the time to learn about ADHD")
     print('\n')
     adhd_page = input("Press enter to load your exit options\n")
     # clear() will decomment once testing is done
@@ -160,6 +162,7 @@ def learn_adhd():
     time.sleep(1)
     print("2. Exit")
     time.sleep(1)
+    print('\n')
     adhd_choice = input("Enter your choice 1-2 below\n")
     if adhd_choice == '1':
         main_menu()
@@ -174,11 +177,17 @@ def leaving():
     """
     Guides user out of app
     """
-    print("We hope that even though you are leaving the app,")
-    print("that you got value from your time spent here.")
-    print("If you leave this screen open,")
-    print("you can return the main menu at any time")
-    print("You can also close and open the app again to access the main menu")
+    ascii_banner = pyfiglet.figlet_format("ADHD Superheros")
+    print(ascii_banner)
+    print(Fore.RED + "You're about to leave the app")
+    print('\n')
+    print("We hope you got value from the time spent using the app today.")
+    print('\n')
+    time.sleep(1)
+    print("You'll now get a option to return to main menu or close the app.")
+    print('\n')
+    print("After the app is closed, you can reopen it to access the main menu.")
+    print('\n')
     print("1. Main menu")
     print("2. Close app")
     time.sleep(2)
@@ -186,7 +195,7 @@ def leaving():
     if leaving_choice == '1':
         main_menu()
     elif leaving_choice == '2':
-        leaving()
+        clear()
     else:
         print("You must choose option 1 or 2")
         time.sleep(2)
@@ -197,6 +206,8 @@ def get_strengths_data():
     Get strengths from strengths worksheet least recently used.
     Print for user to be reminded.
     """
+    ascii_banner = pyfiglet.figlet_format("ADHD Superheros")
+    print(ascii_banner)
     global STRENGTH_NAME
     global STRENGTH_DETAIL
     strengths = SHEET.worksheet("strengths")
@@ -218,6 +229,8 @@ def get_advice_data():
     Get advice from advice worksheet least recently used.
     Print to display to user.
     """
+    ascii_banner = pyfiglet.figlet_format("ADHD Superheros")
+    print(ascii_banner)
     global ADVICE_NAME
     global ADVICE_DETAIL
     advice = SHEET.worksheet("advice")
@@ -237,8 +250,9 @@ def get_last_3_priorities():
     Get previous days top 3 priorities.
     Present to user to confirm if done or not done on previous day.
     """
+    ascii_banner = pyfiglet.figlet_format("ADHD Superheros")
+    print(ascii_banner)
     dailytopthree = SHEET.worksheet("dailytopthree")
-
     columns = []
     for num in range(1, 3):
         column = dailytopthree.col_values(num)
@@ -253,6 +267,8 @@ def calc_weekly_avg():
     Get last 7 days of total priorities (complete & incomplete)
     Calculate %  done of total priorities
     """
+    ascii_banner = pyfiglet.figlet_format("ADHD Superheros")
+    print(ascii_banner)
     dailytopthree = SHEET.worksheet("dailytopthree")
     wk_start_date = date.today() - timedelta(days=7)
     wk_end_date = date.today()
@@ -286,6 +302,8 @@ def calc_month_avg():
     Get last 30 days of total priorities (complete & incomplete)
     Calculate %  done of total priorities
     """
+    ascii_banner = pyfiglet.figlet_format("ADHD Superheros")
+    print(ascii_banner)
     dailytopthree = SHEET.worksheet("dailytopthree")
     mth_start_date = date.today() - timedelta(days=30)
     mth_end_date = date.today()
@@ -318,6 +336,8 @@ def get_current_wins():
     """
     Get 3 wins from previous day from user
     """
+    ascii_banner = pyfiglet.figlet_format("ADHD Superheros")
+    print(ascii_banner)
     while True:
         print("Its important to take time to document your wins")
         time.sleep(3)
