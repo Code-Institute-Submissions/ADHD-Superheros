@@ -314,7 +314,7 @@ def get_advice_data():
     print(Fore.CYAN + f'{ADVICE_DETAIL}.')
     print('\n')
     time.sleep(1)
-    advioce_page = input(Fore.WHITE +"Press enter to review your previous top 3 priorities.\n")
+    advice_page = input(Fore.WHITE +"Press enter to review your previous top 3 priorities.\n")
     print('\n')
 
 
@@ -323,16 +323,24 @@ def get_last_3_priorities():
     Get previous days top 3 priorities.
     Present to user to confirm if done or not done on previous day.
     """
-    ascii_banner = pyfiglet.figlet_format("ADHD Superheros")
-    print(ascii_banner)
     dailytopthree = SHEET.worksheet("dailytopthree")
     columns = []
-    for num in range(1, 3):
+    for num in range(1, 4):
         column = dailytopthree.col_values(num)
         columns.append(column[-3:])
 
     print(columns)
+    print(columns[0])
+    print(columns[1])
+    print(columns[2])
+    ascii_banner = pyfiglet.figlet_format("ADHD Superheros")
+    print(ascii_banner)
+    print(Fore.RED + "Review previous top 3 priorities")
+    print('\n')
     # Add code so user can input whether task was done or not.
+
+    priorities_page = input(Fore.WHITE +"Press enter to view your weekly and monthly completion %.\n")
+    print('\n')
 
 
 def calc_weekly_avg():
@@ -342,15 +350,13 @@ def calc_weekly_avg():
     """
     ascii_banner = pyfiglet.figlet_format("ADHD Superheros")
     print(ascii_banner)
+    print(Fore.RED + "Your weekly report.")
+    print('\n')
     dailytopthree = SHEET.worksheet("dailytopthree")
     wk_start_date = date.today() - timedelta(days=7)
     wk_end_date = date.today()
-    print(wk_start_date)
-    print(wk_end_date)
-
     wktotal = 0  # total priorities in last 7 days
     wkdone = 0  # priorities with status done in last 7 days
-
     rows = dailytopthree.get_all_values()
     for i, row in enumerate(rows):
         if i > 0:
@@ -359,15 +365,29 @@ def calc_weekly_avg():
                 if row[3] == 'done':
                     wkdone += 1
                 wktotal += 1
-    print(wkdone)
-    print(wktotal)
     if wktotal == 0:
-        print("There are no priorites for the last 7 days")
-        print("If you log priorties more often, we'll have data to share")
+        print(Fore.BLUE + "There are no priorites for the last 7 days")
+        print('\n')
+        time.sleep(1)
+        print(Fore.CYAN + "If you log priorties more often, we'll have data to share")
+        print('\n')
+        time.sleep(1)
+        weekly_page = input(Fore.WHITE +"Press enter to view your monthly report.\n")
+        print('\n')
     else:
         weekly_avg_num = (wkdone / wktotal)
         weekly_avg_per = "{:.0%}".format(weekly_avg_num)
-        print(f'Your average % of completed priorities for the last 7 days is {weekly_avg_per}')
+        print(Fore.BLUE + f'You entered {wktotal} priorities between {wk_start_date} and {wk_end_date}.')
+        print('\n')
+        time.sleep(1)
+        print(Fore.CYAN + f'You completed {wkdone} of {wktotal} priorities.')
+        print('\n')
+        time.sleep(1)
+        print(Fore.BLUE + f'Your average % of completed priorities for the last 7 days is {weekly_avg_per}')
+        print('\n')
+        time.sleep(1)
+        weekly_page = input(Fore.WHITE +"Press enter to view your monthly report.\n")
+        print('\n')
 
 
 def calc_month_avg():
@@ -377,15 +397,13 @@ def calc_month_avg():
     """
     ascii_banner = pyfiglet.figlet_format("ADHD Superheros")
     print(ascii_banner)
+    print(Fore.RED + "Your monthly report.")
+    print('\n')
     dailytopthree = SHEET.worksheet("dailytopthree")
     mth_start_date = date.today() - timedelta(days=30)
     mth_end_date = date.today()
-    print(mth_start_date)
-    print(mth_end_date)
-
     mthtotal = 0  # total priorities in last 30 days
     mthdone = 0  # priorities with status done in last 30 days
-
     rows = dailytopthree.get_all_values()
     for i, row in enumerate(rows):
         if i > 0:
@@ -394,15 +412,29 @@ def calc_month_avg():
                 if row[3] == 'done':
                     mthdone += 1
                 mthtotal += 1
-    print(mthdone)
-    print(mthtotal)
     if mthtotal == 0:
-        print("There are no priorites for the last 30 days")
-        print("If you log priorties more often, we'll have data to share")
+        print(Fore.BLUE + "There are no priorites for the last 30 days")
+        print('\n')
+        time.sleep(1)
+        print(Fore.CYAN + "If you log priorties more often, we'll have data to share")
+        print('\n')
+        time.sleep(1)
+        weekly_page = input(Fore.WHITE +"Press enter to view your monthly report.\n")
+        print('\n')
     else:
         month_avg_num = (mthdone / mthtotal)
         month_avg_per = "{:.0%}".format(month_avg_num)
-        print(f'Your average % of completed priorities for the last 30 days is {month_avg_per}')
+        print(Fore.BLUE + f'You entered {mthtotal} priorities between {mth_start_date} and {mth_end_date}.')
+        print('\n')
+        time.sleep(1)
+        print(Fore.CYAN + f'You completed {mthdone} of {mthtotal} priorities.')
+        print('\n')
+        time.sleep(1)
+        print(Fore.BLUE + f'Your average % of completed priorities for the last 30 days is {month_avg_per}')
+        print('\n')
+        time.sleep(1)
+        weekly_page = input(Fore.WHITE +"Press enter to view your monthly report.\n")
+        print('\n')
 
 
 def get_current_wins():
