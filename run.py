@@ -104,7 +104,7 @@ def learn_app():
     time.sleep(1)
     learn_page = input(Fore.WHITE +"Press enter to load next screen about using the app\n")
     print('\n')
-    # Option 2 - add clear ()
+    # Option 2 - add clear () + banner
     print(Fore.WHITE + "2. Learn how to use app")
     print('\n')
     time.sleep(1)
@@ -115,7 +115,7 @@ def learn_app():
     print('\n')
     learn_page = input(Fore.WHITE +"Press enter to load next screen about using the app\n")
     print('\n')
-    # Option 3 - add clear ()
+    # Option 3 -  add clear () + banner
     print(Fore.WHITE + "3. Learn about ADHD")
     print('\n')
     time.sleep(1)
@@ -126,7 +126,7 @@ def learn_app():
     print('\n')
     learn_page = input(Fore.WHITE +"Press enter to load next screen about using the app\n")
     print('\n')
-    # Option 4 - add clear ()
+    # Option 4 -  add clear () + banner
     print(Fore.WHITE + "4. Exit")
     print('\n')
     time.sleep(1)
@@ -255,25 +255,32 @@ def leaving():
 
 def get_strengths_data():
     """
-    Get strengths from strengths worksheet least recently used.
-    Print for user to be reminded.
+    Get random strength from strengths worksheet.
     """
-    ascii_banner = pyfiglet.figlet_format("ADHD Superheros")
-    print(ascii_banner)
     global STRENGTH_NAME
     global STRENGTH_DETAIL
+    ascii_banner = pyfiglet.figlet_format("ADHD Superheros")
+    print(ascii_banner)
+    print(Fore.RED + "ADHD Strenghts")
+    print('\n')
     strengths = SHEET.worksheet("strengths")
     row_count = len(strengths.col_values(1))
     row_ref_start = row_count + 2
     random_row = strengths.row_values(randrange(1, row_ref_start))
     time.sleep(2)
-    print(random_row[0])
-    print(random_row[1])
     STRENGTH_NAME = random_row[0]
     STRENGTH_DETAIL = random_row[1]
-    print('ADHD is like having superpowers if you focus on your strengths enough.')
-    print(f'Today, try to think about examples where the strength of {STRENGTH_NAME}. {STRENGTH_DETAIL}')
-    # Decide which code is better for strength and advice functions
+    print(Fore.WHITE + 'ADHD is like having superpowers if you focus on your strengths enough.')
+    print('\n')
+    time.sleep(1)
+    print(Fore.BLUE + f'Today, try to think about examples where the strength of {STRENGTH_NAME}.')
+    print('\n')
+    time.sleep(1)
+    print(Fore.CYAN + f'{STRENGTH_DETAIL}.')
+    print('\n')
+    time.sleep(1)
+    strengths_page = input(Fore.WHITE +"Press enter to load your daily advive reminder\n")
+    print('\n')
 
 
 def get_advice_data():
