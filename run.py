@@ -259,10 +259,6 @@ def get_strengths_data():
     """
     global STRENGTH_NAME
     global STRENGTH_DETAIL
-    ascii_banner = pyfiglet.figlet_format("ADHD Superheros")
-    print(ascii_banner)
-    print(Fore.RED + "ADHD Strenghts")
-    print('\n')
     strengths = SHEET.worksheet("strengths")
     row_count = len(strengths.col_values(1))
     row_ref_start = row_count + 2
@@ -270,6 +266,13 @@ def get_strengths_data():
     time.sleep(2)
     STRENGTH_NAME = random_row[0]
     STRENGTH_DETAIL = random_row[1]
+    # add clear ()
+    ascii_banner = pyfiglet.figlet_format("ADHD Superheros")
+    print(ascii_banner)
+    time.sleep(1)
+    print(Fore.RED + "ADHD Strenghts")
+    print('\n')
+    time.sleep(1)
     print(Fore.WHITE + 'ADHD is like having superpowers if you focus on your strengths enough.')
     print('\n')
     time.sleep(1)
@@ -288,20 +291,31 @@ def get_advice_data():
     Get advice from advice worksheet least recently used.
     Print to display to user.
     """
-    ascii_banner = pyfiglet.figlet_format("ADHD Superheros")
-    print(ascii_banner)
     global ADVICE_NAME
     global ADVICE_DETAIL
-    advice = SHEET.worksheet("advice")
-    row_count = len(advice.col_values(1))
+    strengths = SHEET.worksheet("advice")
+    row_count = len(strengths.col_values(1))
     row_ref_start = row_count + 2
-    random_row = advice.row_values(randrange(1, row_ref_start))
+    random_row = strengths.row_values(randrange(1, row_ref_start))
     time.sleep(2)
     ADVICE_NAME = random_row[0]
     ADVICE_DETAIL = random_row[1]
-    print('Great advice is worth repeating.')
-    print(f'Today, give some thought to the advice {ADVICE_NAME}. {ADVICE_DETAIL}')
-    # Add code to update last presented data of advice
+    # add clear ()
+    ascii_banner = pyfiglet.figlet_format("ADHD Superheros")
+    print(ascii_banner)
+    print(Fore.RED + "ADHD Advice")
+    print('\n')
+    print(Fore.WHITE + 'Great advice is worth repeating.')
+    print('\n')
+    time.sleep(1)
+    print(Fore.BLUE + f'Today, give some thought to the advice on {ADVICE_NAME}.')
+    print('\n')
+    time.sleep(1)
+    print(Fore.CYAN + f'{ADVICE_DETAIL}.')
+    print('\n')
+    time.sleep(1)
+    advioce_page = input(Fore.WHITE +"Press enter to review your previous top 3 priorities.\n")
+    print('\n')
 
 
 def get_last_3_priorities():
