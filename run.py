@@ -4,10 +4,11 @@ from datetime import date, timedelta, datetime
 import os
 import re
 import gspread
+import pyfiglet
 from google.oauth2.service_account import Credentials
 from random import randrange
-from colorama import Fore, Style  # https://pypi.org/project/colorama/
-import pyfiglet
+from colorama import Fore, Style, init  # https://pypi.org/project/colorama/
+init(autoreset=True)
 if os.path.exists("env.py"):
     import env  # noqa
 
@@ -52,14 +53,14 @@ def main_menu():
     time.sleep(0.5)
     print(Fore.BLUE + "1. Use app")
     time.sleep(0.5)
-    print("2. Learn how to use app")
+    print(Fore.BLUE + "2. Learn how to use app")
     time.sleep(0.5)
-    print("3. Learn about ADHD")
+    print(Fore.BLUE + "3. Learn about ADHD")
     time.sleep(0.5)
-    print("4. Exit")
+    print(Fore.BLUE + "4. Exit")
     print('\n')
     time.sleep(1)
-    menu_choice = input(Style.RESET_ALL + "Enter your choice 1-4 below\n")
+    menu_choice = input("Enter your choice 1-4 below\n")
     time.sleep(1)
     if menu_choice == '1':
         main()
@@ -359,8 +360,8 @@ def get_strengths_data():
     print('\n')
     time.sleep(1)
     print(
-        Fore.BLUE + f"Today, try to think about examples "
-        "where you've used the strength of {STRENGTH_NAME}.")
+        Fore.BLUE + "Today, try to think about examples "
+        f"where you've used the strength of {STRENGTH_NAME}.")
     print('\n')
     time.sleep(1)
     print(Fore.CYAN + f'{STRENGTH_DETAIL}.')
@@ -388,23 +389,20 @@ def get_advice_data():
     clear()
     ascii_banner = pyfiglet.figlet_format("ADHD Superheros")
     print(ascii_banner)
-    print(Fore.RED + "ADHD Advice")
-    print('\n')
-    print(Fore.WHITE + 'Great advice is worth repeating.')
-    print('\n')
+    print(Fore.RED + "ADHD Advice \n")
+    time.sleep(1)
+    print(Fore.WHITE + 'Great advice is worth repeating.\n')
     time.sleep(1)
     print(
-        Fore.BLUE + f'Today, give some thought "
-        "to the advice on {ADVICE_NAME}.")
-    print('\n')
+        Fore.BLUE + "Today, give some thought "
+        f"to the advice on {ADVICE_NAME}.'\n")
     time.sleep(1)
-    print(Fore.CYAN + f'{ADVICE_DETAIL}.')
-    print('\n')
+    print(Fore.CYAN + f'{ADVICE_DETAIL}.\n')
     time.sleep(1)
     input(
         Fore.WHITE + "Press enter to review your "
-        "previous top 3 priorities.")
-    print('\n')
+        "previous top 3 priorities.\n")
+    time.sleep(1)
 
 
 def get_last_3_priorities():
@@ -413,31 +411,137 @@ def get_last_3_priorities():
     Present to user to confirm if done or not done on previous day.
     """
     dailytopthree = SHEET.worksheet("dailytopthree")
+    # worksheet_to_update = SHEET.worksheet("dailytopthree")
+    max_rows = len(dailytopthree.get_all_values())
     columns = []
     for num in range(1, 5):
         column = dailytopthree.col_values(num)
-        columns.append(column[-1:])
-
-    print(columns)
-    print(columns[0])
-    print(columns[1])
-    print(columns[2])
-    print(columns[3])
+        columns.append(column[-3:])
+    # Priority 1
+    clear()
     ascii_banner = pyfiglet.figlet_format("ADHD Superheros")
     print(ascii_banner)
-    print(Fore.RED + "Review previous top 3 priorities")
+    print(Fore.RED + "Review previous top 3 priorities \n")
+    time.sleep(1)
+    print(
+        Fore.WHITE + "The first priority to review is "
+        f"{columns[2][0]} from {columns[0][0]}.\n")
+    time.sleep(1)
+    while True:
+        taskstatus = input(Fore.BLUE + "Please confirm if this priority was done or undone.\n")
+        if taskstatus == "done":
+            break
+        if taskstatus == "undone":
+            break
+        else:
+            print(Fore.WHITE + "Only done or undone will be accepted.\n")
+            time.sleep(2)
     print('\n')
-    print(f'Your last priorty was {columns[2]} on {columns[0]}')
+    print(Fore.CYAN + f'Thank you for confirming status of {columns[2][0]} is {taskstatus}.\n')
+    time.sleep(1)
+    print(Fore.GREEN + "We are updating your priorities worksheet...\n")
+    time.sleep(1)
+    dailytopthree.update_cell((max_rows - 2), 4, str(taskstatus))
+    print(Fore.GREEN + "Your priorities worksheet update successfully\n")
+    time.sleep(1)
+    input(Fore.WHITE + "Press enter to review next priority\n")
     print('\n')
-    taskstatus = input('Please confirm if this priority was done or undone')
-    taskdata = taskstatus.split(",")
-    columns[3] = taskdata
-    # Add code so user can input whether task was done or not.
+    # Priority 2
+    clear()
+    ascii_banner = pyfiglet.figlet_format("ADHD Superheros")
+    print(ascii_banner)
+    print(Fore.RED + "Review previous top 3 priorities \n")
+    time.sleep(1)
+    print(Fore.WHITE + f'The second priority to review is {columns[2][1]} from {columns[0][1]}.\n')
+    time.sleep(1)
+    while True:
+        taskstatus = input(Fore.BLUE + "Please confirm if this priority was done or undone.\n")
+        if taskstatus == "done":
+            break
+        if taskstatus == "undone":
+            break
+        else:
+            print(Fore.WHITE + "Only done or undone will be accepted.\n")
+            time.sleep(2)
+    print('\n') 
+    print(Fore.CYAN + f'Thank you for confirming status of {columns[2][1]} is {taskstatus}.\n')
+    time.sleep(1)
+    print(Fore.GREEN + "We are updating your priorities worksheet...\n")
+    time.sleep(1)
+    dailytopthree.update_cell((max_rows - 1), 4, str(taskstatus))
+    print(Fore.GREEN + "Your priorities worksheet update successfully\n")
+    time.sleep(1)
+    input(Fore.WHITE + "Press enter to review next priority\n")
+    print('\n')
+    # Priority 3
+    clear()
+    ascii_banner = pyfiglet.figlet_format("ADHD Superheros")
+    print(ascii_banner)
+    print(Fore.RED + "Review previous top 3 priorities \n")
+    time.sleep(1)
+    print(Fore.WHITE + f'The third and final priority to review is {columns[2][2]} from {columns[0][2]}.\n')
+    time.sleep(1)
+    while True:
+        taskstatus = input(Fore.BLUE + 'Please confirm if this priority was done or undone.\n')
+        if taskstatus == "done":
+            break
+        if taskstatus == "undone":
+            break
+        else:
+            print(Fore.WHITE + "Only done or undone will be accepted.\n")
+            time.sleep(2)
+    print('\n')
+    print(Fore.CYAN + f'Thank you for confirming status of {columns[2][2]} is {taskstatus}.\n')
+    time.sleep(1)
+    print(Fore.GREEN + "We are updating your priorities worksheet...\n")
+    time.sleep(1)
+    dailytopthree.update_cell((max_rows), 4, str(taskstatus))
+    print(Fore.GREEN + "Your priorities worksheet update successfully\n")
+    time.sleep(1)
+    print(Fore.WHITE + "You finished reviewing your priorities.\n")
+    input(Fore.WHITE + "Press enter to view your weekly and monthly reports.\n")
+    print('\n')
 
-    input(
-        Fore.WHITE + "Press enter to view your weekly "
-        "and monthly completion %.\n")
+def get_today_priorities():
+    """
+    Get todays top 3 priorities.
+    """
+    dailytopthree = SHEET.worksheet("dailytopthree")
+    max_rows = len(dailytopthree.get_all_values())
+    taskdate = date.today()
+    clear()
+    ascii_banner = pyfiglet.figlet_format("ADHD Superheros")
+    print(ascii_banner)
+    print(Fore.RED + "Enter today's top 3 priorities.\n")
+    time.sleep(1)
+    print("Today's priorities can be new ones, or they can be undone ones from the previous day.\n")
+    time.sleep(1)
+    print("Don't forget that priorties can be to go do something fun or relaxing. Time off is important!\n")
+    time.sleep(1)
+    # Priority 1
+    priority1 = input(Fore.BLUE + "What will be your first priority for today?\n")
+    dailytopthree.update_cell((max_rows + 1), 1, str(taskdate))
+    dailytopthree.update_cell((max_rows + 1), 3, str(priority1))
+    time.sleep(1)
     print('\n')
+    # Priority 2
+    priority2 = input(Fore.CYAN + "What will be your second priority for today?\n")
+    dailytopthree.update_cell((max_rows + 2), 1, str(taskdate))
+    dailytopthree.update_cell((max_rows + 2), 3, str(priority2))
+    time.sleep(1)
+    print('\n')
+    # Priority 3
+    priority3 = input(Fore.BLUE + "What will be your third priority for today?\n")
+    taskdate = date.today()
+    dailytopthree.update_cell((max_rows + 3), 1, str(taskdate))
+    dailytopthree.update_cell((max_rows + 3), 3, str(priority3))
+    time.sleep(1)
+    print('\n')
+    # Summary
+    print("Thank you for providing your top 3 priorities for today.\n")
+    time.sleep(1)
+    print(Fore.GREEN + f"Your top 3 priorities for today are {priority1}, {priority2} and {priority3}.\n")
+    time.sleep(1)
 
 
 def calc_weekly_avg():
@@ -478,16 +582,16 @@ def calc_weekly_avg():
         weekly_avg_num = (wkdone / wktotal)
         weekly_avg_per = "{:.0%}".format(weekly_avg_num)
         print(
-            Fore.BLUE + f'You entered {wktotal} priorities "
-            "between {wk_start_date} and {wk_end_date}.')
+            Fore.BLUE + f"You entered {wktotal} priorities "
+            f"between {wk_start_date} and {wk_end_date}.")
         print('\n')
         time.sleep(1)
         print(Fore.CYAN + f'You completed {wkdone} of {wktotal} priorities.')
         print('\n')
         time.sleep(1)
         print(
-            Fore.BLUE + f'Your average % of completed priorities "
-            "for the last 7 days is {weekly_avg_per}')
+            Fore.BLUE + f"Your average % of completed priorities"
+            f"for the last 7 days is {weekly_avg_per}")
         print('\n')
         time.sleep(1)
         input(Fore.WHITE + "Press enter to view your monthly report.")
@@ -532,16 +636,16 @@ def calc_month_avg():
         month_avg_num = (mthdone / mthtotal)
         month_avg_per = "{:.0%}".format(month_avg_num)
         print(
-            Fore.BLUE + f'You entered {mthtotal} priorities "
-            "between {mth_start_date} and {mth_end_date}.')
+            Fore.BLUE + f"You entered {mthtotal} priorities "
+            f"between {mth_start_date} and {mth_end_date}.")
         print('\n')
         time.sleep(1)
         print(Fore.CYAN + f'You completed {mthdone} of {mthtotal} priorities.')
         print('\n')
         time.sleep(1)
         print(
-            Fore.BLUE + f'Your average % of completed priorities "
-            "for the last 30 days is {month_avg_per}')
+            Fore.BLUE + f"Your average % of completed priorities "
+            f"for the last 30 days is {month_avg_per}")
         print('\n')
         time.sleep(1)
         input(Fore.WHITE + "Press enter to submit your win or success.")
@@ -605,8 +709,8 @@ def update_wins_worksheet(data):
     Update the wins worksheet with the data provided
     """
     print("Updating your wins worksheet...\n")
-    worksheet_to_update = SHEET.worksheet("wins")
-    worksheet_to_update.append_row(data)
+    winssheet = SHEET.worksheet("wins")
+    winssheet.append_row(data)
     print("Your wins worksheet update successfully\n")
 
 
@@ -659,15 +763,16 @@ def main():
     """
     Run all program functions
     """
-    get_strengths_data()
-    get_advice_data()
-    get_last_3_priorities()
-    calc_weekly_avg()
-    calc_month_avg()
-    data = get_current_wins()
-    update_wins_worksheet(data)
-    get_email()
-    email_send()
+    # get_strengths_data()
+    # get_advice_data()
+    # get_last_3_priorities()
+    get_today_priorities()
+    # calc_weekly_avg()
+    # calc_month_avg()
+    # data = get_current_wins()
+    # update_wins_worksheet(data)
+    # get_email()
+    # email_send()
 
 
 main_menu()
