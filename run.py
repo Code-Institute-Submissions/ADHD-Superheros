@@ -320,15 +320,16 @@ def leaving():
     print("1. Main menu")
     print("2. Close app")
     time.sleep(2)
-    leaving_choice = input("Enter your choice 1-2 below\n")
-    if leaving_choice == '1':
-        main_menu()
-    elif leaving_choice == '2':
-        clear()
-        print("Thanks for visiting ADHD Superheros!")
-    else:
-        print("You must choose option 1 or 2")
-        time.sleep(2)
+    while True:
+        leaving_choice = input("Enter your choice 1-2 below\n").strip()
+        if leaving_choice == "1":
+            main_menu()
+        elif leaving_choice == "2":
+            clear()
+            print("Thanks for visiting ADHD Superheros!")
+        else:
+            print("You must choose option 1 or 2")
+            time.sleep(2)
 
 
 def get_strengths_data():
