@@ -651,6 +651,26 @@ def calc_month_avg():
         input(Fore.WHITE + "Press enter to submit your win or success.")
         print('\n')
 
+def show_previous_wins():
+    """
+    Present user with 5 random previous wins
+    """
+    wins = SHEET.worksheet("wins")
+    row_count = len(wins.col_values(1))
+    row_ref_start = row_count + 1
+    clear()
+    ascii_banner = pyfiglet.figlet_format("ADHD Superheros")
+    print(ascii_banner)
+    print(Fore.RED + "Reminders of previous wins and successes")
+    print('\n')
+    random1 = wins.row_values(randrange(2, row_ref_start))
+    print(str(random1))
+    # win 1
+    print(f'Your first win is {str(wins.row_values(randrange(2, row_ref_start)))}')
+    print(f'Your second win is {wins.row_values(randrange(2, row_ref_start))}')
+    print(f'Your third win is {wins.row_values(randrange(2, row_ref_start))}')
+    print(f'Your fourth win is {wins.row_values(randrange(2, row_ref_start))}')
+    print(f'Your fift win is {wins.row_values(randrange(2, row_ref_start))}')
 
 def get_current_wins():
     """
