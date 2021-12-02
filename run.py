@@ -721,66 +721,42 @@ def show_previous_wins():
     print(f'Your fourth win is {OLDWIN4}\n')
     print(f'Your fift win is {OLDWIN5}\n')
 
-def get_current_wins():
+
+def get_current_win():
     """
-    Get 3 wins from previous day from user
+    Get a win/success from previous day from user
     """
+    global WIN_DATA
+    wins = SHEET.worksheet("wins")
     clear()
     ascii_banner = pyfiglet.figlet_format("ADHD Superheros")
     print(ascii_banner)
-    print(Fore.RED + "Time to focus on a win or success")
-    print('\n')
-    while True:
-        print(Fore.BLUE + "* Its important to take time to document your wins")
-        time.sleep(1)
-        print(
-            Fore.CYAN + "* Focusing your thoughts on past "
-            "progress and leads to future progress")
-        time.sleep(1)
-        print('\n')
-        print(Fore.WHITE + "Your win will need to have a minimum of 10 words")
-        print('\n')
-        time.sleep(1)
-        print(
-            "Example: I cleared all my emails by lunchtime and "
-            "worked on my project in the afternoon as scheduled")
-        print('\n')
-        time.sleep(1)
-        win_str = input("Enter your win here:\n")
-        win_data = win_str.split(",")
-        # Add code to ensure win_data saves as a string
+    print(Fore.RED + "Time to focus on a win or success\n")
 
-        # if validate_data(win_data):
-        #     print("Example is not strong enough. Try more detail!")
-        #     break
-
-        return win_data
-
-# def validate_data(values):
-#     """
-#     Inside the try, raises ValueError if string less than 6 words
-#     """
-#     try:
-#         if len(values) < 10:
-#             raise ValueError(
-#                 f"At least 10 words are required, you provided len(values)"
-#             )
-#         except ValueError as e:
-#             print(f"Invalid data enetered: {e}, please try again.\n")
-#             return False
-
-#         return True.
-
-
-def update_wins_worksheet(data):
-    """
-    Receives a string to be inserted into wins worksheet
-    Update the wins worksheet with the data provided
-    """
-    print("Updating your wins worksheet...\n")
-    winssheet = SHEET.worksheet("wins")
-    winssheet.append_row(data)
-    print("Your wins worksheet update successfully\n")
+    print(Fore.BLUE + "* Its important to take time to document your wins")
+    time.sleep(1)
+    print(
+        Fore.CYAN + "* Focusing your thoughts on past "
+        "progress and success leads to future progress\n")
+    time.sleep(1)
+    print(Fore.WHITE + "Your win will need to have a minimum of 10 words.\n")
+    time.sleep(1)
+    print(
+        "Example: I cleared all my emails by lunchtime and "
+        "worked on my project in the afternoon as scheduled\n")
+    time.sleep(1)
+    WIN_DATA = input("Enter your win here:\n")
+    print(len(WIN_DATA))
+    try:
+        if len(WIN_DATA) < 6:
+            raise ValueError(
+                f"A minimum of 6 words required, you provided {len(WIN_DATA)}"
+            )
+        else:
+            wins.append_row(str(WIN_DATA))
+            print(Fore.GREEN + "Updating your wins worksheet...\n")
+            time.sleep(1)
+            print(Fore.GREEN + "Your wins worksheet update successfully\n")
 
 
 def get_email():
