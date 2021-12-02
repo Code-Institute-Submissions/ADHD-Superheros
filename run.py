@@ -586,6 +586,9 @@ def calc_weekly_avg():
     Get last 7 days of total priorities (complete & incomplete)
     Calculate %  done of total priorities
     """
+    global WKTOTAL
+    global WKDONE
+    global WEEKLY_AVG_PERC
     clear()
     ascii_banner = pyfiglet.figlet_format("ADHD Superheros")
     print(ascii_banner)
@@ -594,17 +597,17 @@ def calc_weekly_avg():
     dailytopthree = SHEET.worksheet("dailytopthree")
     wk_start_date = date.today() - timedelta(days=7)
     wk_end_date = date.today()
-    wktotal = 0  # total priorities in last 7 days
-    wkdone = 0  # priorities with status done in last 7 days
+    WKTOTAL = 0  # total priorities in last 7 days
+    WKDONE = 0  # priorities with status done in last 7 days
     rows = dailytopthree.get_all_values()
     for i, row in enumerate(rows):
         if i > 0:
             dt_w = datetime.strptime(row[0], "%d/%m/%Y").date()
             if dt_w >= wk_start_date and dt_w <= wk_end_date:
                 if row[3] == 'done':
-                    wkdone += 1
-                wktotal += 1
-    if wktotal == 0:
+                    WKDONE += 1
+                WKTOTAL += 1
+    if WKTOTAL == 0:
         print(Fore.BLUE + "There are no priorites for the last 7 days")
         print('\n')
         time.sleep(1)
@@ -616,19 +619,18 @@ def calc_weekly_avg():
         input(Fore.WHITE + "Press enter to view your monthly report.\n")
         print('\n')
     else:
-        weekly_avg_num = (wkdone / wktotal)
-        weekly_avg_per = "{:.0%}".format(weekly_avg_num)
+        WEEKLY_AVG_PERC = "{:.0%}".format(WKDONE / WKTOTAL)
         print(
-            Fore.BLUE + f"You entered {wktotal} priorities "
+            Fore.BLUE + f"You entered {WKTOTAL} priorities "
             f"between {wk_start_date} and {wk_end_date}.")
         print('\n')
         time.sleep(1)
-        print(Fore.CYAN + f'You completed {wkdone} of {wktotal} priorities.')
+        print(Fore.CYAN + f'You completed {WKDONE} of {WKTOTAL} priorities.')
         print('\n')
         time.sleep(1)
         print(
             Fore.BLUE + f"Your average % of completed priorities"
-            f"for the last 7 days is {weekly_avg_per}")
+            f"for the last 7 days is {WEEKLY_AVG_PERC}")
         print('\n')
         time.sleep(1)
         input(Fore.WHITE + "Press enter to view your monthly report.")
