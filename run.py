@@ -344,7 +344,7 @@ def get_strengths_data():
     strengths = SHEET.worksheet("strengths")
     row_count = len(strengths.col_values(1))
     row_ref_start = row_count + 2
-    random_row = strengths.row_values(randrange(1, row_ref_start))
+    random_row = strengths.row_values(randrange(2, row_ref_start))
     STRENGTH_NAME = random_row[0]
     STRENGTH_DETAIL = random_row[1]
     clear()
@@ -383,7 +383,7 @@ def get_advice_data():
     advice = SHEET.worksheet("advice")
     row_count = len(advice.col_values(1))
     row_ref_start = row_count + 2
-    random_row = advice.row_values(randrange(1, row_ref_start))
+    random_row = advice.row_values(randrange(2, row_ref_start))
     ADVICE_NAME = random_row[0]
     ADVICE_DETAIL = random_row[1]
     clear()
@@ -755,19 +755,39 @@ def email_send():
     msg["From"] = EMAIL
     msg["To"] = USER_EMAIL
     msg["Subject"] = "Your ADHD Superhero Summary!"
-    format_email = (
-        "Thank you for taking the time today to use the ADHD Superheros App."
-        "<br>"
-        "This emails purpose is summarise what we have covered today."
-        "<br>"
-        f"It's important to focus on your strenghts. Today's strength is <strong>{STRENGTH_NAME}</strong>."
-        "<br>"
-        f"{STRENGTH_DETAIL}"
-        "<br>"
-        f"Great advice is worth repeating. Today's advice focused on <strong>{ADVICE_NAME}</strong>."
-        "<br>"
-        f"{ADVICE_DETAIL}"
-        "<br>"
+    format_email = ("""<html>
+            <body>
+                <div>
+                    <img src="https://raw.githubusercontent.com/declanosullivan/ADHD-Superheros/main/assets/images/emailheaderlogo.png" style="width: 100%; height: auto;">
+                    <div style="text-align: left;">
+                        <h2>Overview</h2>
+                        <p>Thank you for taking the time today to use the ADHD Superheros App.</p>
+                        <p>This emails purpose is summarise what we have covered today.</p>
+                        <br>
+                    </div>
+                    <div style="text-align: left;">    
+                        <h2>1. Today's strength</h2>
+                        f"<p>It's important to focus on your strenghts. Today's strength is <strong>{STRENGTH_NAME}</strong>.</p>"
+                        f"<p>{STRENGTH_DETAIL}</p>"
+                        <br>
+                    </div>
+                    <div style="text-align: left;">    
+                        <h2>'2. Today's advice'</h2>
+                        <br>
+                        <p> Great advice is worth repeating. Today's advice focused on $ADVICE_NAME </strong>."</p>
+                        <br>
+                        <p>f"{ADVICE_DETAIL}"</p>
+                        <br>
+                    </div>  
+                        <h2>3. Your weekly and monthly report</h2>
+                        <br>
+                        <h2>4. Your previous top 3 priorities</h2>
+                        <br>
+                        <h2>1. Today's top 3 priorities</h2>
+                    </div>
+                </div>
+            </body>
+    </html>"""
     )
     msg.attach(MIMEText(str(format_email), "html"))
     smtpserver = smtplib.SMTP("smtp.gmail.com", 587)
@@ -786,13 +806,14 @@ def main():
     # get_strengths_data()
     # get_advice_data()
     # get_last_3_priorities()
-    get_today_priorities()
+    # get_today_priorities()
     # calc_weekly_avg()
     # calc_month_avg()
+    # show_previous_wins()
     # data = get_current_wins()
     # update_wins_worksheet(data)
-    # get_email()
-    # email_send()
+    get_email()
+    email_send()
 
 
 main_menu()
