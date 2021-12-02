@@ -15,7 +15,6 @@ if os.path.exists("env.py"):
 import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
-
 EMAIL = os.environ.get("EMAIL")
 PASSWORD = os.environ.get("PASSWORD")
 
@@ -395,9 +394,9 @@ def get_advice_data():
     time.sleep(1)
     print(
         Fore.BLUE + "Today, give some thought "
-        f"to the advice on {ADVICE_NAME}.'\n")
+        f"to the advice on {ADVICE_NAME}.\n")
     time.sleep(1)
-    print(Fore.CYAN + f'{ADVICE_DETAIL}.\n')
+    print(Fore.CYAN + f'{ADVICE_DETAIL}\n')
     time.sleep(1)
     input(
         Fore.WHITE + "Press enter to review your "
@@ -527,6 +526,7 @@ def get_last_3_priorities():
         Fore.WHITE + "Press enter to view your "
         "weekly and monthly reports.\n")
     print('\n')
+
 
 def get_today_priorities():
     """
@@ -692,6 +692,7 @@ def calc_month_avg():
         input(Fore.WHITE + "Press enter to submit your win or success.")
         print('\n')
 
+
 def show_previous_wins():
     """
     Present user with 5 random previous wins
@@ -764,7 +765,7 @@ def get_email():
     while True:
         USER_EMAIL = input("Please enter your email: \n")
         regex = r"^[a-zA-Z0-9._%+-]{1,64}@[a-zA-Z0-9.-]{3,252}\.[a-zA-Z]{2,}$"
-
+       
         if not re.fullmatch(regex, USER_EMAIL):
             clear()
             print(f"'{USER_EMAIL}' is Invalid, enter a real email address!\n")
@@ -772,7 +773,7 @@ def get_email():
             clear()
             print("Thank you for entering your email!\n")
             break
-    return USER_EMAIL
+        return USER_EMAIL
 
 
 def email_send():
@@ -780,40 +781,76 @@ def email_send():
     msg["From"] = EMAIL
     msg["To"] = USER_EMAIL
     msg["Subject"] = "Your ADHD Superhero Summary!"
-    format_email = ("""<html>
+    format_email = '''<html>
             <body>
                 <div>
-                    <img src="https://raw.githubusercontent.com/declanosullivan/ADHD-Superheros/main/assets/images/emailheaderlogo.png" style="width: 100%; height: auto;">
+                    <img src="https://raw.githubusercontent.com/
+                    declanosullivan/ADHD-Superheros/main/assets/
+                    images/emailheaderlogo.png"
+                    style="width: 100%; height: auto;">
                     <div style="text-align: left;">
                         <h2>Overview</h2>
-                        <p>Thank you for taking the time today to use the ADHD Superheros App.</p>
-                        <p>This emails purpose is summarise what we have covered today.</p>
-                        <br>
+                        <p>Thank you for taking the time today to use
+                         the ADHD Superheros App.</p>
+                        <p>This emails purpose is summarise what
+                         we have covered today.</p>
                     </div>
-                    <div style="text-align: left;">    
-                        <h2>1. Today's strength</h2>
-                        f"<p>It's important to focus on your strenghts. Today's strength is <strong>{STRENGTH_NAME}</strong>.</p>"
-                        f"<p>{STRENGTH_DETAIL}</p>"
-                        <br>
+                    <div style="text-align: left;">
+                        <h2>1. Today's strength </h2>
+                        <p>It's important to focus on your strenghts.
+                         Today's strength is <strong>{0}</strong>.</p>
+                        <p>{1}</p>
                     </div>
-                    <div style="text-align: left;">    
-                        <h2>'2. Today's advice'</h2>
-                        <br>
-                        <p> Great advice is worth repeating. Today's advice focused on $ADVICE_NAME </strong>."</p>
-                        <br>
-                        <p>f"{ADVICE_DETAIL}"</p>
-                        <br>
-                    </div>  
-                        <h2>3. Your weekly and monthly report</h2>
-                        <br>
-                        <h2>4. Your previous top 3 priorities</h2>
-                        <br>
-                        <h2>1. Today's top 3 priorities</h2>
+                    <div style="text-align: left;">
+                        <h2>2. Today's advice </h2>
+                        <p>It's important to focus on your strenghts.
+                         Today's strength is <strong>{2}</strong>.</p>
+                        <p>{3}</p>
+                    </div>
+                    <div style="text-align: left;">
+                        <h2>3. Your weekly and monthly report </h2>
+                        <p>In the last 7 days you completed {4} priorities out
+                         of a total of {5}. Your average % of completed
+                         priorties for the last 7 days is
+                         <strong>{6}</strong></p>
+                        <p>In the last 30 days you completed {7} priorities
+                         out of a total of {8}. Your average % of completed
+                         priorties for the last 7 days is
+                         <strong>{9}</strong></p>
+                    </div>
+                    <div style="text-align: left;">
+                        <h2>4. Today's top 3 priorities </h2>
+                        <p> <strong>Priority 1: </strong>{10}</p>
+                        <p> <strong>Priority 2: </strong>{11}</p>
+                        <p> <strong>Priority 3: </strong>{12}</p>
+                    </div>
+                    <div style="text-align: left;">
+                        <h2>5. Status Update on Past Priorities </h2>
+                        <p> <strong>{13}: </strong>{16}</p>
+                        <p> <strong>{14}: </strong>{17}</p>
+                        <p> <strong>{15}: </strong>{18}</p>
+                    </div>
+                    <div style="text-align: left;">
+                        <h2>6. Reminder of Previous Wins & Successes </h2>
+                        <p> <strong>Win/Success #1: </strong>{19}</p>
+                        <p> <strong>Win/Success #1: </strong>{20}</p>
+                        <p> <strong>Win/Success #1: </strong>{21}</p>
+                        <p> <strong>Win/Success #4: </strong>{22}</p>
+                        <p> <strong>Win/Success #5: </strong>{23}</p>
+                        <br<
+                        <p> The above wins/success are randomly
+                         picked from past and here is the most
+                         recent on you entered today - {24}</p>
                     </div>
                 </div>
             </body>
-    </html>"""
-    )
+    </html>'''.format(
+        STRENGTH_NAME, STRENGTH_DETAIL, ADVICE_NAME,
+        ADVICE_DETAIL, WKDONE, WKTOTAL, WEEKLY_AVG_PERC, MTHTOTAL, MTHDONE,
+        MONTH_AVG_PER, NEWPRIORITY1, NEWPRIORITY2, NEWPRIORITY3, OLDPRIORITY1,
+        OLDPRIORITY2, OLDPRIORITY3, TASKSTATUS1, TASKSTATUS2, TASKSTATUS3,
+        OLDWIN1, OLDWIN2, OLDWIN3, OLDWIN4, OLDWIN5, WIN_DATA)
+
     msg.attach(MIMEText(str(format_email), "html"))
     smtpserver = smtplib.SMTP("smtp.gmail.com", 587)
     smtpserver.ehlo()
@@ -828,15 +865,14 @@ def main():
     """
     Run all program functions
     """
-    # get_strengths_data()
-    # get_advice_data()
-    # get_last_3_priorities()
-    # get_today_priorities()
-    # calc_weekly_avg()
-    # calc_month_avg()
-    # show_previous_wins()
-    # data = get_current_wins()
-    # update_wins_worksheet(data)
+    get_strengths_data()
+    get_advice_data()
+    get_last_3_priorities()
+    get_today_priorities()
+    calc_weekly_avg()
+    calc_month_avg()
+    show_previous_wins()
+    get_current_win()
     get_email()
     email_send()
 
