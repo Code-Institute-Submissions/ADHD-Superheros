@@ -552,33 +552,56 @@ def get_today_priorities():
         "go do something fun or relaxing. Time off is important!\n")
     time.sleep(1)
     # Priority 1
-    NEWPRIORITY1 = input(
-        Fore.BLUE + "What will be your first priority for today?\n")
-    dailytopthree.update_cell((max_rows + 1), 1, str(taskdate))
-    dailytopthree.update_cell((max_rows + 1), 3, str(NEWPRIORITY1))
-    time.sleep(1)
-    print('\n')
+    while True:
+        NEWPRIORITY1 = input(
+            Fore.BLUE + "What will be your first priority for today (3 word minimum)?\n")
+        if len(NEWPRIORITY1.split()) < 3:
+            print('\n')
+            print(f"A minimum of 3 words required.\n")
+            time.sleep(1)
+        else:
+            dailytopthree.update_cell((max_rows + 1), 1, str(taskdate))
+            dailytopthree.update_cell((max_rows + 1), 3, str(NEWPRIORITY1))
+            time.sleep(1)
+            print('Your first priority for today is saved\n')
+            break
     # Priority 2
-    NEWPRIORITY2 = input(
-        Fore.CYAN + "What will be your second priority for today?\n")
-    dailytopthree.update_cell((max_rows + 2), 1, str(taskdate))
-    dailytopthree.update_cell((max_rows + 2), 3, str(NEWPRIORITY2))
-    time.sleep(1)
-    print('\n')
+    while True:
+        NEWPRIORITY2 = input(
+            Fore.CYAN + "What will be your second priority for today (3 word minimum)?\n")
+        if len(NEWPRIORITY2.split()) < 3:
+            print('\n')
+            print(f"A minimum of 3 words required.")
+            time.sleep(2)
+        else:
+            dailytopthree.update_cell((max_rows + 2), 1, str(taskdate))
+            dailytopthree.update_cell((max_rows + 2), 3, str(NEWPRIORITY2))
+            time.sleep(1)
+            print('Your second priority for today is saved\n')
+            break
     # Priority 3
-    NEWPRIORITY3 = input(
-        Fore.BLUE + "What will be your third priority for today?\n")
-    dailytopthree.update_cell((max_rows + 3), 1, str(taskdate))
-    dailytopthree.update_cell((max_rows + 3), 3, str(NEWPRIORITY3))
-    time.sleep(1)
-    print('\n')
+    while True:
+        NEWPRIORITY3 = input(
+            Fore.BLUE + "What will be your third priority for today (3 word minimum)?\n")
+        if len(NEWPRIORITY3.split()) < 3:
+            print('\n')
+            print(f"A minimum of 3 words required, you provided {len(NEWPRIORITY3)}")
+            time.sleep(2)
+        else:
+            dailytopthree.update_cell((max_rows + 3), 1, str(taskdate))
+            dailytopthree.update_cell((max_rows + 3), 3, str(NEWPRIORITY3))
+            time.sleep(1)
+            print('Your third priority for today is saved\n')
+            break
     # Summary
-    print("Thank you for providing your top 3 priorities for today.\n")
+    print("Thank you for providing your top 3 priorities for today (3 word minimum)?\n")
     time.sleep(1)
     print(
         Fore.GREEN + f"Your top 3 priorities for today are {NEWPRIORITY1}"
         f", {NEWPRIORITY2} and {NEWPRIORITY3}.\n")
     time.sleep(1)
+    input(Fore.WHITE + "Press enter to view your weekly and monthly report.\n")
+    print('\n')
 
 
 def calc_weekly_avg():
