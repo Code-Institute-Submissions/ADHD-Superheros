@@ -642,6 +642,9 @@ def calc_month_avg():
     Get last 30 days of total priorities (complete & incomplete)
     Calculate %  done of total priorities
     """
+    global MTHTOTAL
+    global MTHDONE
+    global MONTH_AVG_PER
     clear()
     ascii_banner = pyfiglet.figlet_format("ADHD Superheros")
     print(ascii_banner)
@@ -650,17 +653,17 @@ def calc_month_avg():
     dailytopthree = SHEET.worksheet("dailytopthree")
     mth_start_date = date.today() - timedelta(days=30)
     mth_end_date = date.today()
-    mthtotal = 0  # total priorities in last 30 days
-    mthdone = 0  # priorities with status done in last 30 days
+    MTHTOTAL = 0  # total priorities in last 30 days
+    MTHDONE = 0  # priorities with status done in last 30 days
     rows = dailytopthree.get_all_values()
     for i, row in enumerate(rows):
         if i > 0:
             dt_m = datetime.strptime(row[0], "%d/%m/%Y").date()
             if dt_m >= mth_start_date and dt_m <= mth_end_date:
                 if row[3] == 'done':
-                    mthdone += 1
-                mthtotal += 1
-    if mthtotal == 0:
+                    MTHDONE += 1
+                MTHTOTAL += 1
+    if MTHTOTAL == 0:
         print(Fore.BLUE + "There are no priorites for the last 30 days")
         print('\n')
         time.sleep(1)
@@ -672,19 +675,18 @@ def calc_month_avg():
         input(Fore.WHITE + "Press enter to view your monthly report.\n")
         print('\n')
     else:
-        month_avg_num = (mthdone / mthtotal)
-        month_avg_per = "{:.0%}".format(month_avg_num)
+        MONTH_AVG_PER = "{:.0%}".format(MTHDONE / MTHTOTAL)
         print(
-            Fore.BLUE + f"You entered {mthtotal} priorities "
+            Fore.BLUE + f"You entered {MTHTOTAL} priorities "
             f"between {mth_start_date} and {mth_end_date}.")
         print('\n')
         time.sleep(1)
-        print(Fore.CYAN + f'You completed {mthdone} of {mthtotal} priorities.')
+        print(Fore.CYAN + f'You completed {MTHDONE} of {MTHTOTAL} priorities.')
         print('\n')
         time.sleep(1)
         print(
             Fore.BLUE + f"Your average % of completed priorities "
-            f"for the last 30 days is {month_avg_per}")
+            f"for the last 30 days is {MONTH_AVG_PER}")
         print('\n')
         time.sleep(1)
         input(Fore.WHITE + "Press enter to submit your win or success.")
