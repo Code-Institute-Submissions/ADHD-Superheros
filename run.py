@@ -343,7 +343,7 @@ def get_strengths_data():
     strengths = SHEET.worksheet("strengths")
     row_count = len(strengths.col_values(1))
     row_ref_start = row_count + 2
-    random_row = strengths.row_values(randrange(2, row_ref_start))
+    random_row = strengths.row_values(randrange(1, row_ref_start))
     STRENGTH_NAME = random_row[0]
     STRENGTH_DETAIL = random_row[1]
     clear()
@@ -382,7 +382,7 @@ def get_advice_data():
     advice = SHEET.worksheet("advice")
     row_count = len(advice.col_values(1))
     row_ref_start = row_count + 2
-    random_row = advice.row_values(randrange(2, row_ref_start))
+    random_row = strengths.row_values(randrange(1, row_ref_start))
     ADVICE_NAME = random_row[0]
     ADVICE_DETAIL = random_row[1]
     clear()
@@ -763,24 +763,26 @@ def get_current_win():
         Fore.CYAN + "* Focusing your thoughts on past "
         "progress and success leads to future progress\n")
     time.sleep(1)
-    print(Fore.WHITE + "Your win will need to have a minimum of 10 words.\n")
+    print(Fore.WHITE + "Your win will need to have a minimum of 5 words.\n")
     time.sleep(1)
     print(
         "Example: I cleared all my emails by lunchtime and "
         "worked on my project in the afternoon as scheduled\n")
     time.sleep(1)
-    WIN_DATA = input("Enter your win here:\n")
-    print(len(WIN_DATA))
-    try:
-        if len(WIN_DATA) < 6:
-            raise ValueError(
-                f"A minimum of 6 words required, you provided {len(WIN_DATA)}"
-            )
+    while True:
+        WIN_DATA = input("Enter your win here:\n")
+        if len(WIN_DATA.split()) < 5:
+            print('\n')
+            print("A minimum of 5 words required\n")
+            time.sleep(1)
         else:
-            wins.append_row(str(WIN_DATA))
+            print('\n')
+            wins.append_row(WIN_DATA.split(","))
             print(Fore.GREEN + "Updating your wins worksheet...\n")
             time.sleep(1)
             print(Fore.GREEN + "Your wins worksheet update successfully\n")
+            break
+        
 
 
 def get_email():
@@ -788,7 +790,7 @@ def get_email():
     while True:
         USER_EMAIL = input("Please enter your email: \n")
         regex = r"^[a-zA-Z0-9._%+-]{1,64}@[a-zA-Z0-9.-]{3,252}\.[a-zA-Z]{2,}$"
-       
+
         if not re.fullmatch(regex, USER_EMAIL):
             clear()
             print(f"'{USER_EMAIL}' is Invalid, enter a real email address!\n")
@@ -796,10 +798,13 @@ def get_email():
             clear()
             print("Thank you for entering your email!\n")
             break
-        return USER_EMAIL
+    return USER_EMAIL
 
 
 def email_send():
+    """
+    Send email address to user
+    """
     msg = MIMEMultipart()
     msg["From"] = EMAIL
     msg["To"] = USER_EMAIL
