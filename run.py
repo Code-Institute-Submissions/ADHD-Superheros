@@ -289,15 +289,15 @@ def learn_adhd():
     print("2. Exit")
     time.sleep(1)
     print('\n')
-    learn_choice = input("Enter your choice 1-2 below\n")
-    # wrap in a while loop
-    if learn_choice == '1':
-        main_menu()
-    elif learn_choice == '2':
-        leaving()
-    else:
-        print("You must choose option 1 or 2")
-        time.sleep(2)
+    while True:
+        learn_choice = input("Enter your choice 1-2 below\n").strip()
+        if learn_choice == "1":
+            main_menu()
+        elif learn_choice == "2":
+            leaving()
+        else:
+            print("You must choose option 1 or 2")
+            time.sleep(2)
 
 
 def leaving():
