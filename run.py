@@ -696,22 +696,30 @@ def show_previous_wins():
     """
     Present user with 5 random previous wins
     """
+    global OLDWIN1
+    global OLDWIN2
+    global OLDWIN3
+    global OLDWIN4
+    global OLDWIN5
     wins = SHEET.worksheet("wins")
     row_count = len(wins.col_values(1))
     row_ref_start = row_count + 1
+    OLDWIN1 = (wins.row_values(randrange(2, row_ref_start))[0])
+    OLDWIN2 = (wins.row_values(randrange(2, row_ref_start))[0])
+    OLDWIN3 = (wins.row_values(randrange(2, row_ref_start))[0])
+    OLDWIN4 = (wins.row_values(randrange(2, row_ref_start))[0])
+    OLDWIN5 = (wins.row_values(randrange(2, row_ref_start))[0])
     clear()
     ascii_banner = pyfiglet.figlet_format("ADHD Superheros")
     print(ascii_banner)
-    print(Fore.RED + "Reminders of previous wins and successes")
-    print('\n')
+    print(Fore.RED + "Reminders of previous wins and successes\n")
     random1 = wins.row_values(randrange(2, row_ref_start))
-    print(str(random1))
-    # win 1
-    print(f'Your first win is {str(wins.row_values(randrange(2, row_ref_start)))}')
-    print(f'Your second win is {wins.row_values(randrange(2, row_ref_start))}')
-    print(f'Your third win is {wins.row_values(randrange(2, row_ref_start))}')
-    print(f'Your fourth win is {wins.row_values(randrange(2, row_ref_start))}')
-    print(f'Your fift win is {wins.row_values(randrange(2, row_ref_start))}')
+    # win 1-5
+    print(f'Your first win is {(OLDWIN1)}\n')
+    print(f'Your second win is {OLDWIN2}\n')
+    print(f'Your third win is {OLDWIN3}\n')
+    print(f'Your fourth win is {OLDWIN4}\n')
+    print(f'Your fift win is {OLDWIN5}\n')
 
 def get_current_wins():
     """
