@@ -532,6 +532,9 @@ def get_today_priorities():
     """
     Get todays top 3 priorities.
     """
+    global NEWPRIORITY1
+    global NEWPRIORITY2
+    global NEWPRIORITY3
     dailytopthree = SHEET.worksheet("dailytopthree")
     max_rows = len(dailytopthree.get_all_values())
     taskdate = date.today()
@@ -540,33 +543,41 @@ def get_today_priorities():
     print(ascii_banner)
     print(Fore.RED + "Enter today's top 3 priorities.\n")
     time.sleep(1)
-    print("Today's priorities can be new ones, or they can be undone ones from the previous day.\n")
+    print(
+        "Today's priorities can be new ones, or "
+        "they can be undone ones from the previous day.\n")
     time.sleep(1)
-    print("Don't forget that priorties can be to go do something fun or relaxing. Time off is important!\n")
+    print(
+        "Don't forget that priorties can be to "
+        "go do something fun or relaxing. Time off is important!\n")
     time.sleep(1)
     # Priority 1
-    priority1 = input(Fore.BLUE + "What will be your first priority for today?\n")
+    NEWPRIORITY1 = input(
+        Fore.BLUE + "What will be your first priority for today?\n")
     dailytopthree.update_cell((max_rows + 1), 1, str(taskdate))
-    dailytopthree.update_cell((max_rows + 1), 3, str(priority1))
+    dailytopthree.update_cell((max_rows + 1), 3, str(NEWPRIORITY1))
     time.sleep(1)
     print('\n')
     # Priority 2
-    priority2 = input(Fore.CYAN + "What will be your second priority for today?\n")
+    NEWPRIORITY2 = input(
+        Fore.CYAN + "What will be your second priority for today?\n")
     dailytopthree.update_cell((max_rows + 2), 1, str(taskdate))
-    dailytopthree.update_cell((max_rows + 2), 3, str(priority2))
+    dailytopthree.update_cell((max_rows + 2), 3, str(NEWPRIORITY2))
     time.sleep(1)
     print('\n')
     # Priority 3
-    priority3 = input(Fore.BLUE + "What will be your third priority for today?\n")
-    taskdate = date.today()
+    NEWPRIORITY3 = input(
+        Fore.BLUE + "What will be your third priority for today?\n")
     dailytopthree.update_cell((max_rows + 3), 1, str(taskdate))
-    dailytopthree.update_cell((max_rows + 3), 3, str(priority3))
+    dailytopthree.update_cell((max_rows + 3), 3, str(NEWPRIORITY3))
     time.sleep(1)
     print('\n')
     # Summary
     print("Thank you for providing your top 3 priorities for today.\n")
     time.sleep(1)
-    print(Fore.GREEN + f"Your top 3 priorities for today are {priority1}, {priority2} and {priority3}.\n")
+    print(
+        Fore.GREEN + f"Your top 3 priorities for today are {NEWPRIORITY1}"
+        f", {NEWPRIORITY2} and {NEWPRIORITY3}.\n")
     time.sleep(1)
 
 
