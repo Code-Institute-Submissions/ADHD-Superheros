@@ -410,13 +410,21 @@ def get_last_3_priorities():
     Get previous days top 3 priorities.
     Present to user to confirm if done or not done on previous day.
     """
+    global OLDPRIORITY1
+    global OLDPRIORITY2
+    global OLDPRIORITY3
+    global TASKSTATUS1
+    global TASKSTATUS2
+    global TASKSTATUS3
     dailytopthree = SHEET.worksheet("dailytopthree")
-    # worksheet_to_update = SHEET.worksheet("dailytopthree")
     max_rows = len(dailytopthree.get_all_values())
     columns = []
     for num in range(1, 5):
         column = dailytopthree.col_values(num)
         columns.append(column[-3:])
+    OLDPRIORITY1 = (columns[2][0])
+    OLDPRIORITY2 = (columns[2][1])
+    OLDPRIORITY3 = (columns[2][2])
     # Priority 1
     clear()
     ascii_banner = pyfiglet.figlet_format("ADHD Superheros")
@@ -425,23 +433,27 @@ def get_last_3_priorities():
     time.sleep(1)
     print(
         Fore.WHITE + "The first priority to review is "
-        f"{columns[2][0]} from {columns[0][0]}.\n")
+        f"{OLDPRIORITY1} from {columns[0][0]}.\n")
     time.sleep(1)
     while True:
-        taskstatus = input(Fore.BLUE + "Please confirm if this priority was done or undone.\n")
-        if taskstatus == "done":
+        TASKSTATUS1 = input(
+            Fore.BLUE + "Please confirm if this "
+            "priority was done or undone.\n")
+        if TASKSTATUS1 == "done":
             break
-        if taskstatus == "undone":
+        if TASKSTATUS1 == "undone":
             break
         else:
             print(Fore.WHITE + "Only done or undone will be accepted.\n")
             time.sleep(2)
     print('\n')
-    print(Fore.CYAN + f'Thank you for confirming status of {columns[2][0]} is {taskstatus}.\n')
+    print(
+        Fore.CYAN + f"Thank you for confirming status of {OLDPRIORITY1} "
+        f"is {TASKSTATUS1}.\n")
     time.sleep(1)
     print(Fore.GREEN + "We are updating your priorities worksheet...\n")
     time.sleep(1)
-    dailytopthree.update_cell((max_rows - 2), 4, str(taskstatus))
+    dailytopthree.update_cell((max_rows - 2), 4, str(TASKSTATUS1))
     print(Fore.GREEN + "Your priorities worksheet update successfully\n")
     time.sleep(1)
     input(Fore.WHITE + "Press enter to review next priority\n")
@@ -452,23 +464,29 @@ def get_last_3_priorities():
     print(ascii_banner)
     print(Fore.RED + "Review previous top 3 priorities \n")
     time.sleep(1)
-    print(Fore.WHITE + f'The second priority to review is {columns[2][1]} from {columns[0][1]}.\n')
+    print(
+        Fore.WHITE + f"The second priority to review is {OLDPRIORITY2} "
+        f"from {columns[0][1]}.\n")
     time.sleep(1)
     while True:
-        taskstatus = input(Fore.BLUE + "Please confirm if this priority was done or undone.\n")
-        if taskstatus == "done":
+        TASKSTATUS2 = input(
+            Fore.BLUE + "Please confirm if this priority "
+            "was done or undone.\n")
+        if TASKSTATUS2 == "done":
             break
-        if taskstatus == "undone":
+        if TASKSTATUS2 == "undone":
             break
         else:
             print(Fore.WHITE + "Only done or undone will be accepted.\n")
             time.sleep(2)
-    print('\n') 
-    print(Fore.CYAN + f'Thank you for confirming status of {columns[2][1]} is {taskstatus}.\n')
+    print('\n')
+    print(
+        Fore.CYAN + f"Thank you for confirming status of {OLDPRIORITY2} "
+        f"is {TASKSTATUS2}.\n")
     time.sleep(1)
     print(Fore.GREEN + "We are updating your priorities worksheet...\n")
     time.sleep(1)
-    dailytopthree.update_cell((max_rows - 1), 4, str(taskstatus))
+    dailytopthree.update_cell((max_rows - 1), 4, str(TASKSTATUS2))
     print(Fore.GREEN + "Your priorities worksheet update successfully\n")
     time.sleep(1)
     input(Fore.WHITE + "Press enter to review next priority\n")
@@ -479,27 +497,35 @@ def get_last_3_priorities():
     print(ascii_banner)
     print(Fore.RED + "Review previous top 3 priorities \n")
     time.sleep(1)
-    print(Fore.WHITE + f'The third and final priority to review is {columns[2][2]} from {columns[0][2]}.\n')
+    print(
+        Fore.WHITE + f"The third priority to review is {OLDPRIORITY3} "
+        f"from {columns[0][2]}.\n")
     time.sleep(1)
     while True:
-        taskstatus = input(Fore.BLUE + 'Please confirm if this priority was done or undone.\n')
-        if taskstatus == "done":
+        TASKSTATUS3 = input(
+            Fore.BLUE + "Please confirm if this "
+            "priority was done or undone.\n")
+        if TASKSTATUS3 == "done":
             break
-        if taskstatus == "undone":
+        if TASKSTATUS3 == "undone":
             break
         else:
             print(Fore.WHITE + "Only done or undone will be accepted.\n")
             time.sleep(2)
     print('\n')
-    print(Fore.CYAN + f'Thank you for confirming status of {columns[2][2]} is {taskstatus}.\n')
+    print(
+        Fore.CYAN + f"Thank you for confirming status of {OLDPRIORITY3} "
+        f"is {TASKSTATUS3}.\n")
     time.sleep(1)
     print(Fore.GREEN + "We are updating your priorities worksheet...\n")
     time.sleep(1)
-    dailytopthree.update_cell((max_rows), 4, str(taskstatus))
+    dailytopthree.update_cell((max_rows), 4, str(TASKSTATUS3))
     print(Fore.GREEN + "Your priorities worksheet update successfully\n")
     time.sleep(1)
     print(Fore.WHITE + "You finished reviewing your priorities.\n")
-    input(Fore.WHITE + "Press enter to view your weekly and monthly reports.\n")
+    input(
+        Fore.WHITE + "Press enter to view your "
+        "weekly and monthly reports.\n")
     print('\n')
 
 def get_today_priorities():
