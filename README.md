@@ -239,7 +239,25 @@ Alternatively, if using Gitpod, you can click below to create your own workspace
 
 Sending emails within this Python application:
 
-Add in steps for ```env.py``` file and add to ```.gitignore``` using the [envsample.py](https://github.com/declanosullivan/ADHD-Superheros/blob/main/envsample.py) as a template
+In several of the functions in this app, global variables were created such as USER_EMAIL. Gloabl variables have scope throughout the program. For variable to be global, it is declared at the top fo the function with the word 'global' and the variable name all in upppercase such as:
+
+```python
+global USER_EMAIL
+```
+
+You will need to create an ```env.py``` based on the sample file [envsample.py](https://github.com/declanosullivan/ADHD-Superheros/blob/main/envsample.py) as a template
+
+You will then need to add this file ```env.py``` to ```.gitignore``` to prevent it being uploaded to Github and exposed publicly. 
+
+You can store credentials in ```env.py``` which act as environmental variables. Your app can use environmental variables but their values will not be displayed or disclosed in the code. These can be added to Heroku as follows: 
+
+- Log into Heroku, go to the 'Settings' tab in your app.
+- Scroll down to the 'Config Vars' section and click the 'Reveal Config Vars' button.
+- We are going to add two config vars.
+- From the ```env.py``` file, you will copy the EMAIL and PASSWORD from here. 
+- Enter EMAIL for KEY and then add the email address from ```env.py``` into the VALUE field.
+- Then click the 'Add' button. 
+- Enter `PASSWORD` for KEY and then add the password from ```env.py``` into the value field and click the 'Add' button.
 
 **NOTE**: If receiving errors while sending emails using this app, due to Google's security feature with **2-Factor Authentication**, **Less Secure Apps**, and **DisplayUnlockCaptcha**, you'll need to follow these steps.
 
