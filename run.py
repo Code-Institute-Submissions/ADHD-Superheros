@@ -828,7 +828,7 @@ def email_send():
     format_email = '''<html>
             <body>
                 <div>
-                    <img src="https://raw.githubusercontent.com/declanosullivan/ADHD-Superheros/main/assets/images/emailheaderlogo.png"  # noqa 
+                    <img src="https://raw.githubusercontent.com/declanosullivan/ADHD-Superheros/main/documentation/images/emailheaderlogo.png"  # noqa 
                     style="width: 50%; height: auto;">
                     <div style="text-align: left;">
                         <h2>Overview</h2>
