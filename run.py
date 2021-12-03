@@ -1,6 +1,9 @@
 import time
 # https://www.geeksforgeeks.org/python-datetime-module/
 from datetime import date, timedelta, datetime
+import smtplib
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
 import os
 import re
 import gspread
@@ -12,9 +15,7 @@ init(autoreset=True)
 if os.path.exists("env.py"):
     import env  # noqa
 
-import smtplib
-from email.mime.multipart import MIMEMultipart
-from email.mime.text import MIMEText
+
 EMAIL = os.environ.get("EMAIL")
 PASSWORD = os.environ.get("PASSWORD")
 
@@ -800,7 +801,7 @@ def get_current_win():
             time.sleep(1)
             print(Fore.GREEN + "Your wins worksheet updated successfully\n")
             break
-        
+
 
 def get_email():
     global USER_EMAIL
