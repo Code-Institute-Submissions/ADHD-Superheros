@@ -438,7 +438,7 @@ Step 5 - Select Github Deployment Method.
     - [StackOverflow](https://stackoverflow.com/q/16512592)
     - [StackOverflow](https://stackoverflow.com/a/8519646)
 
-    * Thanks to Dave Horrocks for sharing a code block I've adopted to add random funtionality to the strenghts and advice functions.
+* Thanks to Dave Horrocks for sharing a code block I've adopted to add random funtionality to the strenghts and advice functions.
 
 ```python
 SHEET  = a_sheet # replace a_sheet with your accessed/authorized sheet
