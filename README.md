@@ -49,13 +49,25 @@ Not agreed:
 
 ### Process Map
 
-* Main Menu Flow:
+* Main Menu Flow
 
  ![Process map of the main menu](assets/documentation/wireframes/mapmainmenu.png)
 
-* App Flow:
+* Option 1 - Use App Flow
 
  ![Process map of the app](assets/documentation/wireframes/mapprocessmap.png)
+
+* Option 2 - Learn to use app Flow
+
+ ![Process map of the app](assets/documentation/wireframes/maplearnhowtouse.png)
+
+* Option 3 - Learn about ADHD Flow
+
+ ![Process map of learn ahout ADHD menu option](assets/documentation/wireframes/maplearnadhd.png)
+
+* Option 4 - Exit Flow
+
+ ![Process map of the app]()
 
 ### Wireframes
 
