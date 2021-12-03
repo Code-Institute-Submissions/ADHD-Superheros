@@ -51,120 +51,126 @@ Not agreed:
 
 * Main Menu Flow
 
- ![Process map of the main menu](assets/documentation/wireframes/mapmainmenu.png)
+ ![Process map of the main menu](documentation/wireframes/mapmainmenu.png)
 
 * Option 1 - Use App Flow
 
- ![Process map of the app](assets/documentation/wireframes/mapprocessmap.png)
+ ![Process map of the app](documentation/wireframes/mapprocessmap.png)
 
 * Option 2 - Learn to use app Flow
 
- ![Process map of the app](assets/documentation/wireframes/maplearnhowtouse.png)
+ ![Process map of learn how to use app](documentation/wireframes/maplearnhowtouse.png)
 
 * Option 3 - Learn about ADHD Flow
 
- ![Process map of learn ahout ADHD menu option](assets/documentation/wireframes/maplearnadhd.png)
+ ![Process map of learn ahout ADHD menu option](documentation/wireframes/maplearnadhd.png)
 
 * Option 4 - Exit Flow
 
- ![Process map of the app]()
+ ![Process map of exit option](documentation/wireframes/mapleaving.png)
 
 ### Wireframes
 
 * Main Menu
 
- ![Wireframe of the main menu](assets/documentation/wireframes/wireframemainmenu.png)
+ ![Wireframe of the main menu](documentation/wireframes/wireframemainmenu.png)
 
 * Option 1 (Loading...)
 
- ![Wireframe of the main menu](assets/documentation/wireframes/wireframeoption1.png)
+ ![Wireframe of the main menu](documentation/wireframes/wireframeoption1.png)
 
  * Option 2 (Learn how to use app 1/2)
 
- ![Wireframe of how to use the app screen](assets/documentation/wireframes/wireframeoption2a.png)
+ ![Wireframe of how to use the app screen](documentation/wireframes/wireframeoption2a.png)
 
   * Option 2 (Learn how to use app 2/2)
 
- ![Wireframe of how to use the app screen](assets/documentation/wireframes/wireframeoption2b.png)
+ ![Wireframe of how to use the app screen](documentation/wireframes/wireframeoption2b.png)
 
 * Option 3 (Learn about ADHD 1/2)
 
- ![Wireframe of the first learn about ADHD screen](assets/documentation/wireframes/wireframeoption3a.png)
+ ![Wireframe of the first learn about ADHD screen](documentation/wireframes/wireframeoption3a.png)
 
 * Option 3 (Learn about ADHD 2/2)
 
- ![Wireframe of the second learn about ADHD screen](assets/documentation/wireframes/wireframeoption3b.png)
+ ![Wireframe of the second learn about ADHD screen](documentation/wireframes/wireframeoption3b.png)
 
 * Option 4 (Exit app)
 
- ![Wireframe of the exit screen](assets/documentation/wireframes/wireframeoption4.png)
+ ![Wireframe of the exit screen](documentation/wireframes/wireframeoption4.png)
  
 ### Feaures
 
 * Main Menu
 
- ![Feature screenshot of main menu](assets/documentation/features/featuremainmenu.png)
+ ![Feature screenshot of main menu](documentation/features/featuremainmenu.png)
 
 * Option 1 - Use App - Strength Reminder
 
- ![Feature screenshot of strength reminder](assets/documentation/features/featureoption1strenghts.png)
+ ![Feature screenshot of strength reminder](documentation/features/featureoption1strenghts.png)
 
 * Option 1 - Use App - Advice Reminder
 
- ![Feature screenshot of advice reminder](assets/documentation/features/featureoption1advice.png)
+ ![Feature screenshot of advice reminder](documentation/features/featureoption1advice.png)
 
 * Option 1 - Use App - Past Priority Review
     - Screen repeats two more times to get status. 
 
- ![Feature screenshot of review previous priorities](assets/documentation/features/featureoption1oldpriorities.png)
+ ![Feature screenshot of review previous priorities](documentation/features/featureoption1oldpriorities.png)
 
 * Option 1 - Use App - Add today's top 3 priorities
 
- ![Feature screenshot of add todays priorities](assets/documentation/features/featureoption1newpriorities.png)
+ ![Feature screenshot of add todays priorities](documentation/features/featureoption1newpriorities.png)
 
 * Option 1 - Use App - Show 5 previous wins/successs
 
- ![Feature screenshot of previous wins and successes](assets/documentation/features/feature1oldwin.png)
+ ![Feature screenshot of previous wins and successes](documentation/features/feature1oldwin.png)
 
 * Option 1 - Use App - Enter new win/success
 
- ![Feature screenshot of entering new win or success](assets/documentation/features/feature1newwin.png)
+ ![Feature screenshot of entering new win or success](documentation/features/feature1newwin.png)
+
+* Option 1 - Use App - Weekly report
+
+ ![Feature screenshot of entering new win or success](documentation/features/feature1weeklyreport.png)
+
+* Option 1 - Use App - Monthly report
+
+ ![Feature screenshot of entering new win or success](documentation/features/feature1monthlyreport.png)
 
 * Option 1 - Use App - Get email address from user
 
- ![Feature screenshot of get email user email address]()
+ ![Feature screenshot of get email user email address](documentation/features/feature1getemail.png)
 
 * Option 1 - Use App - Email summary report
 
- ![Feature screenshot of email summary report](assets/documentation/features/feature1emailsummary.png)
+ ![Feature screenshot of email summary report](documentation/features/feature1emailsummary.png)
 
 * Option 2 - Learn to use app (five screens/pages)
     - Note that at the end of this menu option, the user is presented to either return to main menu or exit
 
- ![Feature screenshot of first page of learn how to use app](assets/documentation/features/featureoption2a.png)
+ ![Feature screenshot of first page of learn how to use app](ocumentation/features/featureoption2a.png)
 
- ![Feature screenshot of second page of learn how to use app](assets/documentation/features/featureoption2b.png)
+ ![Feature screenshot of second page of learn how to use app](documentation/features/featureoption2b.png)
 
- ![Feature screenshot of third page of learn how to use app](assets/documentation/features/featureoption2c.png)
+ ![Feature screenshot of third page of learn how to use app](documentation/features/featureoption2c.png)
 
- ![Feature screenshot of third page of learn how to use app](assets/documentation/features/featureoption2d.png)
+ ![Feature screenshot of third page of learn how to use app](documentation/features/featureoption2d.png)
 
- ![Feature screenshot of third page of learn how to use app](assets/documentation/features/featureoption2e.png)
+ ![Feature screenshot of third page of learn how to use app](documentation/features/featureoption2e.png)
 
 * Option 3 - Learn about ADHD (three screens/pages)
     - Note that at the end of this menu option, the user is presented to either return to main menu or exit
 
- ![Feature screenshot of first page of learn about ADHD](assets/documentation/features/featureoption3a.png)
+ ![Feature screenshot of first page of learn about ADHD](documentation/features/featureoption3a.png)
 
- ![Feature screenshot of second page of learn about ADHD](assets/documentation/features/featureoption3b.png)
+ ![Feature screenshot of second page of learn about ADHD](documentation/features/featureoption3b.png)
 
- ![Feature screenshot of second page of learn about ADHD](assets/documentation/features/featureoption3c.png)
+ ![Feature screenshot of second page of learn about ADHD](documentation/features/featureoption3c.png)
 
 * Option 4 - Exit app
 
-
-
-
+ ![Feature screenshot of second page of learn about ADHD](documentation/features/feature1exit.png)
 
 ## Technologies
 
@@ -233,7 +239,7 @@ Alternatively, if using Gitpod, you can click below to create your own workspace
 
 Sending emails within this Python application:
 
-Add in steps for env.py file and add to gitignore using the envsample.py as a template
+Add in steps for ```env.py``` file and add to ```.gitignore``` using the [envsample.py](https://github.com/declanosullivan/ADHD-Superheros/blob/main/envsample.py) as a template
 
 **NOTE**: If receiving errors while sending emails using this app, due to Google's security feature with **2-Factor Authentication**, **Less Secure Apps**, and **DisplayUnlockCaptcha**, you'll need to follow these steps.
 
