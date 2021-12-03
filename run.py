@@ -304,17 +304,16 @@ def leaving():
     """
     Guides user out of app
     """
+    clear()
     ascii_banner = pyfiglet.figlet_format("ADHD Superheros")
     print(ascii_banner)
     print(Fore.RED + "You're about to leave the app")
     print('\n')
-    print("We hope you got value from the time spent using the app today.")
-    print('\n')
+    print(Fore.BLUE + "We hope you got value from the time spent using the app today.")
     time.sleep(1)
-    print("You'll now get a option to return to main menu or close the app.")
-    print('\n')
-    print(
-        "After the app is closed, you can "
+    print(Fore.CYAN + "You'll now get a option to return to main menu or close the app.")
+    time.sleep(1
+    print(Fore.BLUE + "After the app is closed, you can "
         "reopen it to access the main menu.")
     print('\n')
     print("1. Main menu")
