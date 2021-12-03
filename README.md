@@ -89,6 +89,39 @@ Not agreed:
  
 ### Feaures
 
+* Main Menu
+
+ ![Wireframe of main menu](assets/documentation/features/featuremainmenu.png)
+
+* Strength Reminder
+
+ ![Wireframe of strength reminder](assets/documentation/features/featureoption1strenghts.png)
+
+* Advice Reminder
+
+ ![Wireframe of advice reminder](assets/documentation/features/featureoption1advice.png)
+
+* Past Priority Review
+
+ ![Wireframe of review previous priorities](assets/documentation/features/featureoption1oldpriorities.png)
+
+* Add today's top 3 priorities
+
+ ![Wireframe of add todays priorities](assets/documentation/features/featureoption1newpriorities.png)
+
+* Show 5 previous wins/successs
+
+ ![Wireframe of previous wins and successes](assets/documentation/features/feature1oldwin.png)
+
+* Enter new win/success
+
+ ![Wireframe of entering new win or success](assets/documentation/features/feature1newwin.png)
+
+* Email summary report
+
+ ![Wireframe of entering new win or success](assets/documentation/features/feature1emailsummary.png)
+
+
 ## Technologies
 
 ### Languages Used
