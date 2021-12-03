@@ -835,7 +835,8 @@ def email_send():
     format_email = '''<html>
             <body>
                 <div>
-                    <img src="https://raw.githubusercontent.com/declanosullivan/ADHD-Superheros/main/assets/images/emailheaderlogo.png" style="width: 100%; height: auto;">
+                    <img src="https://raw.githubusercontent.com/declanosullivan/ADHD-Superheros/main/assets/images/emailheaderlogo.png"  # noqa 
+                    style="width: 100%; height: auto;">
                     <div style="text-align: left;">
                         <h2>Overview</h2>
                         <p>Thank you for taking the time today to use
@@ -888,8 +889,8 @@ def email_send():
                         <br<
                         <p> The above wins/success are randomly
                          picked from past and here is the most
-                         recent on you entered today 
-                         - <strong>{24}</strong></p>
+                         recent on you entered today - <strong>
+                         {24}</strong></p>
                     </div>
                 </div>
             </body>
@@ -926,6 +927,8 @@ def app_run_complete():
     print(
         "Now that you're done, the app will "
         "close and leave a clear screen in 10 seconds.")
+    time.sleep(10)
+    clear()
 
 
 def main():
