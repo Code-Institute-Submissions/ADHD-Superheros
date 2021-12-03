@@ -382,7 +382,7 @@ def get_advice_data():
     advice = SHEET.worksheet("advice")
     row_count = len(advice.col_values(1))
     row_ref_start = row_count + 2
-    random_row = strengths.row_values(randrange(1, row_ref_start))
+    random_row = advice.row_values(randrange(1, row_ref_start))
     ADVICE_NAME = random_row[0]
     ADVICE_DETAIL = random_row[1]
     clear()
@@ -453,7 +453,7 @@ def get_last_3_priorities():
     print(Fore.GREEN + "We are updating your priorities worksheet...\n")
     time.sleep(1)
     dailytopthree.update_cell((max_rows - 2), 4, str(TASKSTATUS1))
-    print(Fore.GREEN + "Your priorities worksheet update successfully\n")
+    print(Fore.GREEN + "Your priorities worksheet updated successfully\n")
     time.sleep(1)
     input(Fore.WHITE + "Press enter to review next priority\n")
     print('\n')
@@ -486,7 +486,7 @@ def get_last_3_priorities():
     print(Fore.GREEN + "We are updating your priorities worksheet...\n")
     time.sleep(1)
     dailytopthree.update_cell((max_rows - 1), 4, str(TASKSTATUS2))
-    print(Fore.GREEN + "Your priorities worksheet update successfully\n")
+    print(Fore.GREEN + "Your priorities worksheet updated successfully\n")
     time.sleep(1)
     input(Fore.WHITE + "Press enter to review next priority\n")
     print('\n')
@@ -519,12 +519,12 @@ def get_last_3_priorities():
     print(Fore.GREEN + "We are updating your priorities worksheet...\n")
     time.sleep(1)
     dailytopthree.update_cell((max_rows), 4, str(TASKSTATUS3))
-    print(Fore.GREEN + "Your priorities worksheet update successfully\n")
+    print(Fore.GREEN + "Your priorities worksheet updated successfully\n")
     time.sleep(1)
     print(Fore.WHITE + "You finished reviewing your priorities.\n")
+    time.sleep(1)
     input(
-        Fore.WHITE + "Press enter to view your "
-        "weekly and monthly reports.\n")
+        Fore.WHITE + "Press enter to provide your top 3 priorities for today\n")
     print('\n')
 
 
@@ -594,7 +594,7 @@ def get_today_priorities():
             print('Your third priority for today is saved\n')
             break
     # Summary
-    print("Thank you for providing your top 3 priorities for today (3 word minimum)?\n")
+    print("Thank you for providing your top 3 priorities for today.\n")
     time.sleep(1)
     print(
         Fore.GREEN + f"Your top 3 priorities for today are {NEWPRIORITY1}"
@@ -737,13 +737,23 @@ def show_previous_wins():
     ascii_banner = pyfiglet.figlet_format("ADHD Superheros")
     print(ascii_banner)
     print(Fore.RED + "Reminders of previous wins and successes\n")
+    time.sleep(1)
+    print("Its important to keep in mind your progress. Here are random wins and success from the past.\n")
     random1 = wins.row_values(randrange(2, row_ref_start))
     # win 1-5
-    print(f'Your first win is {(OLDWIN1)}\n')
-    print(f'Your second win is {OLDWIN2}\n')
-    print(f'Your third win is {OLDWIN3}\n')
-    print(f'Your fourth win is {OLDWIN4}\n')
-    print(f'Your fift win is {OLDWIN5}\n')
+    print(Fore.BLUE + f'Your first win/success is {(OLDWIN1)}\n')
+    time.sleep(1)
+    print(Fore.CYAN + f'Your second win/success is {OLDWIN2}\n')
+    time.sleep(1)
+    print(Fore.BLUE + f'Your third win/success is {OLDWIN3}\n')
+    time.sleep(1)
+    print(Fore.CYAN + f'Your fourth win/success is {OLDWIN4}\n')
+    time.sleep(1)
+    print(Fore.BLUE + f'Your fift win/success is {OLDWIN5}\n')
+    time.sleep(1)
+    input(Fore.WHITE + "Press enter to submit your win or success.")
+    print('\n')
+
 
 
 def get_current_win():
@@ -780,7 +790,7 @@ def get_current_win():
             wins.append_row(WIN_DATA.split(","))
             print(Fore.GREEN + "Updating your wins worksheet...\n")
             time.sleep(1)
-            print(Fore.GREEN + "Your wins worksheet update successfully\n")
+            print(Fore.GREEN + "Your wins worksheet updated successfully\n")
             break
         
 
@@ -812,10 +822,7 @@ def email_send():
     format_email = '''<html>
             <body>
                 <div>
-                    <img src="https://raw.githubusercontent.com/
-                    declanosullivan/ADHD-Superheros/main/assets/
-                    images/emailheaderlogo.png"
-                    style="width: 100%; height: auto;">
+                    <img src="https://raw.githubusercontent.com/declanosullivan/ADHD-Superheros/main/assets/images/emailheaderlogo.png" style="width: 100%; height: auto;">
                     <div style="text-align: left;">
                         <h2>Overview</h2>
                         <p>Thank you for taking the time today to use
@@ -868,7 +875,7 @@ def email_send():
                         <br<
                         <p> The above wins/success are randomly
                          picked from past and here is the most
-                         recent on you entered today - {24}</p>
+                         recent on you entered today - <strong>{24}</strong></p>
                     </div>
                 </div>
             </body>
