@@ -1,7 +1,7 @@
 
 # ADHD Superstars
 
- ![Mockup of the app across different screen sizes](assets/documentation/wireframes/responsivemockup.png)
+ ![Mockup of the app across different screen sizes](documentation/wireframes/responsivemockup.png)
 
 ## Overview
 
