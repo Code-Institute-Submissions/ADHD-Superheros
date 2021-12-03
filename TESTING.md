@@ -19,6 +19,8 @@ To do: Add examples of user stories as features, including screenshots.
 
 ## Bugs/Issues
 
+I've used the [GitHub Issues](https://github.com/declanosullivan/ADHD-Superheros/issues) tracker for any bugs I encountered throughout the development stages of this application.
+
 * **gspread.exceptions.APIError: {'code': 400,** - [#1](https://github.com/declanosullivan/ADHD-Superheros/issues/1)
 * **No module named 'pyfiglet'** - [#2](https://github.com/declanosullivan/ADHD-Superheros/issues/2)
 * **ZeroDivisionError: division by zero** - [#3](https://github.com/declanosullivan/ADHD-Superheros/issues/3)
