@@ -7,7 +7,7 @@ import gspread
 import pyfiglet
 from google.oauth2.service_account import Credentials
 from random import randrange
-from colorama import Fore, Style, init  # https://pypi.org/project/colorama/
+from colorama import Fore, init  # https://pypi.org/project/colorama/
 init(autoreset=True)
 if os.path.exists("env.py"):
     import env  # noqa
@@ -309,17 +309,21 @@ def leaving():
     print(ascii_banner)
     print(Fore.RED + "You're about to leave the app")
     print('\n')
-    print(Fore.BLUE + "We hope you got value from the time spent using the app today.")
+    print(
+        Fore.BLUE + "We hope you got value from "
+        "the time spent using the app today.")
     time.sleep(1)
-    print(Fore.CYAN + "You'll now get a option to return to main menu or close the app.")
-    time.sleep(1
-    print(Fore.BLUE + "After the app is closed, you can "
-        "reopen it to access the main menu.")
-    print('\n')
-    print("1. Main menu")
-    print("2. Close app")
-    time.sleep(2)
+    print(
+        Fore.CYAN + "You'll now get a option to return "
+        "to main menu or close the app.")
+    time.sleep(1)
+    print(
+        Fore.BLUE + "After the app is closed, you can "
+        "reopen it to access the main menu.\n")
     while True:
+        print("1. Main menu")
+        print("2. Close app")
+        time.sleep(2)
         leaving_choice = input("Enter your choice 1-2 below\n").strip()
         if leaving_choice == "1":
             main_menu()
@@ -523,7 +527,8 @@ def get_last_3_priorities():
     print(Fore.WHITE + "You finished reviewing your priorities.\n")
     time.sleep(1)
     input(
-        Fore.WHITE + "Press enter to provide your top 3 priorities for today\n")
+        Fore.WHITE + "Press enter to provide your top 3 "
+        "priorities for today\n")
     print('\n')
 
 
@@ -553,10 +558,11 @@ def get_today_priorities():
     # Priority 1
     while True:
         NEWPRIORITY1 = input(
-            Fore.BLUE + "What will be your first priority for today (3 word minimum)?\n")
+            Fore.BLUE + "What will be your first "
+            "priority for today (3 word minimum)?\n")
         if len(NEWPRIORITY1.split()) < 3:
             print('\n')
-            print(f"A minimum of 3 words required.\n")
+            print("A minimum of 3 words required.\n")
             time.sleep(1)
         else:
             dailytopthree.update_cell((max_rows + 1), 1, str(taskdate))
@@ -567,10 +573,11 @@ def get_today_priorities():
     # Priority 2
     while True:
         NEWPRIORITY2 = input(
-            Fore.CYAN + "What will be your second priority for today (3 word minimum)?\n")
+            Fore.CYAN + "What will be your second priority "
+            "for today (3 word minimum)?\n")
         if len(NEWPRIORITY2.split()) < 3:
             print('\n')
-            print(f"A minimum of 3 words required.")
+            print("A minimum of 3 words required.")
             time.sleep(2)
         else:
             dailytopthree.update_cell((max_rows + 2), 1, str(taskdate))
@@ -581,10 +588,11 @@ def get_today_priorities():
     # Priority 3
     while True:
         NEWPRIORITY3 = input(
-            Fore.BLUE + "What will be your third priority for today (3 word minimum)?\n")
+            Fore.BLUE + "What will be your third priority "
+            "for today (3 word minimum)?\n")
         if len(NEWPRIORITY3.split()) < 3:
             print('\n')
-            print(f"A minimum of 3 words required, you provided {len(NEWPRIORITY3)}")
+            print("A minimum of 3 words required.")
             time.sleep(2)
         else:
             dailytopthree.update_cell((max_rows + 3), 1, str(taskdate))
@@ -737,8 +745,10 @@ def show_previous_wins():
     print(ascii_banner)
     print(Fore.RED + "Reminders of previous wins and successes\n")
     time.sleep(1)
-    print("Its important to keep in mind your progress. Here are random wins and success from the past.\n")
-    random1 = wins.row_values(randrange(2, row_ref_start))
+    print(
+        "Its important to keep in mind your progress. "
+        "Here are random wins and success from the past.\n")
+    # random1 = wins.row_values(randrange(2, row_ref_start))
     # win 1-5
     print(Fore.BLUE + f'Your first win/success is {(OLDWIN1)}\n')
     time.sleep(1)
@@ -752,7 +762,6 @@ def show_previous_wins():
     time.sleep(1)
     input(Fore.WHITE + "Press enter to submit your win or success.")
     print('\n')
-
 
 
 def get_current_win():
@@ -793,9 +802,13 @@ def get_current_win():
             break
         
 
-
 def get_email():
     global USER_EMAIL
+    clear()
+    ascii_banner = pyfiglet.figlet_format("ADHD Superheros")
+    print(ascii_banner)
+    print(Fore.RED + "A summary email is being prepared\n")
+    time.sleep(1)
     while True:
         USER_EMAIL = input("Please enter your email: \n")
         regex = r"^[a-zA-Z0-9._%+-]{1,64}@[a-zA-Z0-9.-]{3,252}\.[a-zA-Z]{2,}$"
@@ -874,7 +887,8 @@ def email_send():
                         <br<
                         <p> The above wins/success are randomly
                          picked from past and here is the most
-                         recent on you entered today - <strong>{24}</strong></p>
+                         recent on you entered today 
+                         - <strong>{24}</strong></p>
                     </div>
                 </div>
             </body>
@@ -895,6 +909,24 @@ def email_send():
     smtpserver.quit()
 
 
+def app_run_complete():
+    """
+    Display to user app is finished
+    """
+    clear()
+    ascii_banner = pyfiglet.figlet_format("ADHD Superheros")
+    print(ascii_banner)
+    print(Fore.RED + "A final note\n")
+    time.sleep(1)
+    print(Fore.BLUE + "Thank you for using the app.\n")
+    time.sleep(1)
+    print(Fore.CYAN + "Please take time today to review your summary email.\n")
+    time.sleep(1)
+    print(
+        "Now that you're done, the app will "
+        "close and leave a clear screen in 10 seconds.")
+
+
 def main():
     """
     Run all program functions
@@ -909,6 +941,7 @@ def main():
     get_current_win()
     get_email()
     email_send()
+    app_run_complete()
 
 
 main_menu()
