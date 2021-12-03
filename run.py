@@ -430,13 +430,13 @@ def get_last_3_priorities():
     while True:
         TASKSTATUS1 = input(
             Fore.BLUE + "Please confirm if this "
-            "priority was done or undone.\n")
+            "priority was ** done ** or ** undone **.\n")
         if TASKSTATUS1 == "done":
             break
         if TASKSTATUS1 == "undone":
             break
         else:
-            print(Fore.WHITE + "Only done or undone will be accepted.\n")
+            print(Fore.WHITE + "Only ** done ** or ** undone ** will be accepted.\n")
             time.sleep(2)
     print('\n')
     print(
@@ -463,13 +463,13 @@ def get_last_3_priorities():
     while True:
         TASKSTATUS2 = input(
             Fore.BLUE + "Please confirm if this priority "
-            "was done or undone.\n")
+            "was ** done ** or ** undone **.\n")
         if TASKSTATUS2 == "done":
             break
         if TASKSTATUS2 == "undone":
             break
         else:
-            print(Fore.WHITE + "Only done or undone will be accepted.\n")
+            print(Fore.WHITE + "Only ** done ** or ** undone ** will be accepted.\n")
             time.sleep(2)
     print('\n')
     print(
@@ -496,13 +496,13 @@ def get_last_3_priorities():
     while True:
         TASKSTATUS3 = input(
             Fore.BLUE + "Please confirm if this "
-            "priority was done or undone.\n")
+            "priority was ** done ** or ** undone **.\n")
         if TASKSTATUS3 == "done":
             break
         if TASKSTATUS3 == "undone":
             break
         else:
-            print(Fore.WHITE + "Only done or undone will be accepted.\n")
+            print(Fore.WHITE + "Only ** done ** or ** undone ** will be accepted.\n")
             time.sleep(2)
     print('\n')
     print(
@@ -595,7 +595,7 @@ def get_today_priorities():
     time.sleep(1)
     print(
         Fore.GREEN + f"Your top 3 priorities for today are {NEWPRIORITY1}"
-        f", {NEWPRIORITY2} and {NEWPRIORITY3}.\n")
+        f", {NEWPRIORITY2}, and {NEWPRIORITY3}.\n")
     time.sleep(1)
     input(Fore.WHITE + "Press enter to view your weekly and monthly report.\n")
     print('\n')
