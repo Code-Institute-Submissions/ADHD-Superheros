@@ -149,7 +149,7 @@ Not agreed:
 * Option 2 - Learn to use app (five screens/pages)
     - Note that at the end of this menu option, the user is presented to either return to main menu or exit
 
- ![Feature screenshot of first page of learn how to use app](ocumentation/features/featureoption2a.png)
+ ![Feature screenshot of first page of learn how to use app](documentation/features/featureoption2a.png)
 
  ![Feature screenshot of second page of learn how to use app](documentation/features/featureoption2b.png)
 
