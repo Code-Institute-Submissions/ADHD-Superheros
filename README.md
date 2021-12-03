@@ -358,7 +358,7 @@ Prerequisites
 
 - A Github repository 
 - Your creds.json file open in Gitpod.
-- Ensuring your requirements.txt is up to date. You can do so using by entering the following line in your terminal:
+- Ensuring your [requirements.txt](https://github.com/declanosullivan/ADHD-Superheros/blob/main/requirements.txt) is up to date. You can do so using by entering the following line in your terminal:
 
 ```
 pip3 freeze --local > requirements.txt
@@ -411,18 +411,34 @@ Step 5 - Select Github Deployment Method.
 
 ## Credits and Learning Experience
 
-* Thanks to Tim Nelson, my CI mentor, for the great support through my third project and in particular guiding me through sending emails from Python:
-    - [freeCodeCamp](https://www.freecodecamp.org/news/send-emails-using-code-4fcea9df63f/)
-    - [StackOverflow](https://stackoverflow.com/a/17596848)
-    - [StackOverflow](https://stackoverflow.com/q/16512592)
-    - [StackOverflow](https://stackoverflow.com/a/8519646)
+### Content
 
 * ADHD Strengths, advice and information about the condition shared through app adopted from these articles in Additube Magazine:
     - [Positives of ADHD - 12 Amazing Superpowers](https://www.additudemag.com/slideshows/positives-of-adhd/)
     - [What Is ADHD? Meaning, Symptoms & Tests](https://www.additudemag.com/what-is-adhd-symptoms-causes-treatments/)
     - [ADHD in Adults](https://adhdireland.ie/for-adults/adhd-in-adults/)
 
-* Thanks to Dave Horrocks for sharing a code block I've adopted to add random funtionality to the strenghts and advice functions.
+* Sample data of historical priorities adopted from this webiste:
+    - [Free Task & To-Do List Template by Instagantt](https://instagantt.com/free-task-and-to-do-list-template-for-project-management)
+
+### Media
+
+* Email banner created using [Canva](https://www.canva.com/):
+    - Using the email header size and the "insert coin" text styling.
+
+    ![Screenshot of text style from Canva](documentation/images/insertcointext.png)
+
+### Acknowledgements
+
+* I learned a tremendous amount from the CI Python Essentials module (including the Love Sandwiches project), the CI community, CI tutors and my mentor. 
+
+* Thanks to Tim Nelson, my CI mentor, for the excellent support through my third project and in particular guiding me through sending emails from Python:
+    - [freeCodeCamp](https://www.freecodecamp.org/news/send-emails-using-code-4fcea9df63f/)
+    - [StackOverflow](https://stackoverflow.com/a/17596848)
+    - [StackOverflow](https://stackoverflow.com/q/16512592)
+    - [StackOverflow](https://stackoverflow.com/a/8519646)
+
+    * Thanks to Dave Horrocks for sharing a code block I've adopted to add random funtionality to the strenghts and advice functions.
 
 ```python
 SHEET  = a_sheet # replace a_sheet with your accessed/authorized sheet
@@ -435,16 +451,3 @@ row_ref_start = row_count + 1 #accounts for Sheets rows starting at 1
 #start the randrange at 1 if including heading row, 2 if not.
 random_row = WORKSHEET.row_values(randrange(1, row_ref_start))
 ```
-
-* Thanks to fellow Student Ivana Iles for sharing this resouce for adding emojis to the app code:
-    - [Emojipedia - Home of Emoji Meanings](https://emojipedia.org/)
-
-* Sample data of historical priorities adopted from this webiste:
-    - [Free Task & To-Do List Template by Instagantt](https://instagantt.com/free-task-and-to-do-list-template-for-project-management)
-
-
-### Content
-
-### Media
-
-### Acknowledgements
