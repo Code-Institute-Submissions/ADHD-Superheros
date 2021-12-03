@@ -315,25 +315,14 @@ def leaving():
         "the time spent using the app today.")
     time.sleep(1)
     print(
-        Fore.CYAN + "You'll now get a option to return "
-        "to main menu or close the app.")
+        Fore.CYAN + "After the app is closed, you can "
+        "reopen it to access the main menu.\n")
     time.sleep(1)
     print(
-        Fore.BLUE + "After the app is closed, you can "
-        "reopen it to access the main menu.\n")
-    while True:
-        print("1. Main menu")
-        print("2. Close app")
-        time.sleep(2)
-        leaving_choice = input("Enter your choice 1-2 below\n").strip()
-        if leaving_choice == "1":
-            main_menu()
-        elif leaving_choice == "2":
-            clear()
-            print("Thanks for visiting ADHD Superheros!")
-        else:
-            print("You must choose option 1 or 2")
-            time.sleep(2)
+        "Now that you're done, the app will "
+        "close and leave a clear screen in 10 seconds.")
+    time.sleep(10)
+    clear()
 
 
 def get_strengths_data():
@@ -792,6 +781,7 @@ def get_current_win():
         WIN_DATA = input("Enter your win here:\n")
         if len(WIN_DATA.split()) < 5:
             print('\n')
+            time.sleep(1)
             print("A minimum of 5 words required\n")
             time.sleep(1)
         else:
@@ -800,6 +790,7 @@ def get_current_win():
             print(Fore.GREEN + "Updating your wins worksheet...\n")
             time.sleep(1)
             print(Fore.GREEN + "Your wins worksheet updated successfully\n")
+            time.sleep(1)
             break
 
 
@@ -817,9 +808,11 @@ def get_email():
         if not re.fullmatch(regex, USER_EMAIL):
             clear()
             print(f"'{USER_EMAIL}' is Invalid, enter a real email address!\n")
+            time.sleep(1)
         else:
             clear()
             print("Thank you for entering your email!\n")
+            time.sleep(1)
             break
     return USER_EMAIL
 
