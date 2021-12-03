@@ -91,35 +91,65 @@ Not agreed:
 
 * Main Menu
 
- ![Wireframe of main menu](assets/documentation/features/featuremainmenu.png)
+ ![Feature screenshot of main menu](assets/documentation/features/featuremainmenu.png)
 
 * Strength Reminder
 
- ![Wireframe of strength reminder](assets/documentation/features/featureoption1strenghts.png)
+ ![Feature screenshot of strength reminder](assets/documentation/features/featureoption1strenghts.png)
 
 * Advice Reminder
 
- ![Wireframe of advice reminder](assets/documentation/features/featureoption1advice.png)
+ ![Feature screenshot of advice reminder](assets/documentation/features/featureoption1advice.png)
 
 * Past Priority Review
 
- ![Wireframe of review previous priorities](assets/documentation/features/featureoption1oldpriorities.png)
+ ![Feature screenshot of review previous priorities](assets/documentation/features/featureoption1oldpriorities.png)
 
 * Add today's top 3 priorities
 
- ![Wireframe of add todays priorities](assets/documentation/features/featureoption1newpriorities.png)
+ ![Feature screenshot of add todays priorities](assets/documentation/features/featureoption1newpriorities.png)
 
 * Show 5 previous wins/successs
 
- ![Wireframe of previous wins and successes](assets/documentation/features/feature1oldwin.png)
+ ![Feature screenshot of previous wins and successes](assets/documentation/features/feature1oldwin.png)
 
 * Enter new win/success
 
- ![Wireframe of entering new win or success](assets/documentation/features/feature1newwin.png)
+ ![Feature screenshot of entering new win or success](assets/documentation/features/feature1newwin.png)
+
+* Get email address from user
+
+ ![Feature screenshot of get email user email address]()
 
 * Email summary report
 
- ![Wireframe of entering new win or success](assets/documentation/features/feature1emailsummary.png)
+ ![Feature screenshot of email summary report](assets/documentation/features/feature1emailsummary.png)
+
+* Learn to use app (Five pages)
+    - Note that at the end of this menu option, the user is presented to either return to main menu or exit
+
+ ![Feature screenshot of first page of learn how to use app](assets/documentation/features/featureoption2a.png)
+
+ ![Feature screenshot of second page of learn how to use app](assets/documentation/features/featureoption2b.png)
+
+ ![Feature screenshot of third page of learn how to use app](assets/documentation/features/featureoption2c.png)
+
+ ![Feature screenshot of third page of learn how to use app](assets/documentation/features/featureoption2d.png)
+
+ ![Feature screenshot of third page of learn how to use app](assets/documentation/features/featureoption2e.png)
+
+* Learn about ADHD
+
+ ![Feature screenshot of first page of learn about ADHD](assets/documentation/features/featureoption3a.png)
+
+ ![Feature screenshot of second page of learn about ADHD](assets/documentation/features/featureoption3b.png)
+
+ ![Feature screenshot of second page of learn about ADHD](assets/documentation/features/featureoption3c.png)
+
+* Exit app
+
+
+
 
 
 ## Technologies
@@ -137,7 +167,7 @@ Not agreed:
 * [GitHub](https://github.com/) - used a hosting service for Git repositories.
 
 * [GitHub Projects Board](https://github.com/declanosullivan/ADHD-Superheros/projects/1) - used as kanban to-do list for tracking issues and feature progress.
-    - ![Screenshot of projects board]()
+    - ![Screenshot of projects board](assets/images/projectboard.png)
 
 * [Gitpod](https://gitpod.io/) - used as a workspace for Git repositories.
 
@@ -152,6 +182,8 @@ Not agreed:
 * [Microsoft Photos](https://www.microsoft.com/en-us/p/microsoft-photos/9wzdncrfjbh4?) - used to resize images.
 
 * [Grammarly](https://www.microsoft.com/en-us/p/microsoft-photos/9wzdncrfjbh4?) - used to ensure documentation is clear and correct.
+
+* [Canva](https://www.canva.com/) - used to create email header.
 
 #### Libraries Used
 
