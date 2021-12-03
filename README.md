@@ -93,39 +93,40 @@ Not agreed:
 
  ![Feature screenshot of main menu](assets/documentation/features/featuremainmenu.png)
 
-* Strength Reminder
+* Option 1 - Use App - Strength Reminder
 
  ![Feature screenshot of strength reminder](assets/documentation/features/featureoption1strenghts.png)
 
-* Advice Reminder
+* Option 1 - Use App - Advice Reminder
 
  ![Feature screenshot of advice reminder](assets/documentation/features/featureoption1advice.png)
 
-* Past Priority Review
+* Option 1 - Use App - Past Priority Review
+    - Screen repeats two more times to get status. 
 
  ![Feature screenshot of review previous priorities](assets/documentation/features/featureoption1oldpriorities.png)
 
-* Add today's top 3 priorities
+* Option 1 - Use App - Add today's top 3 priorities
 
  ![Feature screenshot of add todays priorities](assets/documentation/features/featureoption1newpriorities.png)
 
-* Show 5 previous wins/successs
+* Option 1 - Use App - Show 5 previous wins/successs
 
  ![Feature screenshot of previous wins and successes](assets/documentation/features/feature1oldwin.png)
 
-* Enter new win/success
+* Option 1 - Use App - Enter new win/success
 
  ![Feature screenshot of entering new win or success](assets/documentation/features/feature1newwin.png)
 
-* Get email address from user
+* Option 1 - Use App - Get email address from user
 
  ![Feature screenshot of get email user email address]()
 
-* Email summary report
+* Option 1 - Use App - Email summary report
 
  ![Feature screenshot of email summary report](assets/documentation/features/feature1emailsummary.png)
 
-* Learn to use app (Five pages)
+* Option 2 - Learn to use app (five screens/pages)
     - Note that at the end of this menu option, the user is presented to either return to main menu or exit
 
  ![Feature screenshot of first page of learn how to use app](assets/documentation/features/featureoption2a.png)
@@ -138,7 +139,8 @@ Not agreed:
 
  ![Feature screenshot of third page of learn how to use app](assets/documentation/features/featureoption2e.png)
 
-* Learn about ADHD
+* Option 3 - Learn about ADHD (three screens/pages)
+    - Note that at the end of this menu option, the user is presented to either return to main menu or exit
 
  ![Feature screenshot of first page of learn about ADHD](assets/documentation/features/featureoption3a.png)
 
@@ -146,7 +148,7 @@ Not agreed:
 
  ![Feature screenshot of second page of learn about ADHD](assets/documentation/features/featureoption3c.png)
 
-* Exit app
+* Option 4 - Exit app
 
 
 
