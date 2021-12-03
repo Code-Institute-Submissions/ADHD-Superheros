@@ -1,5 +1,4 @@
 import time
-# https://www.geeksforgeeks.org/python-datetime-module/
 from datetime import date, timedelta, datetime
 import smtplib
 from email.mime.multipart import MIMEMultipart
@@ -10,7 +9,7 @@ import gspread
 import pyfiglet
 from google.oauth2.service_account import Credentials
 from random import randrange
-from colorama import Fore, init  # https://pypi.org/project/colorama/
+from colorama import Fore, init 
 init(autoreset=True)
 if os.path.exists("env.py"):
     import env  # noqa
@@ -89,7 +88,6 @@ def learn_app():
     print(Fore.WHITE + "Below is a summary of each of the menu options.")
     print('\n')
     time.sleep(1)
-    # Option 1
     print(Fore.WHITE + "1. Use app")
     print('\n')
     time.sleep(1)
@@ -118,7 +116,6 @@ def learn_app():
         Fore.WHITE + "Press enter to load the next "
         "screen about using the app")
     print('\n')
-    # Option 2
     clear()
     ascii_banner = pyfiglet.figlet_format("ADHD Superheros")
     print(ascii_banner)
@@ -138,7 +135,6 @@ def learn_app():
         Fore.WHITE + "Press enter to load the next "
         "screen about using the app")
     print('\n')
-    # Option 3
     clear()
     ascii_banner = pyfiglet.figlet_format("ADHD Superheros")
     print(ascii_banner)
@@ -158,7 +154,6 @@ def learn_app():
         Fore.WHITE + "Press enter to load the next "
         "screen about using the app\n")
     print('\n')
-    # Option 4
     clear()
     ascii_banner = pyfiglet.figlet_format("ADHD Superheros")
     print(ascii_banner)
@@ -210,7 +205,6 @@ def learn_adhd():
     clear()
     ascii_banner = pyfiglet.figlet_format("ADHD Superheros")
     print(ascii_banner)
-    # Part 1 of 2
     print(Fore.RED + "Learn about ADHD - Part 1/2")
     print('\n')
     print(
@@ -243,7 +237,6 @@ def learn_adhd():
     clear()
     ascii_banner = pyfiglet.figlet_format("ADHD Superheros")
     print(ascii_banner)
-    # Part 2 of 2
     print(Fore.RED + "Learn about ADHD - Part 2/2")
     print('\n')
     print(
@@ -417,7 +410,6 @@ def get_last_3_priorities():
     OLDPRIORITY1 = (columns[2][0])
     OLDPRIORITY2 = (columns[2][1])
     OLDPRIORITY3 = (columns[2][2])
-    # Priority 1
     clear()
     ascii_banner = pyfiglet.figlet_format("ADHD Superheros")
     print(ascii_banner)
@@ -450,7 +442,6 @@ def get_last_3_priorities():
     time.sleep(1)
     input(Fore.WHITE + "Press enter to review next priority\n")
     print('\n')
-    # Priority 2
     clear()
     ascii_banner = pyfiglet.figlet_format("ADHD Superheros")
     print(ascii_banner)
@@ -483,7 +474,6 @@ def get_last_3_priorities():
     time.sleep(1)
     input(Fore.WHITE + "Press enter to review next priority\n")
     print('\n')
-    # Priority 3
     clear()
     ascii_banner = pyfiglet.figlet_format("ADHD Superheros")
     print(ascii_banner)
@@ -545,7 +535,6 @@ def get_today_priorities():
         "Don't forget that priorties can be to "
         "go do something fun or relaxing. Time off is important!\n")
     time.sleep(1)
-    # Priority 1
     while True:
         NEWPRIORITY1 = input(
             Fore.BLUE + "What will be your first "
@@ -560,7 +549,6 @@ def get_today_priorities():
             time.sleep(1)
             print('Your first priority for today is saved\n')
             break
-    # Priority 2
     while True:
         NEWPRIORITY2 = input(
             Fore.CYAN + "What will be your second priority "
@@ -575,7 +563,6 @@ def get_today_priorities():
             time.sleep(1)
             print('Your second priority for today is saved\n')
             break
-    # Priority 3
     while True:
         NEWPRIORITY3 = input(
             Fore.BLUE + "What will be your third priority "
@@ -590,7 +577,6 @@ def get_today_priorities():
             time.sleep(1)
             print('Your third priority for today is saved\n')
             break
-    # Summary
     print("Thank you for providing your top 3 priorities for today.\n")
     time.sleep(1)
     print(
@@ -617,8 +603,8 @@ def calc_weekly_avg():
     dailytopthree = SHEET.worksheet("dailytopthree")
     wk_start_date = date.today() - timedelta(days=7)
     wk_end_date = date.today()
-    WKTOTAL = 0  # total priorities in last 7 days
-    WKDONE = 0  # priorities with status done in last 7 days
+    WKTOTAL = 0
+    WKDONE = 0
     rows = dailytopthree.get_all_values()
     for i, row in enumerate(rows):
         if i > 0:
@@ -673,8 +659,8 @@ def calc_month_avg():
     dailytopthree = SHEET.worksheet("dailytopthree")
     mth_start_date = date.today() - timedelta(days=30)
     mth_end_date = date.today()
-    MTHTOTAL = 0  # total priorities in last 30 days
-    MTHDONE = 0  # priorities with status done in last 30 days
+    MTHTOTAL = 0
+    MTHDONE = 0
     rows = dailytopthree.get_all_values()
     for i, row in enumerate(rows):
         if i > 0:
@@ -738,8 +724,6 @@ def show_previous_wins():
     print(
         "Its important to keep in mind your progress. "
         "Here are random wins and success from the past.\n")
-    # random1 = wins.row_values(randrange(2, row_ref_start))
-    # win 1-5
     print(Fore.BLUE + f'Your first win/success is {(OLDWIN1)}\n')
     time.sleep(1)
     print(Fore.CYAN + f'Your second win/success is {OLDWIN2}\n')
