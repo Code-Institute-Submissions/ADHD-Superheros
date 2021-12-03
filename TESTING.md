@@ -56,8 +56,24 @@ I've used the [GitHub Issues](https://github.com/declanosullivan/ADHD-Superheros
 All code passes PEP8 compliance. I used [pep8online](http://pep8online.com/) for code validation.
 There was one minor issue with Line Too Long, which is due to the email image URL. I've included # noqa to avoid breaking the image URL so validation would ignore this one line.
 
- ![Screenshot of PEP8 online validator](documentation/testing/pep8.png)
+ ![Screenshot of PEP8 online validator](documentation/images/testing/pep8.png)
 
 ### Compatibility
 
-Chrome, Firefox etc with screenshots. 
+* Chrome Browser (96.0.4664.45)
+
+ ![Screenshot from Chrome of main menu ](documentation/images/browsertesting/chromemainmenu.png)
+
+ ![Screenshot from Chrome of option 1 first page ](documentation/images/browsertesting/chromeoption1.png)
+
+* Firefox Browser (94)
+
+ ![Screenshot from Firefox of main menu ](documentation/images/browsertesting/firefoxmainmenu.png)
+
+ ![Screenshot from Firefox of option 2](documentation/images/browsertesting/firefoxlearn.png)
+
+* Edge Browser (96.0.1054.41)
+
+ ![Screenshot from Edge of main menu ](documentation/images/browsertesting/edgelearn.png)
+
+ ![Screenshot from Edge of option 3 ](documentation/images/browsertesting/edgemainmenu.png)
