@@ -38,10 +38,10 @@ Agreed:
 * As a user, I need to review my top 3 priorities from yesterday day and confirm done/not done.
 * As a user, I need a weekly % of my task completion (one week = 21 tasks, 16 done on the day = 76%). 
 * As a user, I need a monthly % of my task completion (one month = 90 tasks, 79 done on the day = 86%).
-* As a user, I need to document my top 3 wins/successes from yesterday.
-* As a user, I need a reminder of random wins/successes from any previous day except yesterday.
+* As a user, I need to document a win/success from yesterday.
+* As a user, I need a reminder of 5 random wins/successes from previous days. 
 * As a user, I need to set my top 3 priorities for the current day.
-* As a user, I need an email reminder midday of my top 3 priorities for today to help me refocus
+* As a user, I need an email summary of information shared while using the app.
 
 Not agreed:
 
