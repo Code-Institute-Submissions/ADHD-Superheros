@@ -29,7 +29,9 @@ I've used the [GitHub Issues](https://github.com/declanosullivan/ADHD-Superheros
 
 ### Validators
 
-Pep8 validator with screenshot
+All code passes PEP8 compliance. I used [pep8online](http://pep8online.com/) for code validation.
+There was one minor issue with Line Too Long, which is due to the email image URL. I've included # noqa to avoid breaking the image URL so validation would ignore this one line.
+
 
 ### Compatibility
 
